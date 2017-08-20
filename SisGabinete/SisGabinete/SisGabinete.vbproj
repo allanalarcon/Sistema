@@ -73,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\conexion.vb" />
+    <Compile Include="Data\fcliente.vb" />
+    <Compile Include="Data\fservicio.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -88,6 +90,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pantallas\frmcliente.Designer.vb">
+      <DependentUpon>frmcliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmcontenedor.Designer.vb">
+      <DependentUpon>frmcontenedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmcontenedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmservicio.Designer.vb">
+      <DependentUpon>frmservicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmservicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -95,6 +115,15 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmcliente.resx">
+      <DependentUpon>frmcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmcontenedor.resx">
+      <DependentUpon>frmcontenedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmservicio.resx">
+      <DependentUpon>frmservicio.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
