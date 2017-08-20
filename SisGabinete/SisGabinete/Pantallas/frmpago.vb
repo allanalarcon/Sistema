@@ -32,6 +32,8 @@
 
         'Ocultas
         dgvlistado.Columns("idpago").Visible = False
+        dgvlistado.Columns("pago").Visible = False
+        dgvlistado.Columns("fechapago").Visible = False
 
         'Visibles
         dgvlistado.Columns("nombre").HeaderText = "Nombres"
@@ -39,14 +41,6 @@
 
         dgvlistado.Columns("apellido").HeaderText = "Apellidos"
         dgvlistado.Columns("apellido").Width = 150
-
-        dgvlistado.Columns("pago").HeaderText = "Pago"
-        dgvlistado.Columns("pago").Width = 80
-        dgvlistado.Columns("pago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-        dgvlistado.Columns("fechapago").HeaderText = "Fecha"
-        dgvlistado.Columns("fechapago").Width = 80
-        dgvlistado.Columns("fechapago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
     End Sub
 

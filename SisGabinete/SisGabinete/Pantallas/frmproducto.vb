@@ -30,21 +30,23 @@
         dgvlistado.CurrentRow.Selected = False
 
         'Ocultas
-        dgvlistado.Columns("idproducto").Visible = False
         dgvlistado.Columns("descripcion").Visible = False
         dgvlistado.Columns("proveedor").Visible = False
         dgvlistado.Columns("nombre_vendedor").Visible = False
         dgvlistado.Columns("apellido_vendedor").Visible = False
 
         'Visibles
+        dgvlistado.Columns("idproducto").HeaderText = "Código"
+        dgvlistado.Columns("idproducto").Width = 30
+
         dgvlistado.Columns("producto").HeaderText = "Nombre"
         dgvlistado.Columns("producto").Width = 150
 
         dgvlistado.Columns("precioventa").HeaderText = "Precio Unitario"
-        dgvlistado.Columns("precioventa").Width = 150
+        dgvlistado.Columns("precioventa").Width = 30
 
         dgvlistado.Columns("stock").HeaderText = "Stock"
-        dgvlistado.Columns("stock").Width = 150
+        dgvlistado.Columns("stock").Width = 30
 
     End Sub
 
@@ -68,6 +70,7 @@
     End Sub
 
     Public Sub limpiar()
+        txtcodigo.Text = ""
         txtnombre.Text = ""
         txtdescripcion.Text = ""
         txtprecio.Text = ""
@@ -83,6 +86,7 @@
 
     Private Sub dgvlistado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellClick
         limpiar()
+        txtcodigo.Text = dgvlistado.SelectedCells.Item(0).Value.ToString.ToString
         txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
         txtdescripcion.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
         txtprecio.Text = dgvlistado.SelectedCells.Item(3).Value.ToString

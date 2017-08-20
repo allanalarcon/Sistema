@@ -22,7 +22,7 @@ Partial Class frmproducto
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pandatossec = New System.Windows.Forms.Panel()
         Me.txtapellidovendedor = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,6 +41,7 @@ Partial Class frmproducto
         Me.pandatosprin = New System.Windows.Forms.Panel()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.picempleado = New System.Windows.Forms.PictureBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.pandatossec.SuspendLayout()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
@@ -214,12 +215,12 @@ Partial Class frmproducto
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
         Me.dgvlistado.TabIndex = 9
@@ -238,6 +239,7 @@ Partial Class frmproducto
         'pandatosprin
         '
         Me.pandatosprin.BackColor = System.Drawing.Color.White
+        Me.pandatosprin.Controls.Add(Me.txtcodigo)
         Me.pandatosprin.Controls.Add(Me.txtnombre)
         Me.pandatosprin.Controls.Add(Me.picempleado)
         Me.pandatosprin.Location = New System.Drawing.Point(501, 60)
@@ -251,7 +253,7 @@ Partial Class frmproducto
         Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtnombre.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.ForeColor = System.Drawing.Color.Black
-        Me.txtnombre.Location = New System.Drawing.Point(156, 48)
+        Me.txtnombre.Location = New System.Drawing.Point(156, 77)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(287, 43)
         Me.txtnombre.TabIndex = 2
@@ -263,6 +265,17 @@ Partial Class frmproducto
         Me.picempleado.Size = New System.Drawing.Size(100, 100)
         Me.picempleado.TabIndex = 0
         Me.picempleado.TabStop = False
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.BackColor = System.Drawing.Color.White
+        Me.txtcodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtcodigo.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigo.ForeColor = System.Drawing.Color.Black
+        Me.txtcodigo.Location = New System.Drawing.Point(156, 20)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(287, 43)
+        Me.txtcodigo.TabIndex = 3
         '
         'frmproducto
         '
@@ -305,4 +318,5 @@ Partial Class frmproducto
     Friend WithEvents pandatosprin As Panel
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents picempleado As PictureBox
+    Friend WithEvents txtcodigo As TextBox
 End Class
