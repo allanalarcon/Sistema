@@ -1,14 +1,14 @@
-﻿Public Class frmcliente
+﻿Public Class frmempleado
 
     Private dt As New DataTable
 
-    Private Sub frmcliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmempleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrar()
     End Sub
 
     Private Sub mostrar()
         Try
-            Dim func As New fcliente
+            Dim func As New fempleado
             dt = func.mostrar()
 
             If dt.Rows.Count <> 0 Then
@@ -31,7 +31,7 @@
         dgvlistado.CurrentRow.Selected = False
 
         'Ocultas
-        dgvlistado.Columns("idcliente").Visible = False
+        dgvlistado.Columns("idempleado").Visible = False
         dgvlistado.Columns("direccion").Visible = False
         dgvlistado.Columns("email").Visible = False
         dgvlistado.Columns("fechanacimiento").Visible = False
@@ -97,9 +97,4 @@
             txtedad.Text = DateDiff(DateInterval.Year, dgvlistado.SelectedCells.Item(6).Value, Date.Now)
         End If
     End Sub
-
-    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-
-    End Sub
-
 End Class

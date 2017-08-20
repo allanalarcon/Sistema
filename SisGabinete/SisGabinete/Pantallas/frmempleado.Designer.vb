@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmcliente
+Partial Class frmempleado
     Inherits System.Windows.Forms.Form
 
-    'Form reemplaza a Dispose para limpiar la lista de componentes.
+    'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -14,25 +14,22 @@ Partial Class frmcliente
         End Try
     End Sub
 
-    'Requerido por el Diseñador de Windows Forms
+    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-    'Se puede modificar usando el Diseñador de Windows Forms.  
-    'No lo modifique con el editor de código.
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.dgvlistado = New System.Windows.Forms.DataGridView()
-        Me.txtbuscar = New System.Windows.Forms.TextBox()
-        Me.pandatosprin = New System.Windows.Forms.Panel()
-        Me.txtapellido = New System.Windows.Forms.TextBox()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.piccliente = New System.Windows.Forms.PictureBox()
-        Me.pandatossec = New System.Windows.Forms.Panel()
+        Me.picempleado = New System.Windows.Forms.PictureBox()
         Me.txtfecha = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtedad = New System.Windows.Forms.TextBox()
+        Me.txtapellido = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.pandatossec = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,67 +39,14 @@ Partial Class frmcliente
         Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.txtcedula = New System.Windows.Forms.TextBox()
+        Me.dgvlistado = New System.Windows.Forms.DataGridView()
+        Me.txtbuscar = New System.Windows.Forms.TextBox()
+        Me.pandatosprin = New System.Windows.Forms.Panel()
+        CType(Me.picempleado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pandatossec.SuspendLayout()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
-        CType(Me.piccliente, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pandatossec.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'dgvlistado
-        '
-        Me.dgvlistado.AllowUserToAddRows = False
-        Me.dgvlistado.AllowUserToDeleteRows = False
-        Me.dgvlistado.AllowUserToResizeColumns = False
-        Me.dgvlistado.AllowUserToResizeRows = False
-        Me.dgvlistado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.dgvlistado.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvlistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvlistado.Location = New System.Drawing.Point(60, 91)
-        Me.dgvlistado.Name = "dgvlistado"
-        Me.dgvlistado.ReadOnly = True
-        Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
-        Me.dgvlistado.TabIndex = 1
-        '
-        'txtbuscar
-        '
-        Me.txtbuscar.BackColor = System.Drawing.Color.White
-        Me.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbuscar.ForeColor = System.Drawing.Color.Black
-        Me.txtbuscar.Location = New System.Drawing.Point(94, 60)
-        Me.txtbuscar.Name = "txtbuscar"
-        Me.txtbuscar.Size = New System.Drawing.Size(347, 25)
-        Me.txtbuscar.TabIndex = 0
-        '
-        'pandatosprin
-        '
-        Me.pandatosprin.BackColor = System.Drawing.Color.White
-        Me.pandatosprin.Controls.Add(Me.txtapellido)
-        Me.pandatosprin.Controls.Add(Me.txtnombre)
-        Me.pandatosprin.Controls.Add(Me.piccliente)
-        Me.pandatosprin.Location = New System.Drawing.Point(501, 60)
-        Me.pandatosprin.Name = "pandatosprin"
-        Me.pandatosprin.Size = New System.Drawing.Size(463, 140)
-        Me.pandatosprin.TabIndex = 2
-        '
-        'txtapellido
-        '
-        Me.txtapellido.BackColor = System.Drawing.Color.White
-        Me.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtapellido.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtapellido.ForeColor = System.Drawing.Color.Black
-        Me.txtapellido.Location = New System.Drawing.Point(20, 69)
-        Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(423, 43)
-        Me.txtapellido.TabIndex = 3
         '
         'txtnombre
         '
@@ -110,18 +54,62 @@ Partial Class frmcliente
         Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtnombre.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.ForeColor = System.Drawing.Color.Black
-        Me.txtnombre.Location = New System.Drawing.Point(20, 20)
+        Me.txtnombre.Location = New System.Drawing.Point(156, 20)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(423, 43)
+        Me.txtnombre.Size = New System.Drawing.Size(287, 43)
         Me.txtnombre.TabIndex = 2
         '
-        'piccliente
+        'picempleado
         '
-        Me.piccliente.Location = New System.Drawing.Point(30, 20)
-        Me.piccliente.Name = "piccliente"
-        Me.piccliente.Size = New System.Drawing.Size(0, 0)
-        Me.piccliente.TabIndex = 0
-        Me.piccliente.TabStop = False
+        Me.picempleado.Location = New System.Drawing.Point(30, 20)
+        Me.picempleado.Name = "picempleado"
+        Me.picempleado.Size = New System.Drawing.Size(100, 100)
+        Me.picempleado.TabIndex = 0
+        Me.picempleado.TabStop = False
+        '
+        'txtfecha
+        '
+        Me.txtfecha.BackColor = System.Drawing.Color.White
+        Me.txtfecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtfecha.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtfecha.ForeColor = System.Drawing.Color.Black
+        Me.txtfecha.Location = New System.Drawing.Point(156, 144)
+        Me.txtfecha.Name = "txtfecha"
+        Me.txtfecha.Size = New System.Drawing.Size(287, 25)
+        Me.txtfecha.TabIndex = 8
+        '
+        'txtedad
+        '
+        Me.txtedad.BackColor = System.Drawing.Color.White
+        Me.txtedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtedad.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtedad.ForeColor = System.Drawing.Color.Black
+        Me.txtedad.Location = New System.Drawing.Point(156, 175)
+        Me.txtedad.Name = "txtedad"
+        Me.txtedad.Size = New System.Drawing.Size(287, 25)
+        Me.txtedad.TabIndex = 9
+        '
+        'txtapellido
+        '
+        Me.txtapellido.BackColor = System.Drawing.Color.White
+        Me.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtapellido.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtapellido.ForeColor = System.Drawing.Color.Black
+        Me.txtapellido.Location = New System.Drawing.Point(156, 69)
+        Me.txtapellido.Name = "txtapellido"
+        Me.txtapellido.Size = New System.Drawing.Size(287, 43)
+        Me.txtapellido.TabIndex = 3
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(17, 177)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(38, 17)
+        Me.Label6.TabIndex = 13
+        Me.Label6.Text = "Edad"
         '
         'pandatossec
         '
@@ -138,43 +126,10 @@ Partial Class frmcliente
         Me.pandatossec.Controls.Add(Me.txttelefono)
         Me.pandatossec.Controls.Add(Me.txtdireccion)
         Me.pandatossec.Controls.Add(Me.txtcedula)
-        Me.pandatossec.Location = New System.Drawing.Point(501, 230)
+        Me.pandatossec.Location = New System.Drawing.Point(493, 199)
         Me.pandatossec.Name = "pandatossec"
         Me.pandatossec.Size = New System.Drawing.Size(463, 220)
-        Me.pandatossec.TabIndex = 3
-        '
-        'txtfecha
-        '
-        Me.txtfecha.BackColor = System.Drawing.Color.White
-        Me.txtfecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfecha.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtfecha.ForeColor = System.Drawing.Color.Black
-        Me.txtfecha.Location = New System.Drawing.Point(156, 144)
-        Me.txtfecha.Name = "txtfecha"
-        Me.txtfecha.Size = New System.Drawing.Size(287, 25)
-        Me.txtfecha.TabIndex = 8
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(17, 177)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(38, 17)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Edad"
-        '
-        'txtedad
-        '
-        Me.txtedad.BackColor = System.Drawing.Color.White
-        Me.txtedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtedad.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtedad.ForeColor = System.Drawing.Color.Black
-        Me.txtedad.Location = New System.Drawing.Point(156, 175)
-        Me.txtedad.Name = "txtedad"
-        Me.txtedad.Size = New System.Drawing.Size(287, 25)
-        Me.txtedad.TabIndex = 9
+        Me.pandatossec.TabIndex = 7
         '
         'Label5
         '
@@ -277,37 +232,79 @@ Partial Class frmcliente
         Me.txtcedula.Size = New System.Drawing.Size(287, 25)
         Me.txtcedula.TabIndex = 4
         '
-        'frmcliente
+        'dgvlistado
+        '
+        Me.dgvlistado.AllowUserToAddRows = False
+        Me.dgvlistado.AllowUserToDeleteRows = False
+        Me.dgvlistado.AllowUserToResizeColumns = False
+        Me.dgvlistado.AllowUserToResizeRows = False
+        Me.dgvlistado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.dgvlistado.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvlistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvlistado.Location = New System.Drawing.Point(52, 60)
+        Me.dgvlistado.Name = "dgvlistado"
+        Me.dgvlistado.ReadOnly = True
+        Me.dgvlistado.RowHeadersVisible = False
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
+        Me.dgvlistado.TabIndex = 5
+        '
+        'txtbuscar
+        '
+        Me.txtbuscar.BackColor = System.Drawing.Color.White
+        Me.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtbuscar.Location = New System.Drawing.Point(86, 29)
+        Me.txtbuscar.Name = "txtbuscar"
+        Me.txtbuscar.Size = New System.Drawing.Size(347, 25)
+        Me.txtbuscar.TabIndex = 4
+        '
+        'pandatosprin
+        '
+        Me.pandatosprin.BackColor = System.Drawing.Color.White
+        Me.pandatosprin.Controls.Add(Me.txtapellido)
+        Me.pandatosprin.Controls.Add(Me.txtnombre)
+        Me.pandatosprin.Controls.Add(Me.picempleado)
+        Me.pandatosprin.Location = New System.Drawing.Point(493, 29)
+        Me.pandatosprin.Name = "pandatosprin"
+        Me.pandatosprin.Size = New System.Drawing.Size(463, 140)
+        Me.pandatosprin.TabIndex = 6
+        '
+        'frmempleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.ClientSize = New System.Drawing.Size(1008, 582)
         Me.Controls.Add(Me.pandatossec)
-        Me.Controls.Add(Me.pandatosprin)
-        Me.Controls.Add(Me.txtbuscar)
         Me.Controls.Add(Me.dgvlistado)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmcliente"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmcliente"
+        Me.Controls.Add(Me.txtbuscar)
+        Me.Controls.Add(Me.pandatosprin)
+        Me.Name = "frmempleado"
+        Me.Text = "frmempleado"
+        CType(Me.picempleado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pandatossec.ResumeLayout(False)
+        Me.pandatossec.PerformLayout()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pandatosprin.ResumeLayout(False)
         Me.pandatosprin.PerformLayout()
-        CType(Me.piccliente, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pandatossec.ResumeLayout(False)
-        Me.pandatossec.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents dgvlistado As DataGridView
-    Friend WithEvents txtbuscar As TextBox
-    Friend WithEvents pandatosprin As Panel
-    Friend WithEvents txtapellido As TextBox
     Friend WithEvents txtnombre As TextBox
-    Friend WithEvents piccliente As PictureBox
+    Friend WithEvents picempleado As PictureBox
+    Friend WithEvents txtfecha As TextBox
+    Friend WithEvents txtedad As TextBox
+    Friend WithEvents txtapellido As TextBox
+    Friend WithEvents Label6 As Label
     Friend WithEvents pandatossec As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
@@ -318,7 +315,7 @@ Partial Class frmcliente
     Friend WithEvents txttelefono As TextBox
     Friend WithEvents txtdireccion As TextBox
     Friend WithEvents txtcedula As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txtedad As TextBox
-    Friend WithEvents txtfecha As TextBox
+    Friend WithEvents dgvlistado As DataGridView
+    Friend WithEvents txtbuscar As TextBox
+    Friend WithEvents pandatosprin As Panel
 End Class
