@@ -36,6 +36,7 @@
         dgvlistado.Columns("email").Visible = False
         dgvlistado.Columns("fechanacimiento").Visible = False
         dgvlistado.Columns("cedula").Visible = False
+        dgvlistado.Columns("tipo").Visible = False
 
         'Visibles
         dgvlistado.Columns("nombre").HeaderText = "Nombres"

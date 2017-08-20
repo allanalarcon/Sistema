@@ -253,7 +253,7 @@ Partial Class frmempleado
         Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
-        Me.dgvlistado.TabIndex = 5
+        Me.dgvlistado.TabIndex = 1
         '
         'txtbuscar
         '
@@ -264,7 +264,7 @@ Partial Class frmempleado
         Me.txtbuscar.Location = New System.Drawing.Point(94, 60)
         Me.txtbuscar.Name = "txtbuscar"
         Me.txtbuscar.Size = New System.Drawing.Size(347, 25)
-        Me.txtbuscar.TabIndex = 4
+        Me.txtbuscar.TabIndex = 0
         '
         'pandatosprin
         '

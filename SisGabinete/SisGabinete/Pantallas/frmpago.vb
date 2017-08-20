@@ -80,9 +80,8 @@
         txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
         txtpago.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
         Dim fecha As String = dgvlistado.SelectedCells.Item(4).Value.ToString
-    End Sub
-
-    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-
+        If Not fecha = "" Then
+            txtfecha.Text = fecha.Substring(0, fecha.Length - 8)
+        End If
     End Sub
 End Class

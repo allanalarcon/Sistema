@@ -22,3 +22,7 @@ C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisG
 C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.pdb
 C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.frmcontenedor.resources
 C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.frmcliente.resources
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.frmempleado.resources
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.frmpago.resources
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.frmproducto.resources
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.frmvendedor.resources
