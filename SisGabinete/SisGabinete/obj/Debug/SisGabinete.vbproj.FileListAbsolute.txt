@@ -1,0 +1,11 @@
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\bin\Debug\SisGabinete.exe.config
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\bin\Debug\SisGabinete.exe
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\bin\Debug\SisGabinete.pdb
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\bin\Debug\SisGabinete.xml
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\obj\Debug\SisGabinete.Form1.resources
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\obj\Debug\SisGabinete.Resources.resources
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\obj\Debug\SisGabinete.vbproj.GenerateResource.Cache
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\obj\Debug\SisGabinete.exe
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\obj\Debug\SisGabinete.xml
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\obj\Debug\SisGabinete.pdb
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Proyecto\SisGabinete\SisGabinete\obj\Debug\SisGabinete.vbprojResolveAssemblyReference.cache
