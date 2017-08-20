@@ -22,7 +22,7 @@ Partial Class frmempleado
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.picempleado = New System.Windows.Forms.PictureBox()
         Me.txtfecha = New System.Windows.Forms.TextBox()
@@ -126,7 +126,7 @@ Partial Class frmempleado
         Me.pandatossec.Controls.Add(Me.txttelefono)
         Me.pandatossec.Controls.Add(Me.txtdireccion)
         Me.pandatossec.Controls.Add(Me.txtcedula)
-        Me.pandatossec.Location = New System.Drawing.Point(493, 199)
+        Me.pandatossec.Location = New System.Drawing.Point(501, 230)
         Me.pandatossec.Name = "pandatossec"
         Me.pandatossec.Size = New System.Drawing.Size(463, 220)
         Me.pandatossec.TabIndex = 7
@@ -241,16 +241,16 @@ Partial Class frmempleado
         Me.dgvlistado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.dgvlistado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvlistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvlistado.Location = New System.Drawing.Point(52, 60)
+        Me.dgvlistado.Location = New System.Drawing.Point(60, 91)
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
         Me.dgvlistado.TabIndex = 5
@@ -261,7 +261,7 @@ Partial Class frmempleado
         Me.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtbuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbuscar.ForeColor = System.Drawing.Color.Black
-        Me.txtbuscar.Location = New System.Drawing.Point(86, 29)
+        Me.txtbuscar.Location = New System.Drawing.Point(94, 60)
         Me.txtbuscar.Name = "txtbuscar"
         Me.txtbuscar.Size = New System.Drawing.Size(347, 25)
         Me.txtbuscar.TabIndex = 4
@@ -272,7 +272,7 @@ Partial Class frmempleado
         Me.pandatosprin.Controls.Add(Me.txtapellido)
         Me.pandatosprin.Controls.Add(Me.txtnombre)
         Me.pandatosprin.Controls.Add(Me.picempleado)
-        Me.pandatosprin.Location = New System.Drawing.Point(493, 29)
+        Me.pandatosprin.Location = New System.Drawing.Point(501, 60)
         Me.pandatosprin.Name = "pandatosprin"
         Me.pandatosprin.Size = New System.Drawing.Size(463, 140)
         Me.pandatosprin.TabIndex = 6
@@ -281,11 +281,12 @@ Partial Class frmempleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 582)
+        Me.ClientSize = New System.Drawing.Size(1024, 621)
         Me.Controls.Add(Me.pandatossec)
         Me.Controls.Add(Me.dgvlistado)
         Me.Controls.Add(Me.txtbuscar)
         Me.Controls.Add(Me.pandatosprin)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmempleado"
         Me.Text = "frmempleado"
         CType(Me.picempleado, System.ComponentModel.ISupportInitialize).EndInit()

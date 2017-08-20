@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\conexion.vb" />
+    <Compile Include="Data\fvendedor.vb" />
     <Compile Include="Data\fcliente.vb" />
     <Compile Include="Data\fempleado.vb" />
     <Compile Include="Data\fservicio.vb" />
@@ -115,6 +116,12 @@
     <Compile Include="Pantallas\frmservicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantallas\frmvendedor.Designer.vb">
+      <DependentUpon>frmvendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmvendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -134,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmservicio.resx">
       <DependentUpon>frmservicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmvendedor.resx">
+      <DependentUpon>frmvendedor.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
