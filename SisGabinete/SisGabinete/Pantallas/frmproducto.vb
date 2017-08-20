@@ -1,14 +1,13 @@
-﻿Public Class frmpago
-
+﻿Public Class frmproducto
     Private dt As New DataTable
 
-    Private Sub frmpago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmcliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrar()
     End Sub
 
     Private Sub mostrar()
         Try
-            Dim func As New fpago
+            Dim func As New fproducto
             dt = func.mostrar()
 
             If dt.Rows.Count <> 0 Then
@@ -31,22 +30,21 @@
         dgvlistado.CurrentRow.Selected = False
 
         'Ocultas
-        dgvlistado.Columns("idpago").Visible = False
+        dgvlistado.Columns("idproducto").Visible = False
+        dgvlistado.Columns("descripcion").Visible = False
+        dgvlistado.Columns("proveedor").Visible = False
+        dgvlistado.Columns("nombre_vendedor").Visible = False
+        dgvlistado.Columns("apellido_vendedor").Visible = False
 
         'Visibles
-        dgvlistado.Columns("nombre").HeaderText = "Nombres"
-        dgvlistado.Columns("nombre").Width = 150
+        dgvlistado.Columns("producto").HeaderText = "Nombre"
+        dgvlistado.Columns("producto").Width = 150
 
-        dgvlistado.Columns("apellido").HeaderText = "Apellidos"
-        dgvlistado.Columns("apellido").Width = 150
+        dgvlistado.Columns("precioventa").HeaderText = "Precio Unitario"
+        dgvlistado.Columns("precioventa").Width = 150
 
-        dgvlistado.Columns("pago").HeaderText = "Pago"
-        dgvlistado.Columns("pago").Width = 80
-        dgvlistado.Columns("pago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-        dgvlistado.Columns("fechapago").HeaderText = "Fecha"
-        dgvlistado.Columns("fechapago").Width = 80
-        dgvlistado.Columns("fechapago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvlistado.Columns("stock").HeaderText = "Stock"
+        dgvlistado.Columns("stock").Width = 150
 
     End Sub
 
@@ -71,9 +69,12 @@
 
     Public Sub limpiar()
         txtnombre.Text = ""
-        txtapellido.Text = ""
-        txtpago.Text = ""
-        txtfecha.Text = ""
+        txtdescripcion.Text = ""
+        txtprecio.Text = ""
+        txtstock.Text = ""
+        txtnombrevendedor.Text = ""
+        txtapellidovendedor.Text = ""
+        txtproveedor.Text = ""
     End Sub
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
@@ -83,9 +84,13 @@
     Private Sub dgvlistado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellClick
         limpiar()
         txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
-        txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
-        txtpago.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
-        Dim fecha As String = dgvlistado.SelectedCells.Item(4).Value.ToString
+        txtdescripcion.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+        txtprecio.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
+        txtstock.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
+        txtnombrevendedor.Text = dgvlistado.SelectedCells.Item(6).Value.ToString
+        txtapellidovendedor.Text = dgvlistado.SelectedCells.Item(7).Value.ToString
+        txtproveedor.Text = dgvlistado.SelectedCells.Item(5).Value.ToString
+
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
