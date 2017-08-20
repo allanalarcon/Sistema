@@ -1,14 +1,14 @@
-﻿Public Class frmvendedor
+﻿Public Class frmpago
 
     Private dt As New DataTable
 
-    Private Sub frmvendedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmpago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrar()
     End Sub
 
     Private Sub mostrar()
         Try
-            Dim func As New fvendedor
+            Dim func As New fpago
             dt = func.mostrar()
 
             If dt.Rows.Count <> 0 Then
@@ -31,8 +31,7 @@
         dgvlistado.CurrentRow.Selected = False
 
         'Ocultas
-        dgvlistado.Columns("idvendedor").Visible = False
-        dgvlistado.Columns("cedula").Visible = False
+        dgvlistado.Columns("idpago").Visible = False
 
         'Visibles
         dgvlistado.Columns("nombre").HeaderText = "Nombres"
@@ -41,9 +40,14 @@
         dgvlistado.Columns("apellido").HeaderText = "Apellidos"
         dgvlistado.Columns("apellido").Width = 150
 
-        dgvlistado.Columns("celular").HeaderText = "Teléfono"
-        dgvlistado.Columns("celular").Width = 80
-        dgvlistado.Columns("celular").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvlistado.Columns("pago").HeaderText = "Pago"
+        dgvlistado.Columns("pago").Width = 80
+        dgvlistado.Columns("pago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        dgvlistado.Columns("fechapago").HeaderText = "Fecha"
+        dgvlistado.Columns("fechapago").Width = 80
+        dgvlistado.Columns("fechapago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
     End Sub
 
     Private Sub buscar()
@@ -68,9 +72,8 @@
     Public Sub limpiar()
         txtnombre.Text = ""
         txtapellido.Text = ""
-        txtcedula.Text = ""
-        txttelefono.Text = ""
-        txtproveedor.Text = ""
+        txtpago.Text = ""
+        txtfecha.Text = ""
     End Sub
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
@@ -81,14 +84,11 @@
         limpiar()
         txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
         txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
-        txtcedula.Text = dgvlistado.SelectedCells.Item(7).Value.ToString
-        txttelefono.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
-        txtproveedor.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
-
+        txtpago.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
+        Dim fecha As String = dgvlistado.SelectedCells.Item(6).Value.ToString
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
 
     End Sub
-
 End Class
