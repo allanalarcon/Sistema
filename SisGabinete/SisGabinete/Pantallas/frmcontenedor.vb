@@ -37,18 +37,38 @@
     End Sub
 
     Private Sub iniciar(ByVal user As String, password As String)
+        Try
+            Dim func As New fusuario
 
+            If func.validar_usuario(user, password) = True Then
+                pnpantallas.Visible = True
+                pnbotones.Visible = True
+                pnlogin.Visible = False
+            Else
+                MsgBox("Credencial incorrecta", MsgBoxStyle.Information, "Acceso denegado al sistema")
+                txtpassword.Clear()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
+
     Private Sub btingresar_Click(sender As Object, e As EventArgs) Handles btingresar.Click
-
+        iniciar(txtuser.Text, txtpassword.Text)
     End Sub
 
-    Private Sub txtuser_KeyDown(sender As Object, e As KeyEventArgs) Handles txtuser.KeyDown
-
+    Private Sub txtuser_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtuser.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            e.Handled = True
+            iniciar(txtuser.Text, txtpassword.Text)
+        End If
     End Sub
 
-    Private Sub txtpassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtpassword.KeyDown
-
+    Private Sub txtpassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpassword.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            e.Handled = True
+            iniciar(txtuser.Text, txtpassword.Text)
+        End If
     End Sub
 
     Private Sub btsalir_Click(sender As Object, e As EventArgs) Handles btsalir.Click

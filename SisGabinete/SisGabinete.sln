@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SisGabinete", "SisGabinete\SisGabinete.vbproj", "{24B4E6C5-D439-4999-9E27-59273FE3B436}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AV Model 2.0.1", "..\..\..\..\..\Dropbox\Programa\Programas\AV Model - MDF\AV Model Versión 2.0.1\AV Model 2.0.1\AV Model 2.0.1.vbproj", "{161DE50B-75AD-4F8B-857F-A61E649E0C15}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{24B4E6C5-D439-4999-9E27-59273FE3B436}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24B4E6C5-D439-4999-9E27-59273FE3B436}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24B4E6C5-D439-4999-9E27-59273FE3B436}.Release|Any CPU.Build.0 = Release|Any CPU
-		{161DE50B-75AD-4F8B-857F-A61E649E0C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{161DE50B-75AD-4F8B-857F-A61E649E0C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{161DE50B-75AD-4F8B-857F-A61E649E0C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{161DE50B-75AD-4F8B-857F-A61E649E0C15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
