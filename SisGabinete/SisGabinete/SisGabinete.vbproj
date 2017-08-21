@@ -75,6 +75,7 @@
     <Compile Include="Data\conexion.vb" />
     <Compile Include="Data\fproducto.vb" />
     <Compile Include="Data\fpago.vb" />
+    <Compile Include="Data\fusuario.vb" />
     <Compile Include="Data\fvendedor.vb" />
     <Compile Include="Data\fcliente.vb" />
     <Compile Include="Data\fempleado.vb" />
