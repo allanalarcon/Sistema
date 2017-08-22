@@ -263,7 +263,7 @@ Partial Class frmcontenedor
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmcontenedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmcontenedor"
+        Me.Text = "z"
         Me.pnbotones.ResumeLayout(False)
         Me.pnbotones.PerformLayout()
         Me.pnlogin.ResumeLayout(False)

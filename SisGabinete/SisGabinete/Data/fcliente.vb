@@ -27,4 +27,34 @@ Public Class fcliente
             desconectado()
         End Try
     End Function
+
+    Public Function ingresar(ByVal dts As vcliente) As Boolean
+        'Try
+        conectado()
+            cmd = New SqlCommand("ingresar_cliente")
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Connection = cn
+
+            cmd.Parameters.AddWithValue("@nombre", dts.gnombre)
+            cmd.Parameters.AddWithValue("@apellido", dts.gapellido)
+            cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
+            cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
+            cmd.Parameters.AddWithValue("@email", dts.gemail)
+        cmd.Parameters.AddWithValue("@fechanacimiento", dts.gfechanacimiento)
+        cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        'Catch ex As Exception
+        'MsgBox(ex.Message)
+        'Return False
+        'Finally
+        desconectado()
+        'End Try
+    End Function
 End Class

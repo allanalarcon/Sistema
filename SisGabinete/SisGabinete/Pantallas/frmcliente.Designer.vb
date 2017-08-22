@@ -22,7 +22,8 @@ Partial Class frmcliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvlistado = New System.Windows.Forms.DataGridView()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.pandatosprin = New System.Windows.Forms.Panel()
@@ -30,7 +31,6 @@ Partial Class frmcliente
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.piccliente = New System.Windows.Forms.PictureBox()
         Me.pandatossec = New System.Windows.Forms.Panel()
-        Me.txtfecha = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtedad = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -42,10 +42,18 @@ Partial Class frmcliente
         Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.txtcedula = New System.Windows.Forms.TextBox()
+        Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.btneliminar = New System.Windows.Forms.Button()
+        Me.btneditar = New System.Windows.Forms.Button()
+        Me.batncancelar = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatossec.SuspendLayout()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvlistado
@@ -61,12 +69,12 @@ Partial Class frmcliente
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
         Me.dgvlistado.TabIndex = 1
@@ -142,17 +150,6 @@ Partial Class frmcliente
         Me.pandatossec.Name = "pandatossec"
         Me.pandatossec.Size = New System.Drawing.Size(463, 220)
         Me.pandatossec.TabIndex = 3
-        '
-        'txtfecha
-        '
-        Me.txtfecha.BackColor = System.Drawing.Color.White
-        Me.txtfecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfecha.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtfecha.ForeColor = System.Drawing.Color.Black
-        Me.txtfecha.Location = New System.Drawing.Point(156, 144)
-        Me.txtfecha.Name = "txtfecha"
-        Me.txtfecha.Size = New System.Drawing.Size(287, 25)
-        Me.txtfecha.TabIndex = 8
         '
         'Label6
         '
@@ -277,12 +274,75 @@ Partial Class frmcliente
         Me.txtcedula.Size = New System.Drawing.Size(287, 25)
         Me.txtcedula.TabIndex = 4
         '
+        'erroricono
+        '
+        Me.erroricono.ContainerControl = Me
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.Location = New System.Drawing.Point(547, 518)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(104, 43)
+        Me.btnnuevo.TabIndex = 4
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
+        'btneliminar
+        '
+        Me.btneliminar.Location = New System.Drawing.Point(60, 577)
+        Me.btneliminar.Name = "btneliminar"
+        Me.btneliminar.Size = New System.Drawing.Size(91, 32)
+        Me.btneliminar.TabIndex = 8
+        Me.btneliminar.Text = "Eliminar"
+        Me.btneliminar.UseVisualStyleBackColor = True
+        '
+        'btneditar
+        '
+        Me.btneditar.Location = New System.Drawing.Point(689, 518)
+        Me.btneditar.Name = "btneditar"
+        Me.btneditar.Size = New System.Drawing.Size(104, 43)
+        Me.btneditar.TabIndex = 9
+        Me.btneditar.Text = "Editar"
+        Me.btneditar.UseVisualStyleBackColor = True
+        '
+        'batncancelar
+        '
+        Me.batncancelar.Location = New System.Drawing.Point(834, 518)
+        Me.batncancelar.Name = "batncancelar"
+        Me.batncancelar.Size = New System.Drawing.Size(104, 43)
+        Me.batncancelar.TabIndex = 11
+        Me.batncancelar.Text = "Cancelar"
+        Me.batncancelar.UseVisualStyleBackColor = True
+        '
+        'btnguardar
+        '
+        Me.btnguardar.Location = New System.Drawing.Point(689, 518)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(104, 43)
+        Me.btnguardar.TabIndex = 10
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.UseVisualStyleBackColor = True
+        '
+        'txtfecha
+        '
+        Me.txtfecha.Location = New System.Drawing.Point(156, 144)
+        Me.txtfecha.Mask = "00/00/0000"
+        Me.txtfecha.Name = "txtfecha"
+        Me.txtfecha.Size = New System.Drawing.Size(287, 20)
+        Me.txtfecha.TabIndex = 14
+        Me.txtfecha.ValidatingType = GetType(Date)
+        '
         'frmcliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.batncancelar)
+        Me.Controls.Add(Me.btnguardar)
+        Me.Controls.Add(Me.btneditar)
+        Me.Controls.Add(Me.btneliminar)
+        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.pandatossec)
         Me.Controls.Add(Me.pandatosprin)
         Me.Controls.Add(Me.txtbuscar)
@@ -297,6 +357,7 @@ Partial Class frmcliente
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pandatossec.ResumeLayout(False)
         Me.pandatossec.PerformLayout()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -320,5 +381,11 @@ Partial Class frmcliente
     Friend WithEvents txtcedula As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtedad As TextBox
-    Friend WithEvents txtfecha As TextBox
+    Friend WithEvents erroricono As ErrorProvider
+    Friend WithEvents batncancelar As Button
+    Friend WithEvents btnguardar As Button
+    Friend WithEvents btneditar As Button
+    Friend WithEvents btneliminar As Button
+    Friend WithEvents btnnuevo As Button
+    Friend WithEvents txtfecha As MaskedTextBox
 End Class

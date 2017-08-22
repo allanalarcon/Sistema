@@ -1,4 +1,6 @@
-﻿Public Class frmcliente
+﻿Imports System.ComponentModel
+
+Public Class frmcliente
 
     Private dt As New DataTable
 
@@ -69,6 +71,8 @@
     End Sub
 
     Public Sub limpiar()
+        btnguardar.Visible = True
+        btneditar.Visible = False
         txtnombre.Text = ""
         txtapellido.Text = ""
         txtcedula.Text = ""
@@ -98,8 +102,56 @@
         End If
     End Sub
 
-    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
 
+    Private Sub txtnombre_Validating(sender As Object, e As CancelEventArgs) Handles txtnombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
     End Sub
 
+    Private Sub txtapellido_Validating(sender As Object, e As CancelEventArgs) Handles txtapellido.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+        mostrar()
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" Then
+            'Try
+            Dim dts As New vcliente
+                Dim func As New fcliente
+
+                dts.gnombre = txtnombre.Text
+                dts.gapellido = txtapellido.Text
+                dts.gdireccion = txtdireccion.Text
+                dts.gtelefono = txttelefono.Text
+                dts.gemail = txtemail.Text
+            dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+            dts.gcedula = txtcedula.Text
+
+                If func.ingresar(dts) Then
+                    MessageBox.Show("Registro completado", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    mostrar()
+                    limpiar()
+                Else
+                    MessageBox.Show("No se pudo completar el registro", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    mostrar()
+                    limpiar()
+                End If
+            'Catch ex As Exception
+            'MsgBox(ex.Message)
+            'End Try
+        Else
+            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
 End Class

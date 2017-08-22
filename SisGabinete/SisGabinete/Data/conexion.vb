@@ -5,7 +5,7 @@ Public Class conexion
 
     Public Function conectado()
         Try
-            cn = New SqlConnection("data source=(local);initial catalog=dbGabinete;integrated security=true")
+            cn = New SqlConnection("data source=IRENE\SQLEXPRESS;initial catalog=dbGabinete;integrated security=true")
             cn.Open()
             Return True
         Catch ex As Exception
