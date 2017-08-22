@@ -29,8 +29,8 @@ Public Class fcliente
     End Function
 
     Public Function ingresar(ByVal dts As vcliente) As Boolean
-        'Try
-        conectado()
+        Try
+            conectado()
             cmd = New SqlCommand("ingresar_cliente")
             cmd.CommandType = CommandType.StoredProcedure
 
@@ -41,8 +41,8 @@ Public Class fcliente
             cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
             cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
             cmd.Parameters.AddWithValue("@email", dts.gemail)
-        cmd.Parameters.AddWithValue("@fechanacimiento", dts.gfechanacimiento)
-        cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
+            cmd.Parameters.AddWithValue("@fechanacimiento", dts.gfechanacimiento)
+            cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -50,11 +50,66 @@ Public Class fcliente
                 Return False
             End If
 
-        'Catch ex As Exception
-        'MsgBox(ex.Message)
-        'Return False
-        'Finally
-        desconectado()
-        'End Try
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            desconectado()
+        End Try
+    End Function
+
+    Public Function editar(ByVal dts As vcliente) As Boolean
+        Try
+            conectado()
+            cmd = New SqlCommand("editar_cliente")
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Connection = cn
+
+            cmd.Parameters.AddWithValue("@idcliente", dts.gidcliente)
+            cmd.Parameters.AddWithValue("@nombre", dts.gnombre)
+            cmd.Parameters.AddWithValue("@apellido", dts.gapellido)
+            cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
+            cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
+            cmd.Parameters.AddWithValue("@email", dts.gemail)
+            cmd.Parameters.AddWithValue("@fechanacimiento", dts.gfechanacimiento)
+            cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            desconectado()
+        End Try
+    End Function
+
+    Public Function eliminar(ByVal dts As vcliente) As Boolean
+        Try
+            conectado()
+            cmd = New SqlCommand("eliminar_cliente")
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Connection = cn
+
+            cmd.Parameters.AddWithValue("@idcliente", dts.gidcliente)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            desconectado()
+        End Try
     End Function
 End Class

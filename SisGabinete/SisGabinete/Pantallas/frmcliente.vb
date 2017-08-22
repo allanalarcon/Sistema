@@ -73,6 +73,7 @@ Public Class frmcliente
     Public Sub limpiar()
         btnguardar.Visible = True
         btneditar.Visible = False
+        txtid.Text = ""
         txtnombre.Text = ""
         txtapellido.Text = ""
         txtcedula.Text = ""
@@ -89,6 +90,7 @@ Public Class frmcliente
 
     Private Sub dgvlistado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellClick
         limpiar()
+        txtid.Text = dgvlistado.SelectedCells.Item(0).Value
         txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
         txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
         txtcedula.Text = dgvlistado.SelectedCells.Item(7).Value.ToString
@@ -97,9 +99,12 @@ Public Class frmcliente
         txtemail.Text = dgvlistado.SelectedCells.Item(5).Value.ToString
         Dim fecha As String = dgvlistado.SelectedCells.Item(6).Value.ToString
         If Not fecha = "" Then
-            txtfecha.Text = fecha.Substring(0, fecha.Length - 8)
+            txtfecha.Text = Format(dgvlistado.SelectedCells.Item(6).Value, "dd/MM/yyyy")
             txtedad.Text = DateDiff(DateInterval.Year, dgvlistado.SelectedCells.Item(6).Value, Date.Now)
         End If
+
+        btneditar.Visible = True
+        btnguardar.Visible = False
     End Sub
 
 
@@ -126,8 +131,8 @@ Public Class frmcliente
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" Then
-            'Try
-            Dim dts As New vcliente
+            Try
+                Dim dts As New vcliente
                 Dim func As New fcliente
 
                 dts.gnombre = txtnombre.Text
@@ -135,8 +140,8 @@ Public Class frmcliente
                 dts.gdireccion = txtdireccion.Text
                 dts.gtelefono = txttelefono.Text
                 dts.gemail = txtemail.Text
-            dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
-            dts.gcedula = txtcedula.Text
+                dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+                dts.gcedula = txtcedula.Text
 
                 If func.ingresar(dts) Then
                     MessageBox.Show("Registro completado", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -147,11 +152,92 @@ Public Class frmcliente
                     mostrar()
                     limpiar()
                 End If
-            'Catch ex As Exception
-            'MsgBox(ex.Message)
-            'End Try
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
         Else
             MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub btneditar_Click(sender As Object, e As EventArgs) Handles btneditar.Click
+
+        Dim result As DialogResult
+
+        result = MessageBox.Show("¿Desea modificar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+
+            If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" Then
+                Try
+                    Dim dts As New vcliente
+                    Dim func As New fcliente
+
+                    dts.gidcliente = txtid.Text
+                    dts.gnombre = txtnombre.Text
+                    dts.gapellido = txtapellido.Text
+                    dts.gdireccion = txtdireccion.Text
+                    dts.gtelefono = txttelefono.Text
+                    dts.gemail = txtemail.Text
+                    dts.gfechanacimiento = txtfecha.Text
+                    dts.gcedula = txtcedula.Text
+
+                    If func.editar(dts) Then
+                        MessageBox.Show("Editar completado", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        mostrar()
+                        limpiar()
+                    Else
+                        MessageBox.Show("No se pudo completar la edición", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        mostrar()
+                        limpiar()
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+    End Sub
+
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+
+
+        Dim result As DialogResult
+
+        result = MessageBox.Show("¿Desea eliminar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+
+            If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" Then
+                Try
+                    Dim dts As New vcliente
+                    Dim func As New fcliente
+
+                    dts.gidcliente = txtid.Text
+                    dts.gnombre = txtnombre.Text
+                    dts.gapellido = txtapellido.Text
+                    dts.gdireccion = txtdireccion.Text
+                    dts.gtelefono = txttelefono.Text
+                    dts.gemail = txtemail.Text
+                    dts.gfechanacimiento = txtfecha.Text
+                    dts.gcedula = txtcedula.Text
+
+                    If func.eliminar(dts) Then
+                        MessageBox.Show("Editar completado", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        mostrar()
+                        limpiar()
+                    Else
+                        MessageBox.Show("No se pudo completar la edición", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        mostrar()
+                        limpiar()
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         End If
     End Sub
 End Class

@@ -23,7 +23,7 @@ Partial Class frmcliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvlistado = New System.Windows.Forms.DataGridView()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.pandatosprin = New System.Windows.Forms.Panel()
@@ -49,6 +49,7 @@ Partial Class frmcliente
         Me.batncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
+        Me.txtid = New System.Windows.Forms.TextBox()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,12 +70,12 @@ Partial Class frmcliente
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
         Me.dgvlistado.TabIndex = 1
@@ -93,6 +94,7 @@ Partial Class frmcliente
         'pandatosprin
         '
         Me.pandatosprin.BackColor = System.Drawing.Color.White
+        Me.pandatosprin.Controls.Add(Me.txtid)
         Me.pandatosprin.Controls.Add(Me.txtapellido)
         Me.pandatosprin.Controls.Add(Me.txtnombre)
         Me.pandatosprin.Controls.Add(Me.piccliente)
@@ -107,9 +109,9 @@ Partial Class frmcliente
         Me.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtapellido.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellido.ForeColor = System.Drawing.Color.Black
-        Me.txtapellido.Location = New System.Drawing.Point(20, 69)
+        Me.txtapellido.Location = New System.Drawing.Point(87, 69)
         Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(423, 43)
+        Me.txtapellido.Size = New System.Drawing.Size(356, 43)
         Me.txtapellido.TabIndex = 3
         '
         'txtnombre
@@ -118,9 +120,9 @@ Partial Class frmcliente
         Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtnombre.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.ForeColor = System.Drawing.Color.Black
-        Me.txtnombre.Location = New System.Drawing.Point(20, 20)
+        Me.txtnombre.Location = New System.Drawing.Point(87, 20)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(423, 43)
+        Me.txtnombre.Size = New System.Drawing.Size(356, 43)
         Me.txtnombre.TabIndex = 2
         '
         'piccliente
@@ -316,7 +318,7 @@ Partial Class frmcliente
         '
         'btnguardar
         '
-        Me.btnguardar.Location = New System.Drawing.Point(689, 518)
+        Me.btnguardar.Location = New System.Drawing.Point(689, 469)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(104, 43)
         Me.btnguardar.TabIndex = 10
@@ -331,6 +333,17 @@ Partial Class frmcliente
         Me.txtfecha.Size = New System.Drawing.Size(287, 20)
         Me.txtfecha.TabIndex = 14
         Me.txtfecha.ValidatingType = GetType(Date)
+        '
+        'txtid
+        '
+        Me.txtid.BackColor = System.Drawing.Color.White
+        Me.txtid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtid.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtid.ForeColor = System.Drawing.Color.Black
+        Me.txtid.Location = New System.Drawing.Point(11, 44)
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(55, 43)
+        Me.txtid.TabIndex = 4
         '
         'frmcliente
         '
@@ -388,4 +401,5 @@ Partial Class frmcliente
     Friend WithEvents btneliminar As Button
     Friend WithEvents btnnuevo As Button
     Friend WithEvents txtfecha As MaskedTextBox
+    Friend WithEvents txtid As TextBox
 End Class
