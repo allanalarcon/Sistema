@@ -1,4 +1,6 @@
-﻿Public Class frmempleado
+﻿Imports System.ComponentModel
+
+Public Class frmempleado
 
     Private dt As New DataTable
 
@@ -92,10 +94,169 @@
         txtdireccion.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
         txttelefono.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
         txtemail.Text = dgvlistado.SelectedCells.Item(5).Value.ToString
+        'falta imagen
         Dim fecha As String = dgvlistado.SelectedCells.Item(6).Value.ToString
         If Not fecha = "" Then
-            txtfecha.Text = fecha.Substring(0, fecha.Length - 8)
+            txtfecha.Text = Format(dgvlistado.SelectedCells.Item(6).Value, "dd/MM/yyyy")
             txtedad.Text = DateDiff(DateInterval.Year, dgvlistado.SelectedCells.Item(6).Value, Date.Now)
+        End If
+    End Sub
+
+    Private Sub txtnombre_Validating(sender As Object, e As CancelEventArgs) Handles txtnombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtapellido_Validating(sender As Object, e As CancelEventArgs) Handles txtapellido.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtcedula_Validating(sender As Object, e As CancelEventArgs) Handles txtcedula.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtdireccion_Validating(sender As Object, e As CancelEventArgs) Handles txtdireccion.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txttelefono_Validating(sender As Object, e As CancelEventArgs) Handles txttelefono.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtfecha_Validating(sender As Object, e As CancelEventArgs) Handles txtfecha.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+        mostrar()
+    End Sub
+
+    Private Sub btneditar_Click(sender As Object, e As EventArgs) Handles btneditar.Click
+        Dim result As DialogResult
+
+        result = MessageBox.Show("¿Desea modificar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+
+            If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" And txtdireccion.Text <> "" And txttelefono.Text <> "" And txtcedula.Text <> "" Then
+                Try
+                    Dim dts As New vempleado
+                    Dim func As New fempleado
+
+                    dts.gidempleado = dgvlistado.SelectedCells.Item(0).Value
+                    dts.gnombre = txtnombre.Text
+                    dts.gapellido = txtapellido.Text
+                    dts.gdireccion = txtdireccion.Text
+                    dts.gtelefono = txttelefono.Text
+                    dts.gemail = txtemail.Text
+                    dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+                    dts.gcedula = txtcedula.Text
+                    dts.gtipo = dgvlistado.SelectedCells.Item(8).Value.ToString
+
+
+                    If func.editar(dts) Then
+                        MessageBox.Show("Editar completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        mostrar()
+                        limpiar()
+                    Else
+                        MessageBox.Show("No se pudo completar la edición", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        mostrar()
+                        limpiar()
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" And txtdireccion.Text <> "" And txttelefono.Text <> "" And txtcedula.Text <> "" Then
+            Try
+                Dim dts As New vempleado
+                Dim func As New fempleado
+
+                dts.gnombre = txtnombre.Text
+                dts.gapellido = txtapellido.Text
+                dts.gdireccion = txtdireccion.Text
+                dts.gtelefono = txttelefono.Text
+                dts.gemail = txtemail.Text
+                dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+                dts.gcedula = txtcedula.Text
+                dts.gtipo = 
+
+                If func.ingresar(dts) Then
+                    MessageBox.Show("Registro completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    mostrar()
+                    limpiar()
+                Else
+                    MessageBox.Show("No se pudo completar el registro", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    mostrar()
+                    limpiar()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+        Dim result As DialogResult
+
+        result = MessageBox.Show("¿Desea eliminar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+
+            If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" And txtdireccion.Text <> "" And txttelefono.Text <> "" And txtcedula.Text <> "" Then
+                Try
+                    Dim dts As New vempleado
+                    Dim func As New fempleado
+
+                    dts.gidempleado = dgvlistado.SelectedCells.Item(0).Value
+
+                    If func.eliminar(dts) Then
+                        MessageBox.Show("Eliminar completado", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        mostrar()
+                        limpiar()
+                    Else
+                        MessageBox.Show("No se pudo completar la eliminación", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        mostrar()
+                        limpiar()
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         End If
     End Sub
 End Class

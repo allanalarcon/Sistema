@@ -22,14 +22,15 @@ Partial Class frmempleado
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.picempleado = New System.Windows.Forms.PictureBox()
-        Me.txtfecha = New System.Windows.Forms.TextBox()
         Me.txtedad = New System.Windows.Forms.TextBox()
         Me.txtapellido = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.pandatossec = New System.Windows.Forms.Panel()
+        Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,10 +43,17 @@ Partial Class frmempleado
         Me.dgvlistado = New System.Windows.Forms.DataGridView()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.pandatosprin = New System.Windows.Forms.Panel()
+        Me.batncancelar = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.btneditar = New System.Windows.Forms.Button()
+        Me.btneliminar = New System.Windows.Forms.Button()
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.picempleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatossec.SuspendLayout()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtnombre
@@ -66,17 +74,6 @@ Partial Class frmempleado
         Me.picempleado.Size = New System.Drawing.Size(100, 100)
         Me.picempleado.TabIndex = 0
         Me.picempleado.TabStop = False
-        '
-        'txtfecha
-        '
-        Me.txtfecha.BackColor = System.Drawing.Color.White
-        Me.txtfecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfecha.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtfecha.ForeColor = System.Drawing.Color.Black
-        Me.txtfecha.Location = New System.Drawing.Point(156, 144)
-        Me.txtfecha.Name = "txtfecha"
-        Me.txtfecha.Size = New System.Drawing.Size(287, 25)
-        Me.txtfecha.TabIndex = 8
         '
         'txtedad
         '
@@ -130,6 +127,15 @@ Partial Class frmempleado
         Me.pandatossec.Name = "pandatossec"
         Me.pandatossec.Size = New System.Drawing.Size(463, 220)
         Me.pandatossec.TabIndex = 7
+        '
+        'txtfecha
+        '
+        Me.txtfecha.Location = New System.Drawing.Point(156, 144)
+        Me.txtfecha.Mask = "00/00/0000"
+        Me.txtfecha.Name = "txtfecha"
+        Me.txtfecha.Size = New System.Drawing.Size(287, 20)
+        Me.txtfecha.TabIndex = 15
+        Me.txtfecha.ValidatingType = GetType(Date)
         '
         'Label5
         '
@@ -245,12 +251,12 @@ Partial Class frmempleado
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
         Me.dgvlistado.TabIndex = 1
@@ -277,11 +283,65 @@ Partial Class frmempleado
         Me.pandatosprin.Size = New System.Drawing.Size(463, 140)
         Me.pandatosprin.TabIndex = 6
         '
+        'batncancelar
+        '
+        Me.batncancelar.Location = New System.Drawing.Point(857, 518)
+        Me.batncancelar.Name = "batncancelar"
+        Me.batncancelar.Size = New System.Drawing.Size(104, 43)
+        Me.batncancelar.TabIndex = 16
+        Me.batncancelar.Text = "Cancelar"
+        Me.batncancelar.UseVisualStyleBackColor = True
+        '
+        'btnguardar
+        '
+        Me.btnguardar.Location = New System.Drawing.Point(620, 469)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(104, 43)
+        Me.btnguardar.TabIndex = 15
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.UseVisualStyleBackColor = True
+        '
+        'btneditar
+        '
+        Me.btneditar.Location = New System.Drawing.Point(620, 518)
+        Me.btneditar.Name = "btneditar"
+        Me.btneditar.Size = New System.Drawing.Size(104, 43)
+        Me.btneditar.TabIndex = 14
+        Me.btneditar.Text = "Editar"
+        Me.btneditar.UseVisualStyleBackColor = True
+        '
+        'btneliminar
+        '
+        Me.btneliminar.Location = New System.Drawing.Point(740, 518)
+        Me.btneliminar.Name = "btneliminar"
+        Me.btneliminar.Size = New System.Drawing.Size(104, 43)
+        Me.btneliminar.TabIndex = 13
+        Me.btneliminar.Text = "Eliminar"
+        Me.btneliminar.UseVisualStyleBackColor = True
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.Location = New System.Drawing.Point(498, 518)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(104, 43)
+        Me.btnnuevo.TabIndex = 12
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
+        'erroricono
+        '
+        Me.erroricono.ContainerControl = Me
+        '
         'frmempleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.batncancelar)
+        Me.Controls.Add(Me.btnguardar)
+        Me.Controls.Add(Me.btneditar)
+        Me.Controls.Add(Me.btneliminar)
+        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.pandatossec)
         Me.Controls.Add(Me.dgvlistado)
         Me.Controls.Add(Me.txtbuscar)
@@ -295,6 +355,7 @@ Partial Class frmempleado
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pandatosprin.ResumeLayout(False)
         Me.pandatosprin.PerformLayout()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -302,7 +363,6 @@ Partial Class frmempleado
 
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents picempleado As PictureBox
-    Friend WithEvents txtfecha As TextBox
     Friend WithEvents txtedad As TextBox
     Friend WithEvents txtapellido As TextBox
     Friend WithEvents Label6 As Label
@@ -319,4 +379,11 @@ Partial Class frmempleado
     Friend WithEvents dgvlistado As DataGridView
     Friend WithEvents txtbuscar As TextBox
     Friend WithEvents pandatosprin As Panel
+    Friend WithEvents batncancelar As Button
+    Friend WithEvents btnguardar As Button
+    Friend WithEvents btneditar As Button
+    Friend WithEvents btneliminar As Button
+    Friend WithEvents btnnuevo As Button
+    Friend WithEvents erroricono As ErrorProvider
+    Friend WithEvents txtfecha As MaskedTextBox
 End Class

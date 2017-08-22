@@ -73,7 +73,6 @@ Public Class frmcliente
     Public Sub limpiar()
         btnguardar.Visible = True
         btneditar.Visible = False
-        txtid.Text = ""
         txtnombre.Text = ""
         txtapellido.Text = ""
         txtcedula.Text = ""
@@ -90,7 +89,6 @@ Public Class frmcliente
 
     Private Sub dgvlistado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellClick
         limpiar()
-        txtid.Text = dgvlistado.SelectedCells.Item(0).Value
         txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
         txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
         txtcedula.Text = dgvlistado.SelectedCells.Item(7).Value.ToString
@@ -144,11 +142,11 @@ Public Class frmcliente
                 dts.gcedula = txtcedula.Text
 
                 If func.ingresar(dts) Then
-                    MessageBox.Show("Registro completado", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Registro completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     mostrar()
                     limpiar()
                 Else
-                    MessageBox.Show("No se pudo completar el registro", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("No se pudo completar el registro", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     mostrar()
                     limpiar()
                 End If
@@ -156,7 +154,7 @@ Public Class frmcliente
                 MsgBox(ex.Message)
             End Try
         Else
-            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -173,7 +171,7 @@ Public Class frmcliente
                     Dim dts As New vcliente
                     Dim func As New fcliente
 
-                    dts.gidcliente = txtid.Text
+                    dts.gidcliente = dgvlistado.SelectedCells.Item(0).Value
                     dts.gnombre = txtnombre.Text
                     dts.gapellido = txtapellido.Text
                     dts.gdireccion = txtdireccion.Text
@@ -183,11 +181,11 @@ Public Class frmcliente
                     dts.gcedula = txtcedula.Text
 
                     If func.editar(dts) Then
-                        MessageBox.Show("Editar completado", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show("Editar completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         mostrar()
                         limpiar()
                     Else
-                        MessageBox.Show("No se pudo completar la edición", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBox.Show("No se pudo completar la edición", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         mostrar()
                         limpiar()
                     End If
@@ -195,13 +193,12 @@ Public Class frmcliente
                     MsgBox(ex.Message)
                 End Try
             Else
-                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-
 
         Dim result As DialogResult
 
@@ -214,21 +211,14 @@ Public Class frmcliente
                     Dim dts As New vcliente
                     Dim func As New fcliente
 
-                    dts.gidcliente = txtid.Text
-                    dts.gnombre = txtnombre.Text
-                    dts.gapellido = txtapellido.Text
-                    dts.gdireccion = txtdireccion.Text
-                    dts.gtelefono = txttelefono.Text
-                    dts.gemail = txtemail.Text
-                    dts.gfechanacimiento = txtfecha.Text
-                    dts.gcedula = txtcedula.Text
+                    dts.gidcliente = dgvlistado.SelectedCells.Item(0).Value
 
                     If func.eliminar(dts) Then
-                        MessageBox.Show("Editar completado", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show("Eliminar completado", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         mostrar()
                         limpiar()
                     Else
-                        MessageBox.Show("No se pudo completar la edición", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBox.Show("No se pudo completar la eliminación", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         mostrar()
                         limpiar()
                     End If
@@ -236,7 +226,7 @@ Public Class frmcliente
                     MsgBox(ex.Message)
                 End Try
             Else
-                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub

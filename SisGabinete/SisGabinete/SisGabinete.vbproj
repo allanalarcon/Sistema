@@ -80,6 +80,8 @@
     <Compile Include="Data\fcliente.vb" />
     <Compile Include="Data\fempleado.vb" />
     <Compile Include="Data\fservicio.vb" />
+    <Compile Include="Log\vproducto.vb" />
+    <Compile Include="Log\vpago.vb" />
     <Compile Include="Log\vempleado.vb" />
     <Compile Include="Log\vcliente.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

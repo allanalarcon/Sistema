@@ -1,16 +1,17 @@
 ﻿Public Class vempleado
-    Dim idcliente, tipo As Integer
+    Dim idempleado, tipo As Integer
     Dim nombre, apellido, direccion, telefono, email, cedula As String
     Dim fechanacimiento As Date
+    Dim imagen As Image
 
     'Setter and getter
 
-    Public Property gidcliente
+    Public Property gidempleado
         Get
-            Return idcliente
+            Return idempleado
         End Get
         Set(ByVal value)
-            idcliente = value
+            idempleado = value
         End Set
     End Property
 
@@ -87,14 +88,23 @@
         End Set
     End Property
 
+    Public Property gimagen
+        Get
+            Return imagen
+        End Get
+        Set(ByVal value)
+            imagen = value
+        End Set
+    End Property
+
     'Constructores
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(ByVal idcliente As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal email As String, ByVal fechanacimiento As Date, ByVal cedula As String)
-        gidcliente = idcliente
+    Public Sub New(ByVal idcliente As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal email As String, ByVal fechanacimiento As Date, ByVal cedula As String, ByVal tipo As Integer, ByVal imagen As Image)
+        gidempleado = idcliente
         gnombre = nombre
         gapellido = apellido
         gdireccion = direccion
@@ -102,6 +112,8 @@
         gemail = email
         gfechanacimiento = fechanacimiento
         gcedula = cedula
+        gtipo = tipo
+        gimagen = imagen
     End Sub
 
 
