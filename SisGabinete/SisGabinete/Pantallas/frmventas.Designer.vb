@@ -30,41 +30,42 @@ Partial Class frmventas
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.pandatossec = New System.Windows.Forms.Panel()
+        Me.btagregars = New System.Windows.Forms.Button()
+        Me.txtprecios = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.btbuscars = New System.Windows.Forms.Button()
+        Me.btbuscare = New System.Windows.Forms.Button()
+        Me.txtcantidads = New System.Windows.Forms.NumericUpDown()
+        Me.txtempleado = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtdireccion = New System.Windows.Forms.TextBox()
+        Me.txtservicio = New System.Windows.Forms.TextBox()
         Me.pandatosprin = New System.Windows.Forms.Panel()
+        Me.checknuevo = New System.Windows.Forms.CheckBox()
+        Me.txthora = New System.Windows.Forms.MaskedTextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.dtpfecha = New System.Windows.Forms.DateTimePicker()
+        Me.checkgenerico = New System.Windows.Forms.CheckBox()
+        Me.btbuscarc = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtapellidoc = New System.Windows.Forms.TextBox()
         Me.txtnombrec = New System.Windows.Forms.TextBox()
         Me.piccliente = New System.Windows.Forms.PictureBox()
         Me.txtbuscarser = New System.Windows.Forms.TextBox()
         Me.dgvservicios = New System.Windows.Forms.DataGridView()
         Me.dgvproductos = New System.Windows.Forms.DataGridView()
         Me.txtbuscarpro = New System.Windows.Forms.TextBox()
-        Me.txtapellidoc = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.btbuscarc = New System.Windows.Forms.Button()
-        Me.checkgenerico = New System.Windows.Forms.CheckBox()
-        Me.dtpfecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txthora = New System.Windows.Forms.MaskedTextBox()
         Me.txtidcliente = New System.Windows.Forms.TextBox()
-        Me.txtempleado = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtcantidad = New System.Windows.Forms.NumericUpDown()
-        Me.btbuscare = New System.Windows.Forms.Button()
-        Me.btbuscars = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtprecios = New System.Windows.Forms.TextBox()
-        Me.btagregars = New System.Windows.Forms.Button()
         Me.txtidempleado = New System.Windows.Forms.TextBox()
         Me.txtidservicio = New System.Windows.Forms.TextBox()
         Me.pandatossec.SuspendLayout()
+        CType(Me.txtcantidads, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvservicios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvproductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtcantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'batncancelar
@@ -120,16 +121,101 @@ Partial Class frmventas
         Me.pandatossec.Controls.Add(Me.Label10)
         Me.pandatossec.Controls.Add(Me.btbuscars)
         Me.pandatossec.Controls.Add(Me.btbuscare)
-        Me.pandatossec.Controls.Add(Me.txtcantidad)
+        Me.pandatossec.Controls.Add(Me.txtcantidads)
         Me.pandatossec.Controls.Add(Me.txtempleado)
         Me.pandatossec.Controls.Add(Me.Label3)
         Me.pandatossec.Controls.Add(Me.Label2)
         Me.pandatossec.Controls.Add(Me.Label1)
-        Me.pandatossec.Controls.Add(Me.txtdireccion)
+        Me.pandatossec.Controls.Add(Me.txtservicio)
         Me.pandatossec.Location = New System.Drawing.Point(501, 234)
         Me.pandatossec.Name = "pandatossec"
         Me.pandatossec.Size = New System.Drawing.Size(463, 127)
         Me.pandatossec.TabIndex = 18
+        '
+        'btagregars
+        '
+        Me.btagregars.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btagregars.Location = New System.Drawing.Point(378, 82)
+        Me.btagregars.Name = "btagregars"
+        Me.btagregars.Size = New System.Drawing.Size(65, 25)
+        Me.btagregars.TabIndex = 20
+        Me.btagregars.Text = "Agregar"
+        Me.btagregars.UseVisualStyleBackColor = True
+        '
+        'txtprecios
+        '
+        Me.txtprecios.BackColor = System.Drawing.Color.White
+        Me.txtprecios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtprecios.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtprecios.ForeColor = System.Drawing.Color.Black
+        Me.txtprecios.Location = New System.Drawing.Point(182, 82)
+        Me.txtprecios.Name = "txtprecios"
+        Me.txtprecios.Size = New System.Drawing.Size(71, 25)
+        Me.txtprecios.TabIndex = 19
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label10.Location = New System.Drawing.Point(131, 84)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(45, 17)
+        Me.Label10.TabIndex = 18
+        Me.Label10.Text = "Precio"
+        '
+        'btbuscars
+        '
+        Me.btbuscars.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btbuscars.Location = New System.Drawing.Point(418, 51)
+        Me.btbuscars.Name = "btbuscars"
+        Me.btbuscars.Size = New System.Drawing.Size(25, 25)
+        Me.btbuscars.TabIndex = 17
+        Me.btbuscars.Text = "..."
+        Me.btbuscars.UseVisualStyleBackColor = True
+        '
+        'btbuscare
+        '
+        Me.btbuscare.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btbuscare.Location = New System.Drawing.Point(418, 20)
+        Me.btbuscare.Name = "btbuscare"
+        Me.btbuscare.Size = New System.Drawing.Size(25, 25)
+        Me.btbuscare.TabIndex = 16
+        Me.btbuscare.Text = "..."
+        Me.btbuscare.UseVisualStyleBackColor = True
+        '
+        'txtcantidads
+        '
+        Me.txtcantidads.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcantidads.Location = New System.Drawing.Point(85, 82)
+        Me.txtcantidads.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txtcantidads.Name = "txtcantidads"
+        Me.txtcantidads.Size = New System.Drawing.Size(40, 25)
+        Me.txtcantidads.TabIndex = 15
+        Me.txtcantidads.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'txtempleado
+        '
+        Me.txtempleado.BackColor = System.Drawing.Color.White
+        Me.txtempleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtempleado.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtempleado.ForeColor = System.Drawing.Color.Black
+        Me.txtempleado.Location = New System.Drawing.Point(156, 20)
+        Me.txtempleado.MaxLength = 10
+        Me.txtempleado.Name = "txtempleado"
+        Me.txtempleado.Size = New System.Drawing.Size(256, 25)
+        Me.txtempleado.TabIndex = 14
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Location = New System.Drawing.Point(17, 84)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(62, 17)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Cantidad"
         '
         'Label2
         '
@@ -153,20 +239,21 @@ Partial Class frmventas
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Empleado"
         '
-        'txtdireccion
+        'txtservicio
         '
-        Me.txtdireccion.BackColor = System.Drawing.Color.White
-        Me.txtdireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtdireccion.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdireccion.ForeColor = System.Drawing.Color.Black
-        Me.txtdireccion.Location = New System.Drawing.Point(156, 51)
-        Me.txtdireccion.Name = "txtdireccion"
-        Me.txtdireccion.Size = New System.Drawing.Size(256, 25)
-        Me.txtdireccion.TabIndex = 5
+        Me.txtservicio.BackColor = System.Drawing.Color.White
+        Me.txtservicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtservicio.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtservicio.ForeColor = System.Drawing.Color.Black
+        Me.txtservicio.Location = New System.Drawing.Point(156, 51)
+        Me.txtservicio.Name = "txtservicio"
+        Me.txtservicio.Size = New System.Drawing.Size(256, 25)
+        Me.txtservicio.TabIndex = 5
         '
         'pandatosprin
         '
         Me.pandatosprin.BackColor = System.Drawing.Color.White
+        Me.pandatosprin.Controls.Add(Me.checknuevo)
         Me.pandatosprin.Controls.Add(Me.txthora)
         Me.pandatosprin.Controls.Add(Me.Label9)
         Me.pandatosprin.Controls.Add(Me.Label8)
@@ -182,10 +269,109 @@ Partial Class frmventas
         Me.pandatosprin.Size = New System.Drawing.Size(463, 144)
         Me.pandatosprin.TabIndex = 17
         '
+        'checknuevo
+        '
+        Me.checknuevo.AutoSize = True
+        Me.checknuevo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checknuevo.Location = New System.Drawing.Point(286, 16)
+        Me.checknuevo.Name = "checknuevo"
+        Me.checknuevo.Size = New System.Drawing.Size(67, 21)
+        Me.checknuevo.TabIndex = 15
+        Me.checknuevo.Text = "Nuevo"
+        Me.checknuevo.UseVisualStyleBackColor = True
+        '
+        'txthora
+        '
+        Me.txthora.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txthora.Location = New System.Drawing.Point(279, 99)
+        Me.txthora.Mask = "00:00"
+        Me.txthora.Name = "txthora"
+        Me.txthora.Size = New System.Drawing.Size(164, 25)
+        Me.txthora.TabIndex = 14
+        Me.txthora.ValidatingType = GetType(Date)
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label9.Location = New System.Drawing.Point(235, 102)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(38, 17)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Hora"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label8.Location = New System.Drawing.Point(17, 102)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(43, 17)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "Fecha"
+        '
+        'dtpfecha
+        '
+        Me.dtpfecha.CustomFormat = ""
+        Me.dtpfecha.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpfecha.Location = New System.Drawing.Point(66, 99)
+        Me.dtpfecha.Name = "dtpfecha"
+        Me.dtpfecha.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dtpfecha.Size = New System.Drawing.Size(164, 25)
+        Me.dtpfecha.TabIndex = 11
+        '
+        'checkgenerico
+        '
+        Me.checkgenerico.AutoSize = True
+        Me.checkgenerico.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkgenerico.Location = New System.Drawing.Point(359, 16)
+        Me.checkgenerico.Name = "checkgenerico"
+        Me.checkgenerico.Size = New System.Drawing.Size(80, 21)
+        Me.checkgenerico.TabIndex = 10
+        Me.checkgenerico.Text = "Genérico"
+        Me.checkgenerico.UseVisualStyleBackColor = True
+        '
+        'btbuscarc
+        '
+        Me.btbuscarc.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btbuscarc.Location = New System.Drawing.Point(418, 37)
+        Me.btbuscarc.Name = "btbuscarc"
+        Me.btbuscarc.Size = New System.Drawing.Size(25, 25)
+        Me.btbuscarc.TabIndex = 9
+        Me.btbuscarc.Text = "..."
+        Me.btbuscarc.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label7.Location = New System.Drawing.Point(17, 17)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 17)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "Cliente"
+        '
+        'txtapellidoc
+        '
+        Me.txtapellidoc.BackColor = System.Drawing.Color.White
+        Me.txtapellidoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtapellidoc.Enabled = False
+        Me.txtapellidoc.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtapellidoc.ForeColor = System.Drawing.Color.Black
+        Me.txtapellidoc.Location = New System.Drawing.Point(20, 68)
+        Me.txtapellidoc.Name = "txtapellidoc"
+        Me.txtapellidoc.Size = New System.Drawing.Size(392, 25)
+        Me.txtapellidoc.TabIndex = 3
+        '
         'txtnombrec
         '
         Me.txtnombrec.BackColor = System.Drawing.Color.White
         Me.txtnombrec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtnombrec.Enabled = False
         Me.txtnombrec.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombrec.ForeColor = System.Drawing.Color.Black
         Me.txtnombrec.Location = New System.Drawing.Point(20, 37)
@@ -269,184 +455,12 @@ Partial Class frmventas
         Me.txtbuscarpro.Size = New System.Drawing.Size(347, 25)
         Me.txtbuscarpro.TabIndex = 2
         '
-        'txtapellidoc
-        '
-        Me.txtapellidoc.BackColor = System.Drawing.Color.White
-        Me.txtapellidoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtapellidoc.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtapellidoc.ForeColor = System.Drawing.Color.Black
-        Me.txtapellidoc.Location = New System.Drawing.Point(20, 68)
-        Me.txtapellidoc.Name = "txtapellidoc"
-        Me.txtapellidoc.Size = New System.Drawing.Size(392, 25)
-        Me.txtapellidoc.TabIndex = 3
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(17, 17)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 17)
-        Me.Label7.TabIndex = 8
-        Me.Label7.Text = "Cliente"
-        '
-        'btbuscarc
-        '
-        Me.btbuscarc.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btbuscarc.Location = New System.Drawing.Point(418, 37)
-        Me.btbuscarc.Name = "btbuscarc"
-        Me.btbuscarc.Size = New System.Drawing.Size(25, 25)
-        Me.btbuscarc.TabIndex = 9
-        Me.btbuscarc.Text = "..."
-        Me.btbuscarc.UseVisualStyleBackColor = True
-        '
-        'checkgenerico
-        '
-        Me.checkgenerico.AutoSize = True
-        Me.checkgenerico.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkgenerico.Location = New System.Drawing.Point(359, 16)
-        Me.checkgenerico.Name = "checkgenerico"
-        Me.checkgenerico.Size = New System.Drawing.Size(80, 21)
-        Me.checkgenerico.TabIndex = 10
-        Me.checkgenerico.Text = "Genérico"
-        Me.checkgenerico.UseVisualStyleBackColor = True
-        '
-        'dtpfecha
-        '
-        Me.dtpfecha.CustomFormat = ""
-        Me.dtpfecha.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpfecha.Location = New System.Drawing.Point(66, 99)
-        Me.dtpfecha.Name = "dtpfecha"
-        Me.dtpfecha.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dtpfecha.Size = New System.Drawing.Size(164, 25)
-        Me.dtpfecha.TabIndex = 11
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(17, 102)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(43, 17)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "Fecha"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(235, 102)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(38, 17)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Hora"
-        '
-        'txthora
-        '
-        Me.txthora.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txthora.Location = New System.Drawing.Point(279, 99)
-        Me.txthora.Mask = "00:00"
-        Me.txthora.Name = "txthora"
-        Me.txthora.Size = New System.Drawing.Size(164, 25)
-        Me.txthora.TabIndex = 14
-        Me.txthora.ValidatingType = GetType(Date)
-        '
         'txtidcliente
         '
         Me.txtidcliente.Location = New System.Drawing.Point(501, 34)
         Me.txtidcliente.Name = "txtidcliente"
         Me.txtidcliente.Size = New System.Drawing.Size(100, 20)
         Me.txtidcliente.TabIndex = 24
-        Me.txtidcliente.Visible = False
-        '
-        'txtempleado
-        '
-        Me.txtempleado.BackColor = System.Drawing.Color.White
-        Me.txtempleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtempleado.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtempleado.ForeColor = System.Drawing.Color.Black
-        Me.txtempleado.Location = New System.Drawing.Point(156, 20)
-        Me.txtempleado.MaxLength = 10
-        Me.txtempleado.Name = "txtempleado"
-        Me.txtempleado.Size = New System.Drawing.Size(256, 25)
-        Me.txtempleado.TabIndex = 14
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(17, 84)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(62, 17)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Cantidad"
-        '
-        'txtcantidad
-        '
-        Me.txtcantidad.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcantidad.Location = New System.Drawing.Point(85, 82)
-        Me.txtcantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(40, 25)
-        Me.txtcantidad.TabIndex = 15
-        Me.txtcantidad.Value = New Decimal(New Integer() {20, 0, 0, 0})
-        '
-        'btbuscare
-        '
-        Me.btbuscare.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btbuscare.Location = New System.Drawing.Point(418, 20)
-        Me.btbuscare.Name = "btbuscare"
-        Me.btbuscare.Size = New System.Drawing.Size(25, 25)
-        Me.btbuscare.TabIndex = 16
-        Me.btbuscare.Text = "..."
-        Me.btbuscare.UseVisualStyleBackColor = True
-        '
-        'btbuscars
-        '
-        Me.btbuscars.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btbuscars.Location = New System.Drawing.Point(418, 51)
-        Me.btbuscars.Name = "btbuscars"
-        Me.btbuscars.Size = New System.Drawing.Size(25, 25)
-        Me.btbuscars.TabIndex = 17
-        Me.btbuscars.Text = "..."
-        Me.btbuscars.UseVisualStyleBackColor = True
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(131, 84)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(45, 17)
-        Me.Label10.TabIndex = 18
-        Me.Label10.Text = "Precio"
-        '
-        'txtprecios
-        '
-        Me.txtprecios.BackColor = System.Drawing.Color.White
-        Me.txtprecios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtprecios.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtprecios.ForeColor = System.Drawing.Color.Black
-        Me.txtprecios.Location = New System.Drawing.Point(182, 82)
-        Me.txtprecios.Name = "txtprecios"
-        Me.txtprecios.Size = New System.Drawing.Size(71, 25)
-        Me.txtprecios.TabIndex = 19
-        '
-        'btagregars
-        '
-        Me.btagregars.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btagregars.Location = New System.Drawing.Point(378, 82)
-        Me.btagregars.Name = "btagregars"
-        Me.btagregars.Size = New System.Drawing.Size(65, 25)
-        Me.btagregars.TabIndex = 20
-        Me.btagregars.Text = "Agregar"
-        Me.btagregars.UseVisualStyleBackColor = True
         '
         'txtidempleado
         '
@@ -489,12 +503,12 @@ Partial Class frmventas
         Me.Text = "frmventas"
         Me.pandatossec.ResumeLayout(False)
         Me.pandatossec.PerformLayout()
+        CType(Me.txtcantidads, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pandatosprin.ResumeLayout(False)
         Me.pandatosprin.PerformLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvservicios, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvproductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtcantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -508,7 +522,7 @@ Partial Class frmventas
     Friend WithEvents pandatossec As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtdireccion As TextBox
+    Friend WithEvents txtservicio As TextBox
     Friend WithEvents pandatosprin As Panel
     Friend WithEvents txthora As MaskedTextBox
     Friend WithEvents Label9 As Label
@@ -531,8 +545,9 @@ Partial Class frmventas
     Friend WithEvents Label10 As Label
     Friend WithEvents btbuscars As Button
     Friend WithEvents btbuscare As Button
-    Friend WithEvents txtcantidad As NumericUpDown
+    Friend WithEvents txtcantidads As NumericUpDown
     Friend WithEvents Label3 As Label
     Friend WithEvents txtidempleado As TextBox
     Friend WithEvents txtidservicio As TextBox
+    Friend WithEvents checknuevo As CheckBox
 End Class

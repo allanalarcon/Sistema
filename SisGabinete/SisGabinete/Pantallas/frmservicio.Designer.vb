@@ -36,6 +36,7 @@ Partial Class frmservicio
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtbandera = New System.Windows.Forms.TextBox()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
         CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -169,11 +170,21 @@ Partial Class frmservicio
         '
         Me.erroricono.ContainerControl = Me
         '
+        'txtbandera
+        '
+        Me.txtbandera.Location = New System.Drawing.Point(501, 34)
+        Me.txtbandera.Name = "txtbandera"
+        Me.txtbandera.Size = New System.Drawing.Size(100, 20)
+        Me.txtbandera.TabIndex = 16
+        Me.txtbandera.Text = "0"
+        Me.txtbandera.Visible = False
+        '
         'frmservicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.txtbandera)
         Me.Controls.Add(Me.batncancelar)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btneditar)
@@ -207,4 +218,5 @@ Partial Class frmservicio
     Friend WithEvents btnnuevo As Button
     Friend WithEvents erroricono As ErrorProvider
     Friend WithEvents Label7 As Label
+    Friend WithEvents txtbandera As TextBox
 End Class
