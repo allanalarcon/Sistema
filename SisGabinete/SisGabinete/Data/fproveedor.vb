@@ -1,13 +1,13 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class fpago
+Public Class fproveedor
     Inherits conexion
     Dim cmd As New SqlCommand
 
     Public Function mostrar() As DataTable
         Try
             conectado()
-            cmd = New SqlCommand("mostrar_pagos")
+            cmd = New SqlCommand("mostrar_proveedores")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
@@ -28,17 +28,18 @@ Public Class fpago
         End Try
     End Function
 
-    Public Function ingresar(ByVal dts As vpago) As Boolean
+    Public Function ingresar(ByVal dts As vproveedor) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("ingresar_pago")
+            cmd = New SqlCommand("ingresar_proveedor")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idempleado", dts.gidempleado)
-            cmd.Parameters.AddWithValue("@pago", dts.gpago)
-            cmd.Parameters.AddWithValue("@fechapago", dts.gfechapago)
+            cmd.Parameters.AddWithValue("@nombre", dts.gnombre)
+            cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
+            cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
+            cmd.Parameters.AddWithValue("@email", dts.gemail)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -54,18 +55,19 @@ Public Class fpago
         End Try
     End Function
 
-    Public Function editar(ByVal dts As vpago) As Boolean
+    Public Function editar(ByVal dts As vproveedor) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("editar_pago")
+            cmd = New SqlCommand("editar_proveedor")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idpago", dts.gidpago)
-            cmd.Parameters.AddWithValue("@idempleado", dts.gidempleado)
-            cmd.Parameters.AddWithValue("@pago", dts.gpago)
-            cmd.Parameters.AddWithValue("@fechapago", dts.gfechapago)
+            cmd.Parameters.AddWithValue("@idproveedor", dts.gidproveedor)
+            cmd.Parameters.AddWithValue("@nombre", dts.gnombre)
+            cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
+            cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
+            cmd.Parameters.AddWithValue("@email", dts.gemail)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -81,15 +83,15 @@ Public Class fpago
         End Try
     End Function
 
-    Public Function eliminar(ByVal dts As vpago) As Boolean
+    Public Function eliminar(ByVal dts As vproveedor) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("eliminar_pago")
+            cmd = New SqlCommand("eliminar_proveedor")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idpago", dts.gidempleado)
+            cmd.Parameters.AddWithValue("@idproveedor", dts.gidproveedor)
 
             If cmd.ExecuteNonQuery Then
                 Return True

@@ -75,15 +75,22 @@
     <Compile Include="Data\conexion.vb" />
     <Compile Include="Data\fproducto.vb" />
     <Compile Include="Data\fpago.vb" />
+    <Compile Include="Data\fproveedor.vb" />
     <Compile Include="Data\fusuario.vb" />
     <Compile Include="Data\fvendedor.vb" />
     <Compile Include="Data\fcliente.vb" />
     <Compile Include="Data\fempleado.vb" />
     <Compile Include="Data\fservicio.vb" />
+    <Compile Include="Data\fventa.vb" />
     <Compile Include="Log\vproducto.vb" />
     <Compile Include="Log\vpago.vb" />
     <Compile Include="Log\vempleado.vb" />
     <Compile Include="Log\vcliente.vb" />
+    <Compile Include="Log\vproveedor.vb" />
+    <Compile Include="Log\vservicio.vb" />
+    <Compile Include="Log\vusuario.vb" />
+    <Compile Include="Log\vvendedor.vb" />
+    <Compile Include="Log\vventa.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

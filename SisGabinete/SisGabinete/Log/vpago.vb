@@ -1,6 +1,6 @@
 ﻿Public Class vpago
     Dim idpago, idempleado As Integer
-    Dim pago As 
+    Dim pago As Double
     Dim fechapago As Date
 
     'Setter and getter
@@ -48,12 +48,10 @@
 
     End Sub
 
-    Public Sub New(ByVal idpago As Integer, ByVal idempleado As Integer, ByVal pago As , ByVal fechapago As Date)
+    Public Sub New(ByVal idpago As Integer, ByVal idempleado As Integer, ByVal pago As Double, ByVal fechapago As Date)
         gidpago = idpago
         gidempleado = idempleado
         gpago = pago
         gfechapago = fechapago
     End Sub
-
-
 End Class

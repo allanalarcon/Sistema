@@ -94,6 +94,4 @@
         gfechanacimiento = fechanacimiento
         gcedula = cedula
     End Sub
-
-
 End Class

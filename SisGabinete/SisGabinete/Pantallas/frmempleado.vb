@@ -143,7 +143,7 @@ Public Class frmempleado
     End Sub
 
     Private Sub txtfecha_Validating(sender As Object, e As CancelEventArgs) Handles txtfecha.Validating
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
+        If DirectCast(sender, MaskedTextBox).Text <> "  /  /" Then
             Me.erroricono.SetError(sender, "")
         Else
             Me.erroricono.SetError(sender, "Campo Obligatorio")
@@ -152,7 +152,6 @@ Public Class frmempleado
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
-        mostrar()
     End Sub
 
     Private Sub btneditar_Click(sender As Object, e As EventArgs) Handles btneditar.Click
@@ -173,7 +172,7 @@ Public Class frmempleado
                     dts.gdireccion = txtdireccion.Text
                     dts.gtelefono = txttelefono.Text
                     dts.gemail = txtemail.Text
-                    dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+                    dts.gfechanacimiento = txtfecha.Text
                     dts.gcedula = txtcedula.Text
                     dts.gtipo = dgvlistado.SelectedCells.Item(8).Value.ToString
 
@@ -209,7 +208,7 @@ Public Class frmempleado
                 dts.gemail = txtemail.Text
                 dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
                 dts.gcedula = txtcedula.Text
-                dts.gtipo = 
+                dts.gtipo = 0
 
                 If func.ingresar(dts) Then
                     MessageBox.Show("Registro completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)

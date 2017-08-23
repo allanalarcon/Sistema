@@ -1,7 +1,7 @@
 ﻿Public Class vproducto
     Dim idproducto, idvendedor, stock As Integer
     Dim nombre, descripcion As String
-    Dim precioventa As
+    Dim precioventa As Double
 
     'Setter and getter
 
@@ -73,6 +73,4 @@
         gprecioventa = precioventa
         gstock = stock
     End Sub
-
-
 End Class

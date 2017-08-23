@@ -44,7 +44,7 @@ Public Class fempleado
             cmd.Parameters.AddWithValue("@fechanacimiento", dts.gfechanacimiento)
             cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
             cmd.Parameters.AddWithValue("@tipo", dts.gtipo)
-            cmd.Parameters.AddWithValue("@imagen", dts.gimagen)
+            'cmd.Parameters.AddWithValue("@imagen", dts.gimagen)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -77,7 +77,7 @@ Public Class fempleado
             cmd.Parameters.AddWithValue("@fechanacimiento", dts.gfechanacimiento)
             cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
             cmd.Parameters.AddWithValue("@tipo", dts.gtipo)
-            cmd.Parameters.AddWithValue("@imagen", dts.gimagen)
+            'cmd.Parameters.AddWithValue("@imagen", dts.gimagen)
 
             If cmd.ExecuteNonQuery Then
                 Return True

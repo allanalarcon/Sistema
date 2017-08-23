@@ -89,7 +89,7 @@ Public Class frmcliente
 
     Private Sub dgvlistado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellClick
         limpiar()
-        txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
+        txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
         txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
         txtcedula.Text = dgvlistado.SelectedCells.Item(7).Value.ToString
         txtdireccion.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
@@ -124,7 +124,6 @@ Public Class frmcliente
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
-        mostrar()
     End Sub
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
