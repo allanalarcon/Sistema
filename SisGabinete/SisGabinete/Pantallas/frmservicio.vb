@@ -85,7 +85,7 @@ Public Class frmservicio
         End If
     End Sub
 
-    Private Sub txtprecio_Validating(sender As Object, e As CancelEventArgs) Handles txtprecio.Validating
+    Private Sub txtprecio_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.erroricono.SetError(sender, "")
         Else
@@ -186,6 +186,21 @@ Public Class frmservicio
             Else
                 MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
+        End If
+    End Sub
+
+    Private Sub dgvlistado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellDoubleClick
+        If txtbandera.Text = "1" Then
+            frmventas.txtidservicio.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
+            frmventas.txtservicio.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
+            frmventas.txtprecios.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+            txtbandera.Text = "0"
+            frmcontenedor.pnpantallas.Controls.Clear()
+            frmventas.TopLevel = False
+            frmventas.Visible = True
+            frmcontenedor.pnpantallas.Controls.Add(frmventas)
+            frmventas.Show()
+            Me.Close()
         End If
     End Sub
 End Class

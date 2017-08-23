@@ -23,12 +23,11 @@ Partial Class frmservicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.dgvlistado = New System.Windows.Forms.DataGridView()
         Me.pandatosprin = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.batncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
@@ -37,6 +36,7 @@ Partial Class frmservicio
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtbandera = New System.Windows.Forms.TextBox()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
         CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,12 +66,12 @@ Partial Class frmservicio
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
         Me.dgvlistado.TabIndex = 1
@@ -79,8 +79,8 @@ Partial Class frmservicio
         'pandatosprin
         '
         Me.pandatosprin.BackColor = System.Drawing.Color.White
-        Me.pandatosprin.Controls.Add(Me.Label7)
         Me.pandatosprin.Controls.Add(Me.txtprecio)
+        Me.pandatosprin.Controls.Add(Me.Label7)
         Me.pandatosprin.Controls.Add(Me.txtdescripcion)
         Me.pandatosprin.Location = New System.Drawing.Point(501, 60)
         Me.pandatosprin.Name = "pandatosprin"
@@ -97,18 +97,6 @@ Partial Class frmservicio
         Me.Label7.Size = New System.Drawing.Size(93, 37)
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Precio"
-        '
-        'txtprecio
-        '
-        Me.txtprecio.BackColor = System.Drawing.Color.White
-        Me.txtprecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtprecio.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtprecio.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.txtprecio.Location = New System.Drawing.Point(232, 69)
-        Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(211, 43)
-        Me.txtprecio.TabIndex = 3
-        Me.txtprecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtdescripcion
         '
@@ -179,6 +167,16 @@ Partial Class frmservicio
         Me.txtbandera.Text = "0"
         Me.txtbandera.Visible = False
         '
+        'txtprecio
+        '
+        Me.txtprecio.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtprecio.ForeColor = System.Drawing.Color.Black
+        Me.txtprecio.Location = New System.Drawing.Point(232, 69)
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(211, 43)
+        Me.txtprecio.TabIndex = 17
+        Me.txtprecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'frmservicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -209,7 +207,6 @@ Partial Class frmservicio
     Friend WithEvents txtbuscar As TextBox
     Friend WithEvents dgvlistado As DataGridView
     Friend WithEvents pandatosprin As Panel
-    Friend WithEvents txtprecio As TextBox
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents batncancelar As Button
     Friend WithEvents btnguardar As Button
@@ -219,4 +216,5 @@ Partial Class frmservicio
     Friend WithEvents erroricono As ErrorProvider
     Friend WithEvents Label7 As Label
     Friend WithEvents txtbandera As TextBox
+    Friend WithEvents txtprecio As TextBox
 End Class

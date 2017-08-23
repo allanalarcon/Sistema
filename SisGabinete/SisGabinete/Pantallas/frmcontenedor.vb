@@ -38,9 +38,13 @@
 
     Private Sub iniciar(ByVal user As String, password As String)
         Try
+            Dim dts As New vusuario
             Dim func As New fusuario
 
-            If func.validar_usuario(user, password) = True Then
+            dts.gusuario = user
+            dts.gpassword = password
+
+            If func.validar_usuario(dts) = True Then
                 pnpantallas.Visible = True
                 pnbotones.Visible = True
                 pnlogin.Visible = False
@@ -73,5 +77,13 @@
 
     Private Sub btsalir_Click(sender As Object, e As EventArgs) Handles btsalir.Click
         End
+    End Sub
+
+    Private Sub btventas_Click(sender As Object, e As EventArgs) Handles btventas.Click
+        pnpantallas.Controls.Clear()
+        frmventas.TopLevel = False
+        frmventas.Visible = True
+        pnpantallas.Controls.Add(frmventas)
+        frmventas.Show()
     End Sub
 End Class

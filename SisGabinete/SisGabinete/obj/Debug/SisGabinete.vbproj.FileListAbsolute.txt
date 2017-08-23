@@ -43,3 +43,4 @@ C:\Users\irene\Source\Repos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinet
 C:\Users\irene\Source\Repos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.exe
 C:\Users\irene\Source\Repos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.xml
 C:\Users\irene\Source\Repos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.pdb
+C:\Users\Allan\OneDrive\ESPOL\Sistema de Bases de Datos\Sistema\SisGabinete\SisGabinete\obj\Debug\SisGabinete.frmventas.resources

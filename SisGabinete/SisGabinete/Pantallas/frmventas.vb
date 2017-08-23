@@ -2,9 +2,7 @@
     Private Sub btbuscarc_Click(sender As Object, e As EventArgs) Handles btbuscarc.Click
         txtnombrec.Enabled = False
         txtapellidoc.Enabled = False
-        checknuevo.Checked = False
         checkgenerico.Checked = False
-        checknuevo.Enabled = True
         checkgenerico.Enabled = True
         frmcliente.txtbandera.Text = "1"
         frmcontenedor.pnpantallas.Controls.Clear()
@@ -39,20 +37,16 @@
             txtidcliente.Text = 1
             txtnombrec.Enabled = False
             txtapellidoc.Enabled = False
-            checknuevo.Checked = False
-            checknuevo.Enabled = True
             checkgenerico.Enabled = False
         End If
     End Sub
 
-    Private Sub checknuevo_CheckedChanged(sender As Object, e As EventArgs) Handles checknuevo.CheckedChanged
-        If checknuevo.Checked = True Then
-            txtnombrec.Enabled = True
-            txtapellidoc.Enabled = True
-            txtidcliente.Clear()
-            checkgenerico.Checked = False
-            checkgenerico.Enabled = True
-            checknuevo.Enabled = False
-        End If
+    Private Sub btbuscarp_Click(sender As Object, e As EventArgs) Handles btbuscarp.Click
+        frmproducto.txtbandera.Text = "1"
+        frmcontenedor.pnpantallas.Controls.Clear()
+        frmproducto.TopLevel = False
+        frmproducto.Visible = True
+        frmcontenedor.pnpantallas.Controls.Add(frmproducto)
+        frmproducto.Show()
     End Sub
 End Class

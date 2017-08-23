@@ -258,4 +258,18 @@ Public Class frmempleado
             End If
         End If
     End Sub
+
+    Private Sub dgvlistado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellDoubleClick
+        If txtbandera.Text = "1" Then
+            frmventas.txtidempleado.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
+            frmventas.txtempleado.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
+            txtbandera.Text = "0"
+            frmcontenedor.pnpantallas.Controls.Clear()
+            frmventas.TopLevel = False
+            frmventas.Visible = True
+            frmcontenedor.pnpantallas.Controls.Add(frmventas)
+            frmventas.Show()
+            Me.Close()
+        End If
+    End Sub
 End Class

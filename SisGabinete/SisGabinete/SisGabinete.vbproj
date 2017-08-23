@@ -136,6 +136,12 @@
     <Compile Include="Pantallas\frmproducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantallas\frmproveedor.Designer.vb">
+      <DependentUpon>frmproveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmproveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantallas\frmservicio.Designer.vb">
       <DependentUpon>frmservicio.vb</DependentUpon>
     </Compile>
@@ -146,6 +152,12 @@
       <DependentUpon>frmvendedor.vb</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\frmvendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmventas.Designer.vb">
+      <DependentUpon>frmventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmventas.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -176,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmvendedor.resx">
       <DependentUpon>frmvendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmventas.resx">
+      <DependentUpon>frmventas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

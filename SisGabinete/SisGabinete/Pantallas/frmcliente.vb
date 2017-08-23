@@ -229,4 +229,20 @@ Public Class frmcliente
             End If
         End If
     End Sub
+
+    Private Sub dgvlistado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellDoubleClick
+        If txtbandera.Text = "1" Then
+            frmventas.txtidcliente.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
+            frmventas.txtnombrec.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
+            frmventas.txtapellidoc.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+            txtbandera.Text = "0"
+            frmventas.checkgenerico.Checked = False
+            frmcontenedor.pnpantallas.Controls.Clear()
+            frmventas.TopLevel = False
+            frmventas.Visible = True
+            frmcontenedor.pnpantallas.Controls.Add(frmventas)
+            frmventas.Show()
+            Me.Close()
+        End If
+    End Sub
 End Class

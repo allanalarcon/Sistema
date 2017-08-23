@@ -97,7 +97,28 @@
 
     End Sub
 
-    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtprecio.TextChanged
+    Private Sub dgvlistado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellDoubleClick
+        If txtbandera.Text = "1" Then
+            frmventas.txtidproducto.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
+            frmventas.txtproducto.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+            frmventas.txtpreciop.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
+            frmventas.txtstock.Text = dgvlistado.SelectedCells.Item(5).Value.ToString
+            txtbandera.Text = "0"
+            frmcontenedor.pnpantallas.Controls.Clear()
+            frmventas.TopLevel = False
+            frmventas.Visible = True
+            frmcontenedor.pnpantallas.Controls.Add(frmventas)
+            frmventas.Show()
+            Me.Close()
+        End If
+    End Sub
 
+    Private Sub btbuscarv_Click(sender As Object, e As EventArgs) Handles btbuscarv.Click
+        frmvendedor.txtbandera.Text = "1"
+        frmcontenedor.pnpantallas.Controls.Clear()
+        frmvendedor.TopLevel = False
+        frmvendedor.Visible = True
+        frmcontenedor.pnpantallas.Controls.Add(frmvendedor)
+        frmvendedor.Show()
     End Sub
 End Class

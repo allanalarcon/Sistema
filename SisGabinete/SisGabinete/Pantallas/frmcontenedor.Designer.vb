@@ -39,6 +39,8 @@ Partial Class frmcontenedor
         Me.txtpassword = New System.Windows.Forms.TextBox()
         Me.txtuser = New System.Windows.Forms.TextBox()
         Me.pnpantallas = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btventas = New System.Windows.Forms.Button()
         Me.pnbotones.SuspendLayout()
         Me.pnlogin.SuspendLayout()
         Me.SuspendLayout()
@@ -46,6 +48,8 @@ Partial Class frmcontenedor
         'pnbotones
         '
         Me.pnbotones.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.pnbotones.Controls.Add(Me.Label5)
+        Me.pnbotones.Controls.Add(Me.btventas)
         Me.pnbotones.Controls.Add(Me.Label4)
         Me.pnbotones.Controls.Add(Me.btservicios)
         Me.pnbotones.Controls.Add(Me.Label2)
@@ -65,7 +69,7 @@ Partial Class frmcontenedor
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(11, 314)
+        Me.Label4.Location = New System.Drawing.Point(11, 390)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(61, 17)
         Me.Label4.TabIndex = 38
@@ -80,7 +84,7 @@ Partial Class frmcontenedor
         Me.btservicios.FlatAppearance.BorderSize = 0
         Me.btservicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btservicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btservicios.Location = New System.Drawing.Point(15, 261)
+        Me.btservicios.Location = New System.Drawing.Point(15, 337)
         Me.btservicios.Name = "btservicios"
         Me.btservicios.Size = New System.Drawing.Size(50, 50)
         Me.btservicios.TabIndex = 4
@@ -92,7 +96,7 @@ Partial Class frmcontenedor
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(6, 237)
+        Me.Label2.Location = New System.Drawing.Point(6, 313)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 17)
         Me.Label2.TabIndex = 36
@@ -107,7 +111,7 @@ Partial Class frmcontenedor
         Me.btproductos.FlatAppearance.BorderSize = 0
         Me.btproductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btproductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btproductos.Location = New System.Drawing.Point(15, 184)
+        Me.btproductos.Location = New System.Drawing.Point(15, 260)
         Me.btproductos.Name = "btproductos"
         Me.btproductos.Size = New System.Drawing.Size(50, 50)
         Me.btproductos.TabIndex = 3
@@ -119,7 +123,7 @@ Partial Class frmcontenedor
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(4, 160)
+        Me.Label1.Location = New System.Drawing.Point(4, 236)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 17)
         Me.Label1.TabIndex = 34
@@ -134,7 +138,7 @@ Partial Class frmcontenedor
         Me.btempleados.FlatAppearance.BorderSize = 0
         Me.btempleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btempleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btempleados.Location = New System.Drawing.Point(15, 107)
+        Me.btempleados.Location = New System.Drawing.Point(15, 183)
         Me.btempleados.Name = "btempleados"
         Me.btempleados.Size = New System.Drawing.Size(50, 50)
         Me.btempleados.TabIndex = 2
@@ -146,7 +150,7 @@ Partial Class frmcontenedor
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(13, 83)
+        Me.Label3.Location = New System.Drawing.Point(13, 159)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(55, 17)
         Me.Label3.TabIndex = 32
@@ -161,7 +165,7 @@ Partial Class frmcontenedor
         Me.btclientes.FlatAppearance.BorderSize = 0
         Me.btclientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btclientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btclientes.Location = New System.Drawing.Point(15, 30)
+        Me.btclientes.Location = New System.Drawing.Point(15, 106)
         Me.btclientes.Name = "btclientes"
         Me.btclientes.Size = New System.Drawing.Size(50, 50)
         Me.btclientes.TabIndex = 1
@@ -252,6 +256,33 @@ Partial Class frmcontenedor
         Me.pnpantallas.Size = New System.Drawing.Size(1024, 621)
         Me.pnpantallas.TabIndex = 5
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(17, 82)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(48, 17)
+        Me.Label5.TabIndex = 40
+        Me.Label5.Text = "Ventas"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btventas
+        '
+        Me.btventas.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btventas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btventas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btventas.FlatAppearance.BorderSize = 0
+        Me.btventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btventas.Location = New System.Drawing.Point(15, 29)
+        Me.btventas.Name = "btventas"
+        Me.btventas.Size = New System.Drawing.Size(50, 50)
+        Me.btventas.TabIndex = 39
+        Me.btventas.UseVisualStyleBackColor = False
+        '
         'frmcontenedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -289,4 +320,6 @@ Partial Class frmcontenedor
     Friend WithEvents txtpassword As TextBox
     Friend WithEvents txtuser As TextBox
     Friend WithEvents pnpantallas As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents btventas As Button
 End Class

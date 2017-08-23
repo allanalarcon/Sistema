@@ -22,8 +22,8 @@ Partial Class frmventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.batncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btneditar = New System.Windows.Forms.Button()
@@ -42,7 +42,6 @@ Partial Class frmventas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtservicio = New System.Windows.Forms.TextBox()
         Me.pandatosprin = New System.Windows.Forms.Panel()
-        Me.checknuevo = New System.Windows.Forms.CheckBox()
         Me.txthora = New System.Windows.Forms.MaskedTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -55,22 +54,36 @@ Partial Class frmventas
         Me.piccliente = New System.Windows.Forms.PictureBox()
         Me.txtbuscarser = New System.Windows.Forms.TextBox()
         Me.dgvservicios = New System.Windows.Forms.DataGridView()
-        Me.dgvproductos = New System.Windows.Forms.DataGridView()
-        Me.txtbuscarpro = New System.Windows.Forms.TextBox()
         Me.txtidcliente = New System.Windows.Forms.TextBox()
         Me.txtidempleado = New System.Windows.Forms.TextBox()
         Me.txtidservicio = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtstock = New System.Windows.Forms.NumericUpDown()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btagregarp = New System.Windows.Forms.Button()
+        Me.txtpreciop = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btbuscarp = New System.Windows.Forms.Button()
+        Me.txtcantidadp = New System.Windows.Forms.NumericUpDown()
+        Me.txtproducto = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.txtidproducto = New System.Windows.Forms.TextBox()
         Me.pandatossec.SuspendLayout()
         CType(Me.txtcantidads, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvservicios, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvproductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.txtstock, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtcantidadp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'batncancelar
         '
-        Me.batncancelar.Location = New System.Drawing.Point(860, 562)
+        Me.batncancelar.Location = New System.Drawing.Point(864, 567)
         Me.batncancelar.Name = "batncancelar"
         Me.batncancelar.Size = New System.Drawing.Size(104, 43)
         Me.batncancelar.TabIndex = 23
@@ -79,7 +92,7 @@ Partial Class frmventas
         '
         'btnguardar
         '
-        Me.btnguardar.Location = New System.Drawing.Point(623, 513)
+        Me.btnguardar.Location = New System.Drawing.Point(395, 567)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(104, 43)
         Me.btnguardar.TabIndex = 20
@@ -88,7 +101,7 @@ Partial Class frmventas
         '
         'btneditar
         '
-        Me.btneditar.Location = New System.Drawing.Point(623, 562)
+        Me.btneditar.Location = New System.Drawing.Point(627, 567)
         Me.btneditar.Name = "btneditar"
         Me.btneditar.Size = New System.Drawing.Size(104, 43)
         Me.btneditar.TabIndex = 21
@@ -97,7 +110,7 @@ Partial Class frmventas
         '
         'btneliminar
         '
-        Me.btneliminar.Location = New System.Drawing.Point(743, 562)
+        Me.btneliminar.Location = New System.Drawing.Point(747, 567)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(104, 43)
         Me.btneliminar.TabIndex = 22
@@ -106,7 +119,7 @@ Partial Class frmventas
         '
         'btnnuevo
         '
-        Me.btnnuevo.Location = New System.Drawing.Point(501, 562)
+        Me.btnnuevo.Location = New System.Drawing.Point(505, 567)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(104, 43)
         Me.btnnuevo.TabIndex = 19
@@ -127,19 +140,19 @@ Partial Class frmventas
         Me.pandatossec.Controls.Add(Me.Label2)
         Me.pandatossec.Controls.Add(Me.Label1)
         Me.pandatossec.Controls.Add(Me.txtservicio)
-        Me.pandatossec.Location = New System.Drawing.Point(501, 234)
+        Me.pandatossec.Location = New System.Drawing.Point(583, 60)
         Me.pandatossec.Name = "pandatossec"
-        Me.pandatossec.Size = New System.Drawing.Size(463, 127)
+        Me.pandatossec.Size = New System.Drawing.Size(381, 127)
         Me.pandatossec.TabIndex = 18
         '
         'btagregars
         '
         Me.btagregars.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btagregars.Location = New System.Drawing.Point(378, 82)
+        Me.btagregars.Location = New System.Drawing.Point(308, 82)
         Me.btagregars.Name = "btagregars"
-        Me.btagregars.Size = New System.Drawing.Size(65, 25)
+        Me.btagregars.Size = New System.Drawing.Size(54, 25)
         Me.btagregars.TabIndex = 20
-        Me.btagregars.Text = "Agregar"
+        Me.btagregars.Text = "Add"
         Me.btagregars.UseVisualStyleBackColor = True
         '
         'txtprecios
@@ -148,9 +161,9 @@ Partial Class frmventas
         Me.txtprecios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtprecios.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtprecios.ForeColor = System.Drawing.Color.Black
-        Me.txtprecios.Location = New System.Drawing.Point(182, 82)
+        Me.txtprecios.Location = New System.Drawing.Point(265, 82)
         Me.txtprecios.Name = "txtprecios"
-        Me.txtprecios.Size = New System.Drawing.Size(71, 25)
+        Me.txtprecios.Size = New System.Drawing.Size(37, 25)
         Me.txtprecios.TabIndex = 19
         '
         'Label10
@@ -158,7 +171,7 @@ Partial Class frmventas
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(131, 84)
+        Me.Label10.Location = New System.Drawing.Point(214, 84)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(45, 17)
         Me.Label10.TabIndex = 18
@@ -167,7 +180,7 @@ Partial Class frmventas
         'btbuscars
         '
         Me.btbuscars.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btbuscars.Location = New System.Drawing.Point(418, 51)
+        Me.btbuscars.Location = New System.Drawing.Point(337, 51)
         Me.btbuscars.Name = "btbuscars"
         Me.btbuscars.Size = New System.Drawing.Size(25, 25)
         Me.btbuscars.TabIndex = 17
@@ -177,7 +190,7 @@ Partial Class frmventas
         'btbuscare
         '
         Me.btbuscare.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btbuscare.Location = New System.Drawing.Point(418, 20)
+        Me.btbuscare.Location = New System.Drawing.Point(337, 20)
         Me.btbuscare.Name = "btbuscare"
         Me.btbuscare.Size = New System.Drawing.Size(25, 25)
         Me.btbuscare.TabIndex = 16
@@ -200,10 +213,10 @@ Partial Class frmventas
         Me.txtempleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtempleado.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtempleado.ForeColor = System.Drawing.Color.Black
-        Me.txtempleado.Location = New System.Drawing.Point(156, 20)
+        Me.txtempleado.Location = New System.Drawing.Point(91, 20)
         Me.txtempleado.MaxLength = 10
         Me.txtempleado.Name = "txtempleado"
-        Me.txtempleado.Size = New System.Drawing.Size(256, 25)
+        Me.txtempleado.Size = New System.Drawing.Size(240, 25)
         Me.txtempleado.TabIndex = 14
         '
         'Label3
@@ -245,15 +258,14 @@ Partial Class frmventas
         Me.txtservicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtservicio.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtservicio.ForeColor = System.Drawing.Color.Black
-        Me.txtservicio.Location = New System.Drawing.Point(156, 51)
+        Me.txtservicio.Location = New System.Drawing.Point(91, 51)
         Me.txtservicio.Name = "txtservicio"
-        Me.txtservicio.Size = New System.Drawing.Size(256, 25)
+        Me.txtservicio.Size = New System.Drawing.Size(240, 25)
         Me.txtservicio.TabIndex = 5
         '
         'pandatosprin
         '
         Me.pandatosprin.BackColor = System.Drawing.Color.White
-        Me.pandatosprin.Controls.Add(Me.checknuevo)
         Me.pandatosprin.Controls.Add(Me.txthora)
         Me.pandatosprin.Controls.Add(Me.Label9)
         Me.pandatosprin.Controls.Add(Me.Label8)
@@ -264,21 +276,10 @@ Partial Class frmventas
         Me.pandatosprin.Controls.Add(Me.txtapellidoc)
         Me.pandatosprin.Controls.Add(Me.txtnombrec)
         Me.pandatosprin.Controls.Add(Me.piccliente)
-        Me.pandatosprin.Location = New System.Drawing.Point(501, 60)
+        Me.pandatosprin.Location = New System.Drawing.Point(60, 60)
         Me.pandatosprin.Name = "pandatosprin"
         Me.pandatosprin.Size = New System.Drawing.Size(463, 144)
         Me.pandatosprin.TabIndex = 17
-        '
-        'checknuevo
-        '
-        Me.checknuevo.AutoSize = True
-        Me.checknuevo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checknuevo.Location = New System.Drawing.Point(286, 16)
-        Me.checknuevo.Name = "checknuevo"
-        Me.checknuevo.Size = New System.Drawing.Size(67, 21)
-        Me.checknuevo.TabIndex = 15
-        Me.checknuevo.Text = "Nuevo"
-        Me.checknuevo.UseVisualStyleBackColor = True
         '
         'txthora
         '
@@ -359,7 +360,6 @@ Partial Class frmventas
         '
         Me.txtapellidoc.BackColor = System.Drawing.Color.White
         Me.txtapellidoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtapellidoc.Enabled = False
         Me.txtapellidoc.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellidoc.ForeColor = System.Drawing.Color.Black
         Me.txtapellidoc.Location = New System.Drawing.Point(20, 68)
@@ -371,7 +371,6 @@ Partial Class frmventas
         '
         Me.txtnombrec.BackColor = System.Drawing.Color.White
         Me.txtnombrec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtnombrec.Enabled = False
         Me.txtnombrec.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombrec.ForeColor = System.Drawing.Color.Black
         Me.txtnombrec.Location = New System.Drawing.Point(20, 37)
@@ -393,9 +392,9 @@ Partial Class frmventas
         Me.txtbuscarser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtbuscarser.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbuscarser.ForeColor = System.Drawing.Color.Black
-        Me.txtbuscarser.Location = New System.Drawing.Point(94, 60)
+        Me.txtbuscarser.Location = New System.Drawing.Point(94, 234)
         Me.txtbuscarser.Name = "txtbuscarser"
-        Me.txtbuscarser.Size = New System.Drawing.Size(347, 25)
+        Me.txtbuscarser.Size = New System.Drawing.Size(429, 25)
         Me.txtbuscarser.TabIndex = 0
         '
         'dgvservicios
@@ -407,87 +406,206 @@ Partial Class frmventas
         Me.dgvservicios.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.dgvservicios.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvservicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvservicios.Location = New System.Drawing.Point(60, 91)
+        Me.dgvservicios.Location = New System.Drawing.Point(60, 265)
         Me.dgvservicios.Name = "dgvservicios"
         Me.dgvservicios.ReadOnly = True
         Me.dgvservicios.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvservicios.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvservicios.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvservicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvservicios.Size = New System.Drawing.Size(381, 210)
+        Me.dgvservicios.Size = New System.Drawing.Size(463, 296)
         Me.dgvservicios.TabIndex = 1
-        '
-        'dgvproductos
-        '
-        Me.dgvproductos.AllowUserToAddRows = False
-        Me.dgvproductos.AllowUserToDeleteRows = False
-        Me.dgvproductos.AllowUserToResizeColumns = False
-        Me.dgvproductos.AllowUserToResizeRows = False
-        Me.dgvproductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.dgvproductos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvproductos.Location = New System.Drawing.Point(60, 351)
-        Me.dgvproductos.Name = "dgvproductos"
-        Me.dgvproductos.ReadOnly = True
-        Me.dgvproductos.RowHeadersVisible = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvproductos.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvproductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvproductos.Size = New System.Drawing.Size(381, 210)
-        Me.dgvproductos.TabIndex = 3
-        '
-        'txtbuscarpro
-        '
-        Me.txtbuscarpro.BackColor = System.Drawing.Color.White
-        Me.txtbuscarpro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbuscarpro.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbuscarpro.ForeColor = System.Drawing.Color.Black
-        Me.txtbuscarpro.Location = New System.Drawing.Point(94, 320)
-        Me.txtbuscarpro.Name = "txtbuscarpro"
-        Me.txtbuscarpro.Size = New System.Drawing.Size(347, 25)
-        Me.txtbuscarpro.TabIndex = 2
         '
         'txtidcliente
         '
-        Me.txtidcliente.Location = New System.Drawing.Point(501, 34)
+        Me.txtidcliente.Location = New System.Drawing.Point(450, 34)
         Me.txtidcliente.Name = "txtidcliente"
         Me.txtidcliente.Size = New System.Drawing.Size(100, 20)
         Me.txtidcliente.TabIndex = 24
         '
         'txtidempleado
         '
-        Me.txtidempleado.Location = New System.Drawing.Point(501, 210)
+        Me.txtidempleado.Location = New System.Drawing.Point(556, 34)
         Me.txtidempleado.Name = "txtidempleado"
         Me.txtidempleado.Size = New System.Drawing.Size(100, 20)
         Me.txtidempleado.TabIndex = 25
-        Me.txtidempleado.Visible = False
         '
         'txtidservicio
         '
-        Me.txtidservicio.Location = New System.Drawing.Point(607, 210)
+        Me.txtidservicio.Location = New System.Drawing.Point(662, 34)
         Me.txtidservicio.Name = "txtidservicio"
         Me.txtidservicio.Size = New System.Drawing.Size(100, 20)
         Me.txtidservicio.TabIndex = 26
-        Me.txtidservicio.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.txtstock)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.btagregarp)
+        Me.Panel1.Controls.Add(Me.txtpreciop)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.btbuscarp)
+        Me.Panel1.Controls.Add(Me.txtcantidadp)
+        Me.Panel1.Controls.Add(Me.txtproducto)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Location = New System.Drawing.Point(583, 217)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(381, 96)
+        Me.Panel1.TabIndex = 27
+        '
+        'txtstock
+        '
+        Me.txtstock.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtstock.Location = New System.Drawing.Point(173, 51)
+        Me.txtstock.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txtstock.Name = "txtstock"
+        Me.txtstock.Size = New System.Drawing.Size(35, 25)
+        Me.txtstock.TabIndex = 22
+        Me.txtstock.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(126, 53)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(41, 17)
+        Me.Label6.TabIndex = 21
+        Me.Label6.Text = "Stock"
+        '
+        'btagregarp
+        '
+        Me.btagregarp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btagregarp.Location = New System.Drawing.Point(308, 51)
+        Me.btagregarp.Name = "btagregarp"
+        Me.btagregarp.Size = New System.Drawing.Size(54, 25)
+        Me.btagregarp.TabIndex = 20
+        Me.btagregarp.Text = "Add"
+        Me.btagregarp.UseVisualStyleBackColor = True
+        '
+        'txtpreciop
+        '
+        Me.txtpreciop.BackColor = System.Drawing.Color.White
+        Me.txtpreciop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtpreciop.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtpreciop.ForeColor = System.Drawing.Color.Black
+        Me.txtpreciop.Location = New System.Drawing.Point(265, 51)
+        Me.txtpreciop.Name = "txtpreciop"
+        Me.txtpreciop.Size = New System.Drawing.Size(37, 25)
+        Me.txtpreciop.TabIndex = 19
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label4.Location = New System.Drawing.Point(214, 53)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(45, 17)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Precio"
+        '
+        'btbuscarp
+        '
+        Me.btbuscarp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btbuscarp.Location = New System.Drawing.Point(337, 20)
+        Me.btbuscarp.Name = "btbuscarp"
+        Me.btbuscarp.Size = New System.Drawing.Size(25, 25)
+        Me.btbuscarp.TabIndex = 16
+        Me.btbuscarp.Text = "..."
+        Me.btbuscarp.UseVisualStyleBackColor = True
+        '
+        'txtcantidadp
+        '
+        Me.txtcantidadp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcantidadp.Location = New System.Drawing.Point(85, 51)
+        Me.txtcantidadp.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txtcantidadp.Name = "txtcantidadp"
+        Me.txtcantidadp.Size = New System.Drawing.Size(35, 25)
+        Me.txtcantidadp.TabIndex = 15
+        Me.txtcantidadp.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'txtproducto
+        '
+        Me.txtproducto.BackColor = System.Drawing.Color.White
+        Me.txtproducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtproducto.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtproducto.ForeColor = System.Drawing.Color.Black
+        Me.txtproducto.Location = New System.Drawing.Point(91, 20)
+        Me.txtproducto.MaxLength = 10
+        Me.txtproducto.Name = "txtproducto"
+        Me.txtproducto.Size = New System.Drawing.Size(240, 25)
+        Me.txtproducto.TabIndex = 14
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label5.Location = New System.Drawing.Point(17, 53)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 17)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Cantidad"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label11.Location = New System.Drawing.Point(17, 22)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(64, 17)
+        Me.Label11.TabIndex = 7
+        Me.Label11.Text = "Producto"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(583, 343)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(381, 218)
+        Me.DataGridView1.TabIndex = 29
+        '
+        'txtidproducto
+        '
+        Me.txtidproducto.Location = New System.Drawing.Point(768, 34)
+        Me.txtidproducto.Name = "txtidproducto"
+        Me.txtidproducto.Size = New System.Drawing.Size(100, 20)
+        Me.txtidproducto.TabIndex = 30
         '
         'frmventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.txtidproducto)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtidservicio)
         Me.Controls.Add(Me.txtidempleado)
         Me.Controls.Add(Me.txtidcliente)
-        Me.Controls.Add(Me.txtbuscarpro)
-        Me.Controls.Add(Me.dgvproductos)
         Me.Controls.Add(Me.batncancelar)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btneditar)
@@ -497,6 +615,7 @@ Partial Class frmventas
         Me.Controls.Add(Me.pandatosprin)
         Me.Controls.Add(Me.txtbuscarser)
         Me.Controls.Add(Me.dgvservicios)
+        Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmventas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -508,7 +627,11 @@ Partial Class frmventas
         Me.pandatosprin.PerformLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvservicios, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvproductos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.txtstock, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtcantidadp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -536,8 +659,6 @@ Partial Class frmventas
     Friend WithEvents piccliente As PictureBox
     Friend WithEvents txtbuscarser As TextBox
     Friend WithEvents dgvservicios As DataGridView
-    Friend WithEvents dgvproductos As DataGridView
-    Friend WithEvents txtbuscarpro As TextBox
     Friend WithEvents txtidcliente As TextBox
     Friend WithEvents txtempleado As TextBox
     Friend WithEvents btagregars As Button
@@ -549,5 +670,17 @@ Partial Class frmventas
     Friend WithEvents Label3 As Label
     Friend WithEvents txtidempleado As TextBox
     Friend WithEvents txtidservicio As TextBox
-    Friend WithEvents checknuevo As CheckBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents txtstock As NumericUpDown
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btagregarp As Button
+    Friend WithEvents txtpreciop As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents btbuscarp As Button
+    Friend WithEvents txtcantidadp As NumericUpDown
+    Friend WithEvents txtproducto As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtidproducto As TextBox
 End Class

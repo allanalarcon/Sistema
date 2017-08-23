@@ -4,7 +4,7 @@ Public Class fservicio
     Inherits conexion
     Dim cmd As New SqlCommand
 
-    Public Function mostrar(ByVal tabla As String)
+    Public Function mostrar()
         Try
             conectado()
             cmd = New SqlCommand("mostrar_servicios")
