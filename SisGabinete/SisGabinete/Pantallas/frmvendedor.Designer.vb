@@ -22,7 +22,7 @@ Partial Class frmvendedor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.pandatossec = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -60,7 +60,7 @@ Partial Class frmvendedor
         Me.pandatossec.Controls.Add(Me.txtcedula)
         Me.pandatossec.Controls.Add(Me.Label1)
         Me.pandatossec.Controls.Add(Me.txttelefono)
-        Me.pandatossec.Location = New System.Drawing.Point(501, 229)
+        Me.pandatossec.Location = New System.Drawing.Point(501, 222)
         Me.pandatossec.Name = "pandatossec"
         Me.pandatossec.Size = New System.Drawing.Size(463, 128)
         Me.pandatossec.TabIndex = 11
@@ -86,7 +86,7 @@ Partial Class frmvendedor
         Me.txtproveedor.MaxLength = 10
         Me.txtproveedor.Name = "txtproveedor"
         Me.txtproveedor.Size = New System.Drawing.Size(287, 25)
-        Me.txtproveedor.TabIndex = 14
+        Me.txtproveedor.TabIndex = 6
         '
         'Label2
         '
@@ -109,7 +109,7 @@ Partial Class frmvendedor
         Me.txtcedula.MaxLength = 10
         Me.txtcedula.Name = "txtcedula"
         Me.txtcedula.Size = New System.Drawing.Size(287, 25)
-        Me.txtcedula.TabIndex = 12
+        Me.txtcedula.TabIndex = 4
         '
         'Label1
         '
@@ -131,7 +131,7 @@ Partial Class frmvendedor
         Me.txttelefono.Location = New System.Drawing.Point(156, 50)
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(287, 25)
-        Me.txttelefono.TabIndex = 13
+        Me.txttelefono.TabIndex = 5
         '
         'txtapellido
         '
@@ -151,7 +151,7 @@ Partial Class frmvendedor
         Me.pandatosprin.Controls.Add(Me.txtnombre)
         Me.pandatosprin.Location = New System.Drawing.Point(501, 59)
         Me.pandatosprin.Name = "pandatosprin"
-        Me.pandatosprin.Size = New System.Drawing.Size(463, 140)
+        Me.pandatosprin.Size = New System.Drawing.Size(463, 132)
         Me.pandatosprin.TabIndex = 10
         '
         'txtbuscar
@@ -163,7 +163,7 @@ Partial Class frmvendedor
         Me.txtbuscar.Location = New System.Drawing.Point(94, 59)
         Me.txtbuscar.Name = "txtbuscar"
         Me.txtbuscar.Size = New System.Drawing.Size(347, 25)
-        Me.txtbuscar.TabIndex = 8
+        Me.txtbuscar.TabIndex = 0
         '
         'dgvlistado
         '
@@ -178,15 +178,15 @@ Partial Class frmvendedor
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
-        Me.dgvlistado.TabIndex = 9
+        Me.dgvlistado.TabIndex = 1
         '
         'frmvendedor
         '

@@ -30,22 +30,19 @@ Partial Class frmproducto
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtnombrevendedor = New System.Windows.Forms.TextBox()
         Me.txtstock = New System.Windows.Forms.TextBox()
-        Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.dgvlistado = New System.Windows.Forms.DataGridView()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.pandatosprin = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.picempleado = New System.Windows.Forms.PictureBox()
-        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.pandatossec.SuspendLayout()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
-        CType(Me.picempleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pandatossec
@@ -57,13 +54,11 @@ Partial Class frmproducto
         Me.pandatossec.Controls.Add(Me.Label5)
         Me.pandatossec.Controls.Add(Me.Label4)
         Me.pandatossec.Controls.Add(Me.Label3)
-        Me.pandatossec.Controls.Add(Me.Label2)
         Me.pandatossec.Controls.Add(Me.Label1)
         Me.pandatossec.Controls.Add(Me.txtnombrevendedor)
         Me.pandatossec.Controls.Add(Me.txtstock)
-        Me.pandatossec.Controls.Add(Me.txtprecio)
         Me.pandatossec.Controls.Add(Me.txtdescripcion)
-        Me.pandatossec.Location = New System.Drawing.Point(501, 230)
+        Me.pandatossec.Location = New System.Drawing.Point(501, 222)
         Me.pandatossec.Name = "pandatossec"
         Me.pandatossec.Size = New System.Drawing.Size(463, 220)
         Me.pandatossec.TabIndex = 11
@@ -74,17 +69,17 @@ Partial Class frmproducto
         Me.txtapellidovendedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtapellidovendedor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellidovendedor.ForeColor = System.Drawing.Color.Black
-        Me.txtapellidovendedor.Location = New System.Drawing.Point(156, 144)
+        Me.txtapellidovendedor.Location = New System.Drawing.Point(156, 113)
         Me.txtapellidovendedor.Name = "txtapellidovendedor"
         Me.txtapellidovendedor.Size = New System.Drawing.Size(287, 25)
-        Me.txtapellidovendedor.TabIndex = 8
+        Me.txtapellidovendedor.TabIndex = 7
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(17, 177)
+        Me.Label6.Location = New System.Drawing.Point(17, 146)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(71, 17)
         Me.Label6.TabIndex = 13
@@ -96,17 +91,17 @@ Partial Class frmproducto
         Me.txtproveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtproveedor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtproveedor.ForeColor = System.Drawing.Color.Black
-        Me.txtproveedor.Location = New System.Drawing.Point(156, 175)
+        Me.txtproveedor.Location = New System.Drawing.Point(156, 144)
         Me.txtproveedor.Name = "txtproveedor"
         Me.txtproveedor.Size = New System.Drawing.Size(287, 25)
-        Me.txtproveedor.TabIndex = 9
+        Me.txtproveedor.TabIndex = 8
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(17, 146)
+        Me.Label5.Location = New System.Drawing.Point(17, 115)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(119, 17)
         Me.Label5.TabIndex = 11
@@ -117,7 +112,7 @@ Partial Class frmproducto
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(17, 115)
+        Me.Label4.Location = New System.Drawing.Point(17, 84)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(120, 17)
         Me.Label4.TabIndex = 10
@@ -128,22 +123,11 @@ Partial Class frmproducto
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(17, 84)
+        Me.Label3.Location = New System.Drawing.Point(17, 53)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(41, 17)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Stock"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(17, 53)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 17)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Precio"
         '
         'Label1
         '
@@ -162,10 +146,10 @@ Partial Class frmproducto
         Me.txtnombrevendedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtnombrevendedor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombrevendedor.ForeColor = System.Drawing.Color.Black
-        Me.txtnombrevendedor.Location = New System.Drawing.Point(156, 113)
+        Me.txtnombrevendedor.Location = New System.Drawing.Point(156, 82)
         Me.txtnombrevendedor.Name = "txtnombrevendedor"
         Me.txtnombrevendedor.Size = New System.Drawing.Size(287, 25)
-        Me.txtnombrevendedor.TabIndex = 7
+        Me.txtnombrevendedor.TabIndex = 6
         '
         'txtstock
         '
@@ -173,22 +157,11 @@ Partial Class frmproducto
         Me.txtstock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtstock.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtstock.ForeColor = System.Drawing.Color.Black
-        Me.txtstock.Location = New System.Drawing.Point(156, 82)
+        Me.txtstock.Location = New System.Drawing.Point(156, 51)
         Me.txtstock.MaxLength = 10
         Me.txtstock.Name = "txtstock"
         Me.txtstock.Size = New System.Drawing.Size(287, 25)
-        Me.txtstock.TabIndex = 6
-        '
-        'txtprecio
-        '
-        Me.txtprecio.BackColor = System.Drawing.Color.White
-        Me.txtprecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtprecio.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtprecio.ForeColor = System.Drawing.Color.Black
-        Me.txtprecio.Location = New System.Drawing.Point(156, 51)
-        Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(287, 25)
-        Me.txtprecio.TabIndex = 5
+        Me.txtstock.TabIndex = 5
         '
         'txtdescripcion
         '
@@ -223,7 +196,7 @@ Partial Class frmproducto
         Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
-        Me.dgvlistado.TabIndex = 9
+        Me.dgvlistado.TabIndex = 1
         '
         'txtbuscar
         '
@@ -234,18 +207,29 @@ Partial Class frmproducto
         Me.txtbuscar.Location = New System.Drawing.Point(94, 60)
         Me.txtbuscar.Name = "txtbuscar"
         Me.txtbuscar.Size = New System.Drawing.Size(347, 25)
-        Me.txtbuscar.TabIndex = 8
+        Me.txtbuscar.TabIndex = 0
         '
         'pandatosprin
         '
         Me.pandatosprin.BackColor = System.Drawing.Color.White
-        Me.pandatosprin.Controls.Add(Me.txtcodigo)
+        Me.pandatosprin.Controls.Add(Me.Label7)
         Me.pandatosprin.Controls.Add(Me.txtnombre)
-        Me.pandatosprin.Controls.Add(Me.picempleado)
+        Me.pandatosprin.Controls.Add(Me.txtprecio)
         Me.pandatosprin.Location = New System.Drawing.Point(501, 60)
         Me.pandatosprin.Name = "pandatosprin"
-        Me.pandatosprin.Size = New System.Drawing.Size(463, 140)
+        Me.pandatosprin.Size = New System.Drawing.Size(463, 132)
         Me.pandatosprin.TabIndex = 10
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label7.Location = New System.Drawing.Point(133, 71)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(93, 37)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Precio"
         '
         'txtnombre
         '
@@ -253,29 +237,22 @@ Partial Class frmproducto
         Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtnombre.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.ForeColor = System.Drawing.Color.Black
-        Me.txtnombre.Location = New System.Drawing.Point(156, 77)
+        Me.txtnombre.Location = New System.Drawing.Point(20, 20)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(287, 43)
+        Me.txtnombre.Size = New System.Drawing.Size(423, 43)
         Me.txtnombre.TabIndex = 2
         '
-        'picempleado
+        'txtprecio
         '
-        Me.picempleado.Location = New System.Drawing.Point(30, 20)
-        Me.picempleado.Name = "picempleado"
-        Me.picempleado.Size = New System.Drawing.Size(100, 100)
-        Me.picempleado.TabIndex = 0
-        Me.picempleado.TabStop = False
-        '
-        'txtcodigo
-        '
-        Me.txtcodigo.BackColor = System.Drawing.Color.White
-        Me.txtcodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtcodigo.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcodigo.ForeColor = System.Drawing.Color.Black
-        Me.txtcodigo.Location = New System.Drawing.Point(156, 20)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(287, 43)
-        Me.txtcodigo.TabIndex = 3
+        Me.txtprecio.BackColor = System.Drawing.Color.White
+        Me.txtprecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtprecio.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtprecio.ForeColor = System.Drawing.Color.Black
+        Me.txtprecio.Location = New System.Drawing.Point(232, 69)
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(211, 43)
+        Me.txtprecio.TabIndex = 3
+        Me.txtprecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'frmproducto
         '
@@ -294,7 +271,6 @@ Partial Class frmproducto
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pandatosprin.ResumeLayout(False)
         Me.pandatosprin.PerformLayout()
-        CType(Me.picempleado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -307,16 +283,14 @@ Partial Class frmproducto
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txtnombrevendedor As TextBox
     Friend WithEvents txtstock As TextBox
-    Friend WithEvents txtprecio As TextBox
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents dgvlistado As DataGridView
     Friend WithEvents txtbuscar As TextBox
     Friend WithEvents pandatosprin As Panel
+    Friend WithEvents txtprecio As TextBox
     Friend WithEvents txtnombre As TextBox
-    Friend WithEvents picempleado As PictureBox
-    Friend WithEvents txtcodigo As TextBox
+    Friend WithEvents Label7 As Label
 End Class

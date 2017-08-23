@@ -25,7 +25,6 @@ Partial Class frmempleado
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.picempleado = New System.Windows.Forms.PictureBox()
         Me.txtedad = New System.Windows.Forms.TextBox()
         Me.txtapellido = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -49,7 +48,7 @@ Partial Class frmempleado
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
-        CType(Me.picempleado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtbandera = New System.Windows.Forms.TextBox()
         Me.pandatossec.SuspendLayout()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
@@ -62,18 +61,10 @@ Partial Class frmempleado
         Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtnombre.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.ForeColor = System.Drawing.Color.Black
-        Me.txtnombre.Location = New System.Drawing.Point(156, 20)
+        Me.txtnombre.Location = New System.Drawing.Point(20, 20)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(287, 43)
+        Me.txtnombre.Size = New System.Drawing.Size(423, 43)
         Me.txtnombre.TabIndex = 2
-        '
-        'picempleado
-        '
-        Me.picempleado.Location = New System.Drawing.Point(30, 20)
-        Me.picempleado.Name = "picempleado"
-        Me.picempleado.Size = New System.Drawing.Size(100, 100)
-        Me.picempleado.TabIndex = 0
-        Me.picempleado.TabStop = False
         '
         'txtedad
         '
@@ -92,9 +83,9 @@ Partial Class frmempleado
         Me.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtapellido.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellido.ForeColor = System.Drawing.Color.Black
-        Me.txtapellido.Location = New System.Drawing.Point(156, 69)
+        Me.txtapellido.Location = New System.Drawing.Point(20, 69)
         Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(287, 43)
+        Me.txtapellido.Size = New System.Drawing.Size(423, 43)
         Me.txtapellido.TabIndex = 3
         '
         'Label6
@@ -123,7 +114,7 @@ Partial Class frmempleado
         Me.pandatossec.Controls.Add(Me.txttelefono)
         Me.pandatossec.Controls.Add(Me.txtdireccion)
         Me.pandatossec.Controls.Add(Me.txtcedula)
-        Me.pandatossec.Location = New System.Drawing.Point(501, 230)
+        Me.pandatossec.Location = New System.Drawing.Point(501, 222)
         Me.pandatossec.Name = "pandatossec"
         Me.pandatossec.Size = New System.Drawing.Size(463, 220)
         Me.pandatossec.TabIndex = 7
@@ -135,7 +126,7 @@ Partial Class frmempleado
         Me.txtfecha.Mask = "00/00/0000"
         Me.txtfecha.Name = "txtfecha"
         Me.txtfecha.Size = New System.Drawing.Size(287, 25)
-        Me.txtfecha.TabIndex = 15
+        Me.txtfecha.TabIndex = 8
         Me.txtfecha.ValidatingType = GetType(Date)
         '
         'Label5
@@ -278,10 +269,9 @@ Partial Class frmempleado
         Me.pandatosprin.BackColor = System.Drawing.Color.White
         Me.pandatosprin.Controls.Add(Me.txtapellido)
         Me.pandatosprin.Controls.Add(Me.txtnombre)
-        Me.pandatosprin.Controls.Add(Me.picempleado)
         Me.pandatosprin.Location = New System.Drawing.Point(501, 60)
         Me.pandatosprin.Name = "pandatosprin"
-        Me.pandatosprin.Size = New System.Drawing.Size(463, 140)
+        Me.pandatosprin.Size = New System.Drawing.Size(463, 132)
         Me.pandatosprin.TabIndex = 6
         '
         'batncancelar
@@ -289,7 +279,7 @@ Partial Class frmempleado
         Me.batncancelar.Location = New System.Drawing.Point(857, 518)
         Me.batncancelar.Name = "batncancelar"
         Me.batncancelar.Size = New System.Drawing.Size(104, 43)
-        Me.batncancelar.TabIndex = 16
+        Me.batncancelar.TabIndex = 14
         Me.batncancelar.Text = "Cancelar"
         Me.batncancelar.UseVisualStyleBackColor = True
         '
@@ -298,7 +288,7 @@ Partial Class frmempleado
         Me.btnguardar.Location = New System.Drawing.Point(620, 469)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(104, 43)
-        Me.btnguardar.TabIndex = 15
+        Me.btnguardar.TabIndex = 11
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = True
         '
@@ -307,7 +297,7 @@ Partial Class frmempleado
         Me.btneditar.Location = New System.Drawing.Point(620, 518)
         Me.btneditar.Name = "btneditar"
         Me.btneditar.Size = New System.Drawing.Size(104, 43)
-        Me.btneditar.TabIndex = 14
+        Me.btneditar.TabIndex = 12
         Me.btneditar.Text = "Editar"
         Me.btneditar.UseVisualStyleBackColor = True
         '
@@ -325,7 +315,7 @@ Partial Class frmempleado
         Me.btnnuevo.Location = New System.Drawing.Point(498, 518)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(104, 43)
-        Me.btnnuevo.TabIndex = 12
+        Me.btnnuevo.TabIndex = 10
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = True
         '
@@ -333,11 +323,21 @@ Partial Class frmempleado
         '
         Me.erroricono.ContainerControl = Me
         '
+        'txtbandera
+        '
+        Me.txtbandera.Location = New System.Drawing.Point(501, 23)
+        Me.txtbandera.Name = "txtbandera"
+        Me.txtbandera.Size = New System.Drawing.Size(100, 20)
+        Me.txtbandera.TabIndex = 16
+        Me.txtbandera.Text = "0"
+        Me.txtbandera.Visible = False
+        '
         'frmempleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.txtbandera)
         Me.Controls.Add(Me.batncancelar)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btneditar)
@@ -350,7 +350,6 @@ Partial Class frmempleado
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmempleado"
         Me.Text = "frmempleado"
-        CType(Me.picempleado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pandatossec.ResumeLayout(False)
         Me.pandatossec.PerformLayout()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).EndInit()
@@ -363,7 +362,6 @@ Partial Class frmempleado
     End Sub
 
     Friend WithEvents txtnombre As TextBox
-    Friend WithEvents picempleado As PictureBox
     Friend WithEvents txtedad As TextBox
     Friend WithEvents txtapellido As TextBox
     Friend WithEvents Label6 As Label
@@ -387,4 +385,5 @@ Partial Class frmempleado
     Friend WithEvents btnnuevo As Button
     Friend WithEvents erroricono As ErrorProvider
     Friend WithEvents txtfecha As MaskedTextBox
+    Friend WithEvents txtbandera As TextBox
 End Class

@@ -70,8 +70,8 @@
     End Sub
 
     Public Sub limpiar()
-        txtcodigo.Text = ""
         txtnombre.Text = ""
+        txtprecio.Text = ""
         txtdescripcion.Text = ""
         txtprecio.Text = ""
         txtstock.Text = ""
@@ -86,8 +86,8 @@
 
     Private Sub dgvlistado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellClick
         limpiar()
-        txtcodigo.Text = dgvlistado.SelectedCells.Item(0).Value.ToString.ToString
-        txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
+        txtnombre.Text = dgvlistado.SelectedCells.Item(0).Value.ToString.ToString
+        txtprecio.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
         txtdescripcion.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
         txtprecio.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
         txtstock.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
@@ -97,7 +97,7 @@
 
     End Sub
 
-    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
+    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtprecio.TextChanged
 
     End Sub
 End Class

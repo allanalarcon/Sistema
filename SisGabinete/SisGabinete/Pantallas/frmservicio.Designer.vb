@@ -23,10 +23,11 @@ Partial Class frmservicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.dgvlistado = New System.Windows.Forms.DataGridView()
         Me.pandatosprin = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.batncancelar = New System.Windows.Forms.Button()
@@ -49,7 +50,7 @@ Partial Class frmservicio
         Me.txtbuscar.Location = New System.Drawing.Point(94, 60)
         Me.txtbuscar.Name = "txtbuscar"
         Me.txtbuscar.Size = New System.Drawing.Size(347, 25)
-        Me.txtbuscar.TabIndex = 2
+        Me.txtbuscar.TabIndex = 0
         '
         'dgvlistado
         '
@@ -64,25 +65,37 @@ Partial Class frmservicio
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
-        Me.dgvlistado.TabIndex = 3
+        Me.dgvlistado.TabIndex = 1
         '
         'pandatosprin
         '
         Me.pandatosprin.BackColor = System.Drawing.Color.White
+        Me.pandatosprin.Controls.Add(Me.Label7)
         Me.pandatosprin.Controls.Add(Me.txtprecio)
         Me.pandatosprin.Controls.Add(Me.txtdescripcion)
         Me.pandatosprin.Location = New System.Drawing.Point(501, 60)
         Me.pandatosprin.Name = "pandatosprin"
-        Me.pandatosprin.Size = New System.Drawing.Size(463, 140)
+        Me.pandatosprin.Size = New System.Drawing.Size(463, 132)
         Me.pandatosprin.TabIndex = 7
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label7.Location = New System.Drawing.Point(133, 71)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(93, 37)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Precio"
         '
         'txtprecio
         '
@@ -112,7 +125,7 @@ Partial Class frmservicio
         Me.batncancelar.Location = New System.Drawing.Point(860, 269)
         Me.batncancelar.Name = "batncancelar"
         Me.batncancelar.Size = New System.Drawing.Size(104, 43)
-        Me.batncancelar.TabIndex = 21
+        Me.batncancelar.TabIndex = 8
         Me.batncancelar.Text = "Cancelar"
         Me.batncancelar.UseVisualStyleBackColor = True
         '
@@ -121,7 +134,7 @@ Partial Class frmservicio
         Me.btnguardar.Location = New System.Drawing.Point(623, 220)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(104, 43)
-        Me.btnguardar.TabIndex = 20
+        Me.btnguardar.TabIndex = 5
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = True
         '
@@ -130,7 +143,7 @@ Partial Class frmservicio
         Me.btneditar.Location = New System.Drawing.Point(623, 269)
         Me.btneditar.Name = "btneditar"
         Me.btneditar.Size = New System.Drawing.Size(104, 43)
-        Me.btneditar.TabIndex = 19
+        Me.btneditar.TabIndex = 6
         Me.btneditar.Text = "Editar"
         Me.btneditar.UseVisualStyleBackColor = True
         '
@@ -139,7 +152,7 @@ Partial Class frmservicio
         Me.btneliminar.Location = New System.Drawing.Point(743, 269)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(104, 43)
-        Me.btneliminar.TabIndex = 18
+        Me.btneliminar.TabIndex = 7
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = True
         '
@@ -148,7 +161,7 @@ Partial Class frmservicio
         Me.btnnuevo.Location = New System.Drawing.Point(501, 269)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(104, 43)
-        Me.btnnuevo.TabIndex = 17
+        Me.btnnuevo.TabIndex = 4
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = True
         '
@@ -193,4 +206,5 @@ Partial Class frmservicio
     Friend WithEvents btneliminar As Button
     Friend WithEvents btnnuevo As Button
     Friend WithEvents erroricono As ErrorProvider
+    Friend WithEvents Label7 As Label
 End Class
