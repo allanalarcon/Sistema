@@ -94,7 +94,6 @@ Public Class frmempleado
         txtdireccion.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
         txttelefono.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
         txtemail.Text = dgvlistado.SelectedCells.Item(5).Value.ToString
-        'falta imagen
         Dim fecha As String = dgvlistado.SelectedCells.Item(6).Value.ToString
         If Not fecha = "" Then
             txtfecha.Text = Format(dgvlistado.SelectedCells.Item(6).Value, "dd/MM/yyyy")
@@ -269,6 +268,28 @@ Public Class frmempleado
             frmventas.Visible = True
             frmcontenedor.pnpantallas.Controls.Add(frmventas)
             frmventas.Show()
+            Me.Close()
+        ElseIf txtbandera.Text = "2" Then
+            frmpago.txtidempleado.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
+            frmpago.txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
+            frmpago.txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+            txtbandera.Text = "0"
+            frmcontenedor.pnpantallas.Controls.Clear()
+            frmpago.TopLevel = False
+            frmpago.Visible = True
+            frmcontenedor.pnpantallas.Controls.Add(frmpago)
+            frmpago.Show()
+            Me.Close()
+        ElseIf txtbandera.Text = "3" Then
+            frmgenerarpago.txtidempleado.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
+            frmgenerarpago.txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
+            frmgenerarpago.txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+            txtbandera.Text = "0"
+            frmcontenedor.pnpantallas.Controls.Clear()
+            frmgenerarpago.TopLevel = False
+            frmgenerarpago.Visible = True
+            frmcontenedor.pnpantallas.Controls.Add(frmgenerarpago)
+            frmgenerarpago.Show()
             Me.Close()
         End If
     End Sub

@@ -23,7 +23,7 @@ Partial Class frmproducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pandatossec = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,19 +38,18 @@ Partial Class frmproducto
         Me.txtbandera = New System.Windows.Forms.TextBox()
         Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btbuscarv = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtapellidovendedor = New System.Windows.Forms.TextBox()
         Me.txtnombrevendedor = New System.Windows.Forms.TextBox()
         Me.txtproveedor = New System.Windows.Forms.TextBox()
-        Me.btbuscarv = New System.Windows.Forms.Button()
         Me.batncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btneditar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
-        Me.btbuscarp = New System.Windows.Forms.Button()
         Me.txtidproveedor = New System.Windows.Forms.TextBox()
         Me.txtidvendedor = New System.Windows.Forms.TextBox()
         Me.pandatossec.SuspendLayout()
@@ -131,12 +130,12 @@ Partial Class frmproducto
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
         Me.dgvlistado.TabIndex = 1
@@ -213,7 +212,6 @@ Partial Class frmproducto
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.btbuscarp)
         Me.Panel1.Controls.Add(Me.btbuscarv)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label8)
@@ -225,6 +223,16 @@ Partial Class frmproducto
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(463, 127)
         Me.Panel1.TabIndex = 18
+        '
+        'btbuscarv
+        '
+        Me.btbuscarv.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btbuscarv.Location = New System.Drawing.Point(418, 51)
+        Me.btbuscarv.Name = "btbuscarv"
+        Me.btbuscarv.Size = New System.Drawing.Size(25, 25)
+        Me.btbuscarv.TabIndex = 17
+        Me.btbuscarv.Text = "..."
+        Me.btbuscarv.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -286,23 +294,14 @@ Partial Class frmproducto
         '
         Me.txtproveedor.BackColor = System.Drawing.Color.White
         Me.txtproveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtproveedor.Enabled = False
         Me.txtproveedor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtproveedor.ForeColor = System.Drawing.Color.Black
         Me.txtproveedor.Location = New System.Drawing.Point(156, 20)
         Me.txtproveedor.MaxLength = 10
         Me.txtproveedor.Name = "txtproveedor"
-        Me.txtproveedor.Size = New System.Drawing.Size(256, 25)
+        Me.txtproveedor.Size = New System.Drawing.Size(287, 25)
         Me.txtproveedor.TabIndex = 4
-        '
-        'btbuscarv
-        '
-        Me.btbuscarv.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btbuscarv.Location = New System.Drawing.Point(418, 51)
-        Me.btbuscarv.Name = "btbuscarv"
-        Me.btbuscarv.Size = New System.Drawing.Size(25, 25)
-        Me.btbuscarv.TabIndex = 17
-        Me.btbuscarv.Text = "..."
-        Me.btbuscarv.UseVisualStyleBackColor = True
         '
         'batncancelar
         '
@@ -348,16 +347,6 @@ Partial Class frmproducto
         Me.btnnuevo.TabIndex = 19
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = True
-        '
-        'btbuscarp
-        '
-        Me.btbuscarp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btbuscarp.Location = New System.Drawing.Point(418, 20)
-        Me.btbuscarp.Name = "btbuscarp"
-        Me.btbuscarp.Size = New System.Drawing.Size(25, 25)
-        Me.btbuscarp.TabIndex = 18
-        Me.btbuscarp.Text = "..."
-        Me.btbuscarp.UseVisualStyleBackColor = True
         '
         'txtidproveedor
         '
@@ -433,7 +422,6 @@ Partial Class frmproducto
     Friend WithEvents btneditar As Button
     Friend WithEvents btneliminar As Button
     Friend WithEvents btnnuevo As Button
-    Friend WithEvents btbuscarp As Button
     Friend WithEvents txtidvendedor As TextBox
     Friend WithEvents txtidproveedor As TextBox
 End Class

@@ -1,13 +1,13 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class fpago
+Public Class fdetalleproducto
     Inherits conexion
     Dim cmd As New SqlCommand
 
     Public Function mostrar() As DataTable
         Try
             conectado()
-            cmd = New SqlCommand("mostrar_pagos")
+            cmd = New SqlCommand("mostrar_detalleproducto")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
@@ -28,17 +28,18 @@ Public Class fpago
         End Try
     End Function
 
-    Public Function ingresar(ByVal dts As vpago) As Boolean
+    Public Function ingresar(ByVal dts As vdetalleproducto) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("ingresar_pago")
+            cmd = New SqlCommand("ingresar_detallepoducto")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idempleado", dts.gidempleado)
-            cmd.Parameters.AddWithValue("@pago", dts.gpago)
-            cmd.Parameters.AddWithValue("@fechapago", dts.gfechapago)
+            cmd.Parameters.AddWithValue("@idventa", dts.gidventa)
+            cmd.Parameters.AddWithValue("@idproducto", dts.gidproducto)
+            cmd.Parameters.AddWithValue("@cantidad", dts.gcantidad)
+            cmd.Parameters.AddWithValue("@preciounitario", dts.gpreciounitario)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -54,18 +55,19 @@ Public Class fpago
         End Try
     End Function
 
-    Public Function editar(ByVal dts As vpago) As Boolean
+    Public Function editar(ByVal dts As vdetalleproducto) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("editar_pago")
+            cmd = New SqlCommand("editar_detalleproducto")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idpago", dts.gidpago)
-            cmd.Parameters.AddWithValue("@idempleado", dts.gidempleado)
-            cmd.Parameters.AddWithValue("@pago", dts.gpago)
-            cmd.Parameters.AddWithValue("@fechapago", dts.gfechapago)
+            cmd.Parameters.AddWithValue("@iddetalleproducto", dts.giddetalleproducto)
+            cmd.Parameters.AddWithValue("@idventa", dts.gidventa)
+            cmd.Parameters.AddWithValue("@idproducto", dts.gidproducto)
+            cmd.Parameters.AddWithValue("@cantidad", dts.gcantidad)
+            cmd.Parameters.AddWithValue("@preciounitario", dts.gpreciounitario)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -81,15 +83,15 @@ Public Class fpago
         End Try
     End Function
 
-    Public Function eliminar(ByVal dts As vpago) As Boolean
+    Public Function eliminar(ByVal dts As vventa) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("eliminar_pago")
+            cmd = New SqlCommand("eliminar_detalleproducto")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idpago", dts.gidpago)
+            cmd.Parameters.AddWithValue("@iddetalleproducto", dts.gidventa)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -105,77 +107,51 @@ Public Class fpago
         End Try
     End Function
 
-    Public Function obtener_fecha(ByVal dts As Integer) As Date
+    Public Function aumentar(ByVal dts As vdetalleproducto) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("obtener_fecha")
+            cmd = New SqlCommand("aumentar_stock")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idempleado", dts)
+            cmd.Parameters.AddWithValue("@idproducto", dts.gidproducto)
+            cmd.Parameters.AddWithValue("@cantidad", dts.gcantidad)
 
             If cmd.ExecuteNonQuery Then
-                Return cmd.ExecuteScalar
+                Return True
             Else
-                Return Nothing
+                Return False
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
-            Return Nothing
+            Return False
         Finally
             desconectado()
         End Try
     End Function
 
-    Public Function generar_tabla(ByVal dts As Integer, ByVal fecha1 As Date, ByVal fecha2 As Date) As DataTable
+    Public Function disminuir(ByVal dts As vdetalleproducto) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("generar_tabla")
+            cmd = New SqlCommand("disminuir_stock")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idempleado", dts)
-            cmd.Parameters.AddWithValue("@fechaultima", fecha1)
-            cmd.Parameters.AddWithValue("@fechaactual", fecha2)
+            cmd.Parameters.AddWithValue("@idproducto", dts.gidproducto)
+            cmd.Parameters.AddWithValue("@cantidad", dts.gcantidad)
 
             If cmd.ExecuteNonQuery Then
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter(cmd)
-                da.Fill(dt)
-                Return dt
+                Return True
             Else
-                Return Nothing
+                Return False
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            desconectado()
-        End Try
-    End Function
-
-    Public Function generar_total(ByVal dts As Integer, ByVal fecha1 As Date, ByVal fecha2 As Date) As Double
-        Try
-            conectado()
-            cmd = New SqlCommand("generar_total")
-            cmd.CommandType = CommandType.StoredProcedure
-
-            cmd.Connection = cn
-
-            cmd.Parameters.AddWithValue("@idempleado", dts)
-            cmd.Parameters.AddWithValue("@fechaultima", fecha1)
-            cmd.Parameters.AddWithValue("@fechaactual", fecha2)
-
-            If cmd.ExecuteNonQuery Then
-                Return cmd.ExecuteScalar
-            Else
-                Return Nothing
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Return Nothing
+            Return False
         Finally
             desconectado()
         End Try

@@ -1,4 +1,6 @@
-﻿Public Class frmproducto
+﻿Imports System.ComponentModel
+
+Public Class frmproducto
     Private dt As New DataTable
 
     Private Sub frmcliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -31,22 +33,23 @@
 
         'Ocultas
         dgvlistado.Columns("descripcion").Visible = False
-        dgvlistado.Columns("proveedor").Visible = False
         dgvlistado.Columns("nombre_vendedor").Visible = False
         dgvlistado.Columns("apellido_vendedor").Visible = False
+        dgvlistado.Columns("idproducto").Visible = False
 
         'Visibles
-        dgvlistado.Columns("idproducto").HeaderText = "Código"
-        dgvlistado.Columns("idproducto").Width = 30
 
         dgvlistado.Columns("producto").HeaderText = "Nombre"
         dgvlistado.Columns("producto").Width = 150
 
-        dgvlistado.Columns("precioventa").HeaderText = "Precio Unitario"
-        dgvlistado.Columns("precioventa").Width = 30
+        dgvlistado.Columns("proveedor").HeaderText = "Proveedor"
+        dgvlistado.Columns("proveedor").Width = 150
+
+        dgvlistado.Columns("precioventa").HeaderText = "Precio"
+        dgvlistado.Columns("precioventa").Width = 40
 
         dgvlistado.Columns("stock").HeaderText = "Stock"
-        dgvlistado.Columns("stock").Width = 30
+        dgvlistado.Columns("stock").Width = 40
 
     End Sub
 
@@ -86,21 +89,20 @@
 
     Private Sub dgvlistado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellClick
         limpiar()
-        txtnombre.Text = dgvlistado.SelectedCells.Item(0).Value.ToString.ToString
-        txtprecio.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
-        txtdescripcion.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
-        txtprecio.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
-        txtstock.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
+        txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString.ToString
+        txtdescripcion.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
+        txtprecio.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
+        txtstock.Text = dgvlistado.SelectedCells.Item(5).Value.ToString
         txtnombrevendedor.Text = dgvlistado.SelectedCells.Item(6).Value.ToString
         txtapellidovendedor.Text = dgvlistado.SelectedCells.Item(7).Value.ToString
-        txtproveedor.Text = dgvlistado.SelectedCells.Item(5).Value.ToString
+        txtproveedor.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
 
     End Sub
 
     Private Sub dgvlistado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellDoubleClick
         If txtbandera.Text = "1" Then
             frmventas.txtidproducto.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
-            frmventas.txtproducto.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+            frmventas.txtproducto.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
             frmventas.txtpreciop.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
             frmventas.txtstock.Text = dgvlistado.SelectedCells.Item(5).Value.ToString
             txtbandera.Text = "0"
@@ -120,5 +122,157 @@
         frmvendedor.Visible = True
         frmcontenedor.pnpantallas.Controls.Add(frmvendedor)
         frmvendedor.Show()
+    End Sub
+
+    Private Sub txtnombre_Validating(sender As Object, e As CancelEventArgs) Handles txtnombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtprecio_Validating(sender As Object, e As CancelEventArgs) Handles txtprecio.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtdescripcion_Validating(sender As Object, e As CancelEventArgs) Handles txtstock.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtstock_Validating(sender As Object, e As CancelEventArgs) Handles txtstock.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtnombrevendedor_Validating(sender As Object, e As CancelEventArgs) Handles txtnombrevendedor.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtapellidovendedor_Validating(sender As Object, e As CancelEventArgs) Handles txtnombrevendedor.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Campo Obligatorio")
+        End If
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        If Me.ValidateChildren = True And txtnombre.Text <> "" And txtprecio.Text <> "" And txtdescripcion.Text <> "" And txtstock.Text <> "" And txtnombrevendedor.Text <> "" And txtapellidovendedor.Text <> "" Then
+            Try
+                Dim dts As New vproducto
+                Dim func As New fproducto
+
+                dts.gnombre = txtnombre.Text
+                dts.gdescripcion = txtdescripcion.Text
+                dts.gprecioventa = txtprecio.Text
+                dts.gstock = txtstock.Text
+                dts.gidvendedor = txtidvendedor.Text
+
+                If func.ingresar(dts) Then
+                    MessageBox.Show("Registro completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    mostrar()
+                    limpiar()
+                Else
+                    MessageBox.Show("No se pudo completar el registro", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    mostrar()
+                    limpiar()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub btneditar_Click(sender As Object, e As EventArgs) Handles btneditar.Click
+
+        Dim result As DialogResult
+
+        result = MessageBox.Show("¿Desea modificar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+
+            If Me.ValidateChildren = True And txtnombre.Text <> "" And txtprecio.Text <> "" And txtdescripcion.Text <> "" And txtstock.Text <> "" And txtnombrevendedor.Text <> "" And txtapellidovendedor.Text <> "" Then
+                Try
+                    Dim dts As New vproducto
+                    Dim func As New fproducto
+
+                    dts.gidproducto = dgvlistado.SelectedCells.Item(0).Value.ToString
+                    dts.gnombre = txtnombre.Text
+                    dts.gdescripcion = txtdescripcion.Text
+                    dts.gprecioventa = txtprecio.Text
+                    dts.gstock = txtstock.Text
+                    dts.gidvendedor = txtidvendedor.Text
+
+                    If func.editar(dts) Then
+                        MessageBox.Show("Editar completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        mostrar()
+                        limpiar()
+                    Else
+                        MessageBox.Show("No se pudo completar la edición", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        mostrar()
+                        limpiar()
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+    End Sub
+
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+
+        Dim result As DialogResult
+
+        result = MessageBox.Show("¿Desea eliminar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+
+            If Me.ValidateChildren = True And txtnombre.Text <> "" And txtprecio.Text <> "" And txtdescripcion.Text <> "" And txtstock.Text <> "" And txtnombrevendedor.Text <> "" And txtapellidovendedor.Text <> "" Then
+                Try
+                    Dim dts As New vproducto
+                    Dim func As New fproducto
+
+                    dts.gidproducto = dgvlistado.SelectedCells.Item(0).Value
+
+                    If func.eliminar(dts) Then
+                        MessageBox.Show("Eliminar completado", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        mostrar()
+                        limpiar()
+                    Else
+                        MessageBox.Show("No se pudo completar la eliminación", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        mostrar()
+                        limpiar()
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
     End Sub
 End Class

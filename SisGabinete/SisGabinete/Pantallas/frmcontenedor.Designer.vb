@@ -23,10 +23,8 @@ Partial Class frmcontenedor
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnbotones = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btservicios = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btproductos = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btventas = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btempleados = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -39,21 +37,29 @@ Partial Class frmcontenedor
         Me.txtpassword = New System.Windows.Forms.TextBox()
         Me.txtuser = New System.Windows.Forms.TextBox()
         Me.pnpantallas = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btventas = New System.Windows.Forms.Button()
+        Me.pnbotones2 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btproductos = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.btservicios = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.btvendedor = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.btproveedor = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.pnbotones.SuspendLayout()
         Me.pnlogin.SuspendLayout()
+        Me.pnbotones2.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnbotones
         '
         Me.pnbotones.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.pnbotones.Controls.Add(Me.Label2)
+        Me.pnbotones.Controls.Add(Me.Button1)
         Me.pnbotones.Controls.Add(Me.Label5)
         Me.pnbotones.Controls.Add(Me.btventas)
-        Me.pnbotones.Controls.Add(Me.Label4)
-        Me.pnbotones.Controls.Add(Me.btservicios)
-        Me.pnbotones.Controls.Add(Me.Label2)
-        Me.pnbotones.Controls.Add(Me.btproductos)
         Me.pnbotones.Controls.Add(Me.Label1)
         Me.pnbotones.Controls.Add(Me.btempleados)
         Me.pnbotones.Controls.Add(Me.Label3)
@@ -63,59 +69,32 @@ Partial Class frmcontenedor
         Me.pnbotones.Size = New System.Drawing.Size(80, 621)
         Me.pnbotones.TabIndex = 0
         '
-        'Label4
+        'Label5
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(11, 390)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 17)
-        Me.Label4.TabIndex = 38
-        Me.Label4.Text = "Servicios"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(17, 82)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(48, 17)
+        Me.Label5.TabIndex = 40
+        Me.Label5.Text = "Ventas"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'btservicios
+        'btventas
         '
-        Me.btservicios.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.btservicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btservicios.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btservicios.FlatAppearance.BorderSize = 0
-        Me.btservicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btservicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btservicios.Location = New System.Drawing.Point(15, 337)
-        Me.btservicios.Name = "btservicios"
-        Me.btservicios.Size = New System.Drawing.Size(50, 50)
-        Me.btservicios.TabIndex = 4
-        Me.btservicios.UseVisualStyleBackColor = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(6, 313)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 17)
-        Me.Label2.TabIndex = 36
-        Me.Label2.Text = "Productos"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'btproductos
-        '
-        Me.btproductos.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.btproductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btproductos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btproductos.FlatAppearance.BorderSize = 0
-        Me.btproductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btproductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btproductos.Location = New System.Drawing.Point(15, 260)
-        Me.btproductos.Name = "btproductos"
-        Me.btproductos.Size = New System.Drawing.Size(50, 50)
-        Me.btproductos.TabIndex = 3
-        Me.btproductos.UseVisualStyleBackColor = False
+        Me.btventas.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btventas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btventas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btventas.FlatAppearance.BorderSize = 0
+        Me.btventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btventas.Location = New System.Drawing.Point(15, 29)
+        Me.btventas.Name = "btventas"
+        Me.btventas.Size = New System.Drawing.Size(50, 50)
+        Me.btventas.TabIndex = 39
+        Me.btventas.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -180,7 +159,7 @@ Partial Class frmcontenedor
         Me.pnlogin.Controls.Add(Me.Label10)
         Me.pnlogin.Controls.Add(Me.txtpassword)
         Me.pnlogin.Controls.Add(Me.txtuser)
-        Me.pnlogin.Location = New System.Drawing.Point(352, 245)
+        Me.pnlogin.Location = New System.Drawing.Point(392, 245)
         Me.pnlogin.Name = "pnlogin"
         Me.pnlogin.Size = New System.Drawing.Size(400, 131)
         Me.pnlogin.TabIndex = 4
@@ -256,38 +235,163 @@ Partial Class frmcontenedor
         Me.pnpantallas.Size = New System.Drawing.Size(1024, 621)
         Me.pnpantallas.TabIndex = 5
         '
-        'Label5
+        'pnbotones2
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(17, 82)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 17)
-        Me.Label5.TabIndex = 40
-        Me.Label5.Text = "Ventas"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.pnbotones2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.pnbotones2.Controls.Add(Me.Label6)
+        Me.pnbotones2.Controls.Add(Me.btproductos)
+        Me.pnbotones2.Controls.Add(Me.Label8)
+        Me.pnbotones2.Controls.Add(Me.btservicios)
+        Me.pnbotones2.Controls.Add(Me.Label11)
+        Me.pnbotones2.Controls.Add(Me.btvendedor)
+        Me.pnbotones2.Controls.Add(Me.Label12)
+        Me.pnbotones2.Controls.Add(Me.btproveedor)
+        Me.pnbotones2.Location = New System.Drawing.Point(1104, 0)
+        Me.pnbotones2.Name = "pnbotones2"
+        Me.pnbotones2.Size = New System.Drawing.Size(80, 621)
+        Me.pnbotones2.TabIndex = 6
         '
-        'btventas
+        'Label6
         '
-        Me.btventas.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.btventas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btventas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btventas.FlatAppearance.BorderSize = 0
-        Me.btventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btventas.Location = New System.Drawing.Point(15, 29)
-        Me.btventas.Name = "btventas"
-        Me.btventas.Size = New System.Drawing.Size(50, 50)
-        Me.btventas.TabIndex = 39
-        Me.btventas.UseVisualStyleBackColor = False
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(6, 82)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(70, 17)
+        Me.Label6.TabIndex = 40
+        Me.Label6.Text = "Productos"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btproductos
+        '
+        Me.btproductos.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btproductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btproductos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btproductos.FlatAppearance.BorderSize = 0
+        Me.btproductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btproductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btproductos.Location = New System.Drawing.Point(15, 29)
+        Me.btproductos.Name = "btproductos"
+        Me.btproductos.Size = New System.Drawing.Size(50, 50)
+        Me.btproductos.TabIndex = 39
+        Me.btproductos.UseVisualStyleBackColor = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(11, 313)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(61, 17)
+        Me.Label8.TabIndex = 36
+        Me.Label8.Text = "Servicios"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btservicios
+        '
+        Me.btservicios.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btservicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btservicios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btservicios.FlatAppearance.BorderSize = 0
+        Me.btservicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btservicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btservicios.Location = New System.Drawing.Point(15, 260)
+        Me.btservicios.Name = "btservicios"
+        Me.btservicios.Size = New System.Drawing.Size(50, 50)
+        Me.btservicios.TabIndex = 3
+        Me.btservicios.UseVisualStyleBackColor = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(1, 236)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(79, 17)
+        Me.Label11.TabIndex = 34
+        Me.Label11.Text = "Vendedores"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btvendedor
+        '
+        Me.btvendedor.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btvendedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btvendedor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btvendedor.FlatAppearance.BorderSize = 0
+        Me.btvendedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btvendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btvendedor.Location = New System.Drawing.Point(15, 183)
+        Me.btvendedor.Name = "btvendedor"
+        Me.btvendedor.Size = New System.Drawing.Size(50, 50)
+        Me.btvendedor.TabIndex = 2
+        Me.btvendedor.UseVisualStyleBackColor = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(-1, 159)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(84, 17)
+        Me.Label12.TabIndex = 32
+        Me.Label12.Text = "Proveedores"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btproveedor
+        '
+        Me.btproveedor.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btproveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btproveedor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btproveedor.FlatAppearance.BorderSize = 0
+        Me.btproveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btproveedor.Location = New System.Drawing.Point(15, 106)
+        Me.btproveedor.Name = "btproveedor"
+        Me.btproveedor.Size = New System.Drawing.Size(50, 50)
+        Me.btproveedor.TabIndex = 1
+        Me.btproveedor.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(17, 313)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 17)
+        Me.Label2.TabIndex = 42
+        Me.Label2.Text = "Pagos"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(15, 260)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(50, 50)
+        Me.Button1.TabIndex = 41
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'frmcontenedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1104, 621)
+        Me.ClientSize = New System.Drawing.Size(1184, 621)
+        Me.Controls.Add(Me.pnbotones2)
         Me.Controls.Add(Me.pnlogin)
         Me.Controls.Add(Me.pnbotones)
         Me.Controls.Add(Me.pnpantallas)
@@ -299,6 +403,8 @@ Partial Class frmcontenedor
         Me.pnbotones.PerformLayout()
         Me.pnlogin.ResumeLayout(False)
         Me.pnlogin.PerformLayout()
+        Me.pnbotones2.ResumeLayout(False)
+        Me.pnbotones2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -306,10 +412,6 @@ Partial Class frmcontenedor
     Friend WithEvents pnbotones As Panel
     Friend WithEvents btclientes As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents btservicios As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btproductos As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btempleados As Button
     Friend WithEvents pnlogin As Panel
@@ -322,4 +424,15 @@ Partial Class frmcontenedor
     Friend WithEvents pnpantallas As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents btventas As Button
+    Friend WithEvents pnbotones2 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btproductos As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents btservicios As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents btvendedor As Button
+    Friend WithEvents Label12 As Label
+    Friend WithEvents btproveedor As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class

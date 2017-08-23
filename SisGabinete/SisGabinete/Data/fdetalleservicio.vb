@@ -1,13 +1,13 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class fvendedor
+Public Class fdetalleservicio
     Inherits conexion
     Dim cmd As New SqlCommand
 
     Public Function mostrar() As DataTable
         Try
             conectado()
-            cmd = New SqlCommand("mostrar_vendedores")
+            cmd = New SqlCommand("mostrar_detalleservicio")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
@@ -28,19 +28,19 @@ Public Class fvendedor
         End Try
     End Function
 
-    Public Function ingresar(ByVal dts As vvendedor) As Boolean
+    Public Function ingresar(ByVal dts As vdetalleservicio) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("ingresar_vendedor")
+            cmd = New SqlCommand("ingresar_detalleservicio")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@nombre", dts.gnombre)
-            cmd.Parameters.AddWithValue("@apellido", dts.gapellido)
-            cmd.Parameters.AddWithValue("@celular", dts.gtelefono)
-            cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
-            cmd.Parameters.AddWithValue("@idproveedor", dts.gidproveedor)
+            cmd.Parameters.AddWithValue("@idventa", dts.gidventa)
+            cmd.Parameters.AddWithValue("@idservicio", dts.gidservicio)
+            cmd.Parameters.AddWithValue("@idempleado", dts.gidempleado)
+            cmd.Parameters.AddWithValue("@cantidad", dts.gcantidad)
+            cmd.Parameters.AddWithValue("@preciounitario", dts.gpreciounitario)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -56,20 +56,20 @@ Public Class fvendedor
         End Try
     End Function
 
-    Public Function editar(ByVal dts As vvendedor) As Boolean
+    Public Function editar(ByVal dts As vdetalleservicio) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("editar_vendedor")
+            cmd = New SqlCommand("editar_detalleservicio")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idvendedor", dts.gidvendedor)
-            cmd.Parameters.AddWithValue("@nombre", dts.gnombre)
-            cmd.Parameters.AddWithValue("@apellido", dts.gapellido)
-            cmd.Parameters.AddWithValue("@celular", dts.gtelefono)
-            cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
-            cmd.Parameters.AddWithValue("@idproveedor", dts.gidproveedor)
+            cmd.Parameters.AddWithValue("@iddetalleservicio", dts.giddetalleservicio)
+            cmd.Parameters.AddWithValue("@idventa", dts.gidventa)
+            cmd.Parameters.AddWithValue("@idservicio", dts.gidservicio)
+            cmd.Parameters.AddWithValue("@idempleado", dts.gidempleado)
+            cmd.Parameters.AddWithValue("@cantidad", dts.gcantidad)
+            cmd.Parameters.AddWithValue("@preciounitario", dts.gpreciounitario)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -85,15 +85,15 @@ Public Class fvendedor
         End Try
     End Function
 
-    Public Function eliminar(ByVal dts As vvendedor) As Boolean
+    Public Function eliminar(ByVal dts As vventa) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("eliminar_vendedor")
+            cmd = New SqlCommand("eliminar_detalleservicio")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
 
-            cmd.Parameters.AddWithValue("@idvendedor", dts.gidvendedor)
+            cmd.Parameters.AddWithValue("@iddetalleservicio", dts.gidventa)
 
             If cmd.ExecuteNonQuery Then
                 Return True

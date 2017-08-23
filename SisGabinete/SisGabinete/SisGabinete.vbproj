@@ -73,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\conexion.vb" />
+    <Compile Include="Data\fdetalleproducto.vb" />
+    <Compile Include="Data\fdetalleservicio.vb" />
     <Compile Include="Data\fproducto.vb" />
     <Compile Include="Data\fpago.vb" />
     <Compile Include="Data\fproveedor.vb" />
@@ -82,6 +84,8 @@
     <Compile Include="Data\fempleado.vb" />
     <Compile Include="Data\fservicio.vb" />
     <Compile Include="Data\fventa.vb" />
+    <Compile Include="Log\vdetalleproducto.vb" />
+    <Compile Include="Log\vdetalleservicio.vb" />
     <Compile Include="Log\vproducto.vb" />
     <Compile Include="Log\vpago.vb" />
     <Compile Include="Log\vempleado.vb" />
@@ -122,6 +126,12 @@
       <DependentUpon>frmempleado.vb</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\frmempleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmgenerarpago.Designer.vb">
+      <DependentUpon>frmgenerarpago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmgenerarpago.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantallas\frmpago.Designer.vb">
@@ -177,11 +187,17 @@
     <EmbeddedResource Include="Pantallas\frmempleado.resx">
       <DependentUpon>frmempleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmgenerarpago.resx">
+      <DependentUpon>frmgenerarpago.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmpago.resx">
       <DependentUpon>frmpago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmproducto.resx">
       <DependentUpon>frmproducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmproveedor.resx">
+      <DependentUpon>frmproveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmservicio.resx">
       <DependentUpon>frmservicio.vb</DependentUpon>

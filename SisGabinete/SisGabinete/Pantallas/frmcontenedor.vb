@@ -2,6 +2,7 @@
     Private Sub frmcontenedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnpantallas.Visible = False
         pnbotones.Visible = False
+        pnbotones2.Visible = False
     End Sub
 
     Private Sub btclientes_Click(sender As Object, e As EventArgs) Handles btclientes.Click
@@ -20,22 +21,6 @@
         frmempleado.Show()
     End Sub
 
-    Private Sub btproductos_Click(sender As Object, e As EventArgs) Handles btproductos.Click
-        pnpantallas.Controls.Clear()
-        frmproducto.TopLevel = False
-        frmproducto.Visible = True
-        pnpantallas.Controls.Add(frmproducto)
-        frmproducto.Show()
-    End Sub
-
-    Private Sub btservicios_Click(sender As Object, e As EventArgs) Handles btservicios.Click
-        pnpantallas.Controls.Clear()
-        frmservicio.TopLevel = False
-        frmservicio.Visible = True
-        pnpantallas.Controls.Add(frmservicio)
-        frmservicio.Show()
-    End Sub
-
     Private Sub iniciar(ByVal user As String, password As String)
         Try
             Dim dts As New vusuario
@@ -48,6 +33,7 @@
                 pnpantallas.Visible = True
                 pnbotones.Visible = True
                 pnlogin.Visible = False
+                pnbotones2.Visible = True
             Else
                 MsgBox("Credencial incorrecta", MsgBoxStyle.Information, "Acceso denegado al sistema")
                 txtpassword.Clear()
@@ -85,5 +71,45 @@
         frmventas.Visible = True
         pnpantallas.Controls.Add(frmventas)
         frmventas.Show()
+    End Sub
+
+    Private Sub btproveedor_Click(sender As Object, e As EventArgs) Handles btproveedor.Click
+        pnpantallas.Controls.Clear()
+        frmproveedor.TopLevel = False
+        frmproveedor.Visible = True
+        pnpantallas.Controls.Add(frmproveedor)
+        frmproveedor.Show()
+    End Sub
+
+    Private Sub btvendedor_Click(sender As Object, e As EventArgs) Handles btvendedor.Click
+        pnpantallas.Controls.Clear()
+        frmvendedor.TopLevel = False
+        frmvendedor.Visible = True
+        pnpantallas.Controls.Add(frmvendedor)
+        frmvendedor.Show()
+    End Sub
+
+    Private Sub btproductos_Click(sender As Object, e As EventArgs) Handles btproductos.Click
+        pnpantallas.Controls.Clear()
+        frmproducto.TopLevel = False
+        frmproducto.Visible = True
+        pnpantallas.Controls.Add(frmproducto)
+        frmproducto.Show()
+    End Sub
+
+    Private Sub btservicios_Click(sender As Object, e As EventArgs) Handles btservicios.Click
+        pnpantallas.Controls.Clear()
+        frmservicio.TopLevel = False
+        frmservicio.Visible = True
+        pnpantallas.Controls.Add(frmservicio)
+        frmservicio.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        pnpantallas.Controls.Clear()
+        frmpago.TopLevel = False
+        frmpago.Visible = True
+        pnpantallas.Controls.Add(frmpago)
+        frmpago.Show()
     End Sub
 End Class
