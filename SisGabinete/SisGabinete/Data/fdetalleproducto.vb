@@ -31,7 +31,7 @@ Public Class fdetalleproducto
     Public Function ingresar(ByVal dts As vdetalleproducto) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("ingresar_detallepoducto")
+            cmd = New SqlCommand("ingresar_detalleproducto")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn

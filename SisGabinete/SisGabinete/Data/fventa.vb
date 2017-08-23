@@ -39,7 +39,7 @@ Public Class fventa
             cmd.Parameters.AddWithValue("@idcliente", dts.gidcliente)
             cmd.Parameters.AddWithValue("@reserva", dts.greserva)
             cmd.Parameters.AddWithValue("@fecha", dts.gfecha)
-            cmd.Parameters.AddWithValue("@hora", dts.ghora)
+            'cmd.Parameters.AddWithValue("@hora", Nothing)
             cmd.Parameters.AddWithValue("@total", dts.gtotal)
 
             If cmd.ExecuteNonQuery Then
@@ -68,7 +68,7 @@ Public Class fventa
             cmd.Parameters.AddWithValue("@idcliente", dts.gidcliente)
             cmd.Parameters.AddWithValue("@reserva", dts.greserva)
             cmd.Parameters.AddWithValue("@fecha", dts.gfecha)
-            cmd.Parameters.AddWithValue("@hora", dts.ghora)
+            'cmd.Parameters.AddWithValue("@hora", Nothing)
             cmd.Parameters.AddWithValue("@total", dts.gtotal)
 
             If cmd.ExecuteNonQuery Then

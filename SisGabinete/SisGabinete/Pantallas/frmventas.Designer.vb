@@ -22,9 +22,9 @@ Partial Class frmventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.batncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btneditar = New System.Windows.Forms.Button()
@@ -72,6 +72,8 @@ Partial Class frmventas
         Me.dgvservicios = New System.Windows.Forms.DataGridView()
         Me.txtidproducto = New System.Windows.Forms.TextBox()
         Me.dgvproductos = New System.Windows.Forms.DataGridView()
+        Me.txtidventa = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.pandatossec.SuspendLayout()
         CType(Me.txtcantidads, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
@@ -288,11 +290,11 @@ Partial Class frmventas
         '
         Me.txthora.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txthora.Location = New System.Drawing.Point(279, 99)
-        Me.txthora.Mask = "00:00"
+        Me.txthora.Mask = "00:00:00"
         Me.txthora.Name = "txthora"
         Me.txthora.Size = New System.Drawing.Size(164, 25)
         Me.txthora.TabIndex = 14
-        Me.txthora.ValidatingType = GetType(Date)
+        Me.txthora.Visible = False
         '
         'Label9
         '
@@ -304,6 +306,7 @@ Partial Class frmventas
         Me.Label9.Size = New System.Drawing.Size(38, 17)
         Me.Label9.TabIndex = 13
         Me.Label9.Text = "Hora"
+        Me.Label9.Visible = False
         '
         'Label8
         '
@@ -413,33 +416,33 @@ Partial Class frmventas
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle19
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(463, 296)
         Me.dgvlistado.TabIndex = 1
         '
         'txtidcliente
         '
-        Me.txtidcliente.Location = New System.Drawing.Point(450, 34)
+        Me.txtidcliente.Location = New System.Drawing.Point(423, 34)
         Me.txtidcliente.Name = "txtidcliente"
         Me.txtidcliente.Size = New System.Drawing.Size(100, 20)
         Me.txtidcliente.TabIndex = 24
         '
         'txtidempleado
         '
-        Me.txtidempleado.Location = New System.Drawing.Point(556, 34)
+        Me.txtidempleado.Location = New System.Drawing.Point(652, 34)
         Me.txtidempleado.Name = "txtidempleado"
         Me.txtidempleado.Size = New System.Drawing.Size(100, 20)
         Me.txtidempleado.TabIndex = 25
         '
         'txtidservicio
         '
-        Me.txtidservicio.Location = New System.Drawing.Point(662, 34)
+        Me.txtidservicio.Location = New System.Drawing.Point(758, 34)
         Me.txtidservicio.Name = "txtidservicio"
         Me.txtidservicio.Size = New System.Drawing.Size(100, 20)
         Me.txtidservicio.TabIndex = 26
@@ -582,19 +585,19 @@ Partial Class frmventas
         Me.dgvservicios.Name = "dgvservicios"
         Me.dgvservicios.ReadOnly = True
         Me.dgvservicios.RowHeadersVisible = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvservicios.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvservicios.RowsDefaultCellStyle = DataGridViewCellStyle20
         Me.dgvservicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvservicios.Size = New System.Drawing.Size(381, 106)
         Me.dgvservicios.TabIndex = 29
         '
         'txtidproducto
         '
-        Me.txtidproducto.Location = New System.Drawing.Point(768, 34)
+        Me.txtidproducto.Location = New System.Drawing.Point(864, 34)
         Me.txtidproducto.Name = "txtidproducto"
         Me.txtidproducto.Size = New System.Drawing.Size(100, 20)
         Me.txtidproducto.TabIndex = 30
@@ -612,21 +615,39 @@ Partial Class frmventas
         Me.dgvproductos.Name = "dgvproductos"
         Me.dgvproductos.ReadOnly = True
         Me.dgvproductos.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvproductos.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvproductos.RowsDefaultCellStyle = DataGridViewCellStyle21
         Me.dgvproductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvproductos.Size = New System.Drawing.Size(381, 106)
         Me.dgvproductos.TabIndex = 31
+        '
+        'txtidventa
+        '
+        Me.txtidventa.Location = New System.Drawing.Point(60, 34)
+        Me.txtidventa.Name = "txtidventa"
+        Me.txtidventa.Size = New System.Drawing.Size(100, 20)
+        Me.txtidventa.TabIndex = 32
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(168, 567)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.txtidventa)
         Me.Controls.Add(Me.dgvproductos)
         Me.Controls.Add(Me.txtidproducto)
         Me.Controls.Add(Me.Panel1)
@@ -712,4 +733,6 @@ Partial Class frmventas
     Friend WithEvents dgvservicios As DataGridView
     Friend WithEvents txtidproducto As TextBox
     Friend WithEvents dgvproductos As DataGridView
+    Friend WithEvents txtidventa As TextBox
+    Friend WithEvents Button1 As Button
 End Class

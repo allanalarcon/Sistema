@@ -55,15 +55,80 @@ Public Class frmventas
         frmproducto.Show()
     End Sub
 
+    Private Sub modificar_columnas()
+
+        dgvlistado.CurrentRow.Selected = False
+
+
+        'Ocultas
+        dgvlistado.Columns("idventa").Visible = False
+        dgvlistado.Columns("idcliente").Visible = False
+        dgvlistado.Columns("fecha").Visible = False
+        dgvlistado.Columns("hora").Visible = False
+
+        'Visibles
+        dgvlistado.Columns("nombre").HeaderText = "Nombres"
+        dgvlistado.Columns("nombre").Width = 150
+        dgvlistado.Columns("apellido").HeaderText = "Apellidos"
+        dgvlistado.Columns("apellido").Width = 150
+        dgvlistado.Columns("total").HeaderText = "Total"
+        dgvlistado.Columns("total").Width = 80
+
+    End Sub
+
+    Private Sub modificar_columnasservicios()
+
+        dgvservicios.CurrentRow.Selected = False
+
+        'Ocultas
+        dgvservicios.Columns("iddetalleservicio").Visible = False
+        dgvservicios.Columns("idventa").Visible = False
+        dgvservicios.Columns("idempleado").Visible = False
+        dgvservicios.Columns("idservicio").Visible = False
+        dgvservicios.Columns("nombre").Visible = False
+        dgvservicios.Columns("apellido").Visible = False
+
+        'Visibles
+        dgvservicios.Columns("descripcion").HeaderText = "Descripción"
+        dgvservicios.Columns("descripcion").Width = 150
+        dgvservicios.Columns("cantidad").HeaderText = "Cantidad"
+        dgvservicios.Columns("cantidad").Width = 150
+        dgvservicios.Columns("preciounitario").HeaderText = "Precio Unitario"
+        dgvservicios.Columns("preciounitario").Width = 80
+    End Sub
+
+    Private Sub modificar_columnasproductos()
+
+
+        dgvproductos.CurrentRow.Selected = False
+
+        'Ocultas
+        dgvproductos.Columns("iddetalleproducto").Visible = False
+        dgvproductos.Columns("idventa").Visible = False
+        dgvproductos.Columns("idproducto").Visible = False
+
+        'Visibles
+
+        dgvproductos.Columns("nombre").HeaderText = "Nombre"
+        dgvproductos.Columns("nombre").Width = 150
+        dgvproductos.Columns("cantidad").HeaderText = "Cantidad"
+        dgvproductos.Columns("cantidad").Width = 150
+        dgvproductos.Columns("preciounitario").HeaderText = "Precio Unitario"
+        dgvproductos.Columns("preciounitario").Width = 80
+
+    End Sub
+
+
+
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
-        If Me.ValidateChildren = True And txtidcliente.Text <> "" And txtnombrec.Text <> "" And txthora.Text <> "  :" Then
+        If Me.ValidateChildren = True And txtidcliente.Text <> "" And txtnombrec.Text <> "" Then
             Try
                 Dim dts As New vventa
                 Dim func As New fventa
 
                 dts.gidcliente = txtidcliente.Text
                 dts.gfecha = Format(dtpfecha.Value, "dd/MM/yyyy")
-                dts.ghora = txthora.Text
+                'dts.ghora = Nothing
                 dts.gtotal = 0
                 dts.greserva = 0
 
@@ -97,11 +162,47 @@ Public Class frmventas
                 dgvlistado.DataSource = dt
                 txtbuscar.Enabled = True
                 dgvlistado.ColumnHeadersVisible = True
-                'modificar_columnas()
+                modificar_columnas()
             Else
                 dgvlistado.DataSource = Nothing
                 txtbuscar.Enabled = False
                 dgvlistado.ColumnHeadersVisible = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub mostrarservicios()
+        Try
+            Dim func As New fdetalleservicio
+            dt = func.mostrar()
+
+            If dt.Rows.Count <> 0 Then
+                dgvservicios.DataSource = dt
+                dgvservicios.ColumnHeadersVisible = True
+                modificar_columnasservicios()
+            Else
+                dgvservicios.DataSource = Nothing
+                dgvservicios.ColumnHeadersVisible = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub mostrarproductos()
+        Try
+            Dim func As New fdetalleproducto
+            dt = func.mostrar()
+
+            If dt.Rows.Count <> 0 Then
+                dgvproductos.DataSource = dt
+                dgvproductos.ColumnHeadersVisible = True
+                modificar_columnasproductos()
+            Else
+                dgvproductos.DataSource = Nothing
+                dgvproductos.ColumnHeadersVisible = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -118,7 +219,7 @@ Public Class frmventas
 
             If dv.Count <> 0 Then
                 dgvlistado.DataSource = dv
-                'modificar_columnas()
+                modificar_columnas()
             Else
                 dgvlistado.DataSource = Nothing
             End If
@@ -153,5 +254,107 @@ Public Class frmventas
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
         buscar()
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+    End Sub
+
+    Private Sub dgvlistado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellContentClick
+        limpiar()
+        txtidventa.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
+        txtidcliente.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
+        txtnombrec.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+        txtapellidoc.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
+        Dim fecha As String = dgvlistado.SelectedCells.Item(4).Value.ToString
+        If Not fecha = "" Then
+            dtpfecha.Text = Format(dgvlistado.SelectedCells.Item(4).Value, "dd/MM/yyyy")
+        End If
+    End Sub
+
+    Private Sub btagregars_Click(sender As Object, e As EventArgs) Handles btagregars.Click
+        If Me.ValidateChildren = True And txtidventa.Text <> "" And txtempleado.Text <> "" And txtservicio.Text <> "" And txtcantidads.Text <> "" And txtprecios.Text <> "" Then
+            Try
+                Dim dts As New vdetalleservicio
+                Dim func As New fdetalleservicio
+
+                dts.gidventa = txtidventa.Text
+                dts.gidservicio = txtidservicio.Text
+                dts.gidempleado = txtidempleado.Text
+                dts.gcantidad = txtcantidads.Text
+                dts.gpreciounitario = txtprecios.Text
+
+                If func.ingresar(dts) Then
+                    mostrar()
+                    mostrarservicios()
+                    txtempleado.Text = ""
+                    txtservicio.Text = ""
+                    txtprecios.Text = ""
+                    txtidservicio.Text = ""
+                    txtcantidads.Text = "1"
+                    txtidempleado.Text = ""
+                    txtidservicio.Text = ""
+
+                Else
+                    MessageBox.Show("No se pudo completar el registro", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    mostrarservicios()
+                    mostrar()
+                    txtempleado.Text = ""
+                    txtservicio.Text = ""
+                    txtprecios.Text = ""
+                    txtidservicio.Text = ""
+                    txtcantidads.Text = "1"
+                    txtidempleado.Text = ""
+                    txtidservicio.Text = ""
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub btagregarp_Click(sender As Object, e As EventArgs) Handles btagregarp.Click
+        If Me.ValidateChildren = True And txtidventa.Text <> "" And txtproducto.Text <> "" And txtcantidadp.Text <> "" And txtpreciop.Text <> "" Then
+            Try
+                Dim dts As New vdetalleproducto
+                Dim func As New fdetalleproducto
+
+                dts.gidventa = txtidventa.Text
+                dts.gidproducto = txtidproducto.Text
+                dts.gcantidad = txtcantidadp.Text
+                dts.gpreciounitario = txtpreciop.Text
+
+                If func.ingresar(dts) Then
+                    mostrar()
+                    mostrarproductos()
+                    txtcantidadp.Text = ""
+                    txtproducto.Text = ""
+                    txtstock.Text = "1"
+                    txtpreciop.Text = ""
+                    txtcantidadp.Text = "1"
+                    txtidproducto.Text = ""
+                Else
+                    MessageBox.Show("No se pudo completar el registro", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    mostrar()
+                    mostrarproductos()
+                    txtcantidadp.Text = ""
+                    txtproducto.Text = ""
+                    txtstock.Text = "1"
+                    txtpreciop.Text = ""
+                    txtcantidadp.Text = "1"
+                    txtidproducto.Text = ""
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        txtnombrec.Text = txthora.Text
     End Sub
 End Class
