@@ -41,4 +41,8 @@
             End If
         End If
     End Sub
+
+    Private Sub btcancelar_Click(sender As Object, e As EventArgs) Handles btcancelar.Click
+        frmcontenedor.pnpantallas.Controls.Clear()
+    End Sub
 End Class

@@ -45,7 +45,7 @@ Public Class frmpago
         btngenerar.Enabled = True
     End Sub
 
-    Private Sub mostrar()
+    Public Sub mostrar()
         Try
             Dim func As New fpago
             dt = func.mostrar()

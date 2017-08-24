@@ -25,6 +25,7 @@ Partial Class frmgenerarpago
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pandatosprin = New System.Windows.Forms.Panel()
+        Me.txtultimalabel = New System.Windows.Forms.TextBox()
         Me.btgenerar = New System.Windows.Forms.Button()
         Me.txtapellido = New System.Windows.Forms.TextBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
@@ -42,6 +43,8 @@ Partial Class frmgenerarpago
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.txtultima = New System.Windows.Forms.TextBox()
         Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtactual = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.pandatosprin.SuspendLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +55,8 @@ Partial Class frmgenerarpago
         'pandatosprin
         '
         Me.pandatosprin.BackColor = System.Drawing.Color.White
+        Me.pandatosprin.Controls.Add(Me.Label2)
+        Me.pandatosprin.Controls.Add(Me.txtultimalabel)
         Me.pandatosprin.Controls.Add(Me.btgenerar)
         Me.pandatosprin.Controls.Add(Me.txtapellido)
         Me.pandatosprin.Controls.Add(Me.txtnombre)
@@ -64,6 +69,17 @@ Partial Class frmgenerarpago
         Me.pandatosprin.Name = "pandatosprin"
         Me.pandatosprin.Size = New System.Drawing.Size(904, 131)
         Me.pandatosprin.TabIndex = 18
+        '
+        'txtultimalabel
+        '
+        Me.txtultimalabel.BackColor = System.Drawing.Color.White
+        Me.txtultimalabel.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtultimalabel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtultimalabel.Location = New System.Drawing.Point(595, 89)
+        Me.txtultimalabel.Name = "txtultimalabel"
+        Me.txtultimalabel.ReadOnly = True
+        Me.txtultimalabel.Size = New System.Drawing.Size(100, 18)
+        Me.txtultimalabel.TabIndex = 25
         '
         'btgenerar
         '
@@ -78,23 +94,25 @@ Partial Class frmgenerarpago
         'txtapellido
         '
         Me.txtapellido.BackColor = System.Drawing.Color.White
-        Me.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtapellido.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellido.ForeColor = System.Drawing.Color.Black
         Me.txtapellido.Location = New System.Drawing.Point(430, 37)
         Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(404, 43)
+        Me.txtapellido.ReadOnly = True
+        Me.txtapellido.Size = New System.Drawing.Size(404, 36)
         Me.txtapellido.TabIndex = 14
         '
         'txtnombre
         '
         Me.txtnombre.BackColor = System.Drawing.Color.White
-        Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtnombre.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.ForeColor = System.Drawing.Color.Black
         Me.txtnombre.Location = New System.Drawing.Point(20, 37)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(404, 43)
+        Me.txtnombre.ReadOnly = True
+        Me.txtnombre.Size = New System.Drawing.Size(404, 36)
         Me.txtnombre.TabIndex = 13
         '
         'Label8
@@ -153,6 +171,7 @@ Partial Class frmgenerarpago
         Me.txtidempleado.Name = "txtidempleado"
         Me.txtidempleado.Size = New System.Drawing.Size(100, 20)
         Me.txtidempleado.TabIndex = 19
+        Me.txtidempleado.Visible = False
         '
         'dgvlistado
         '
@@ -213,18 +232,18 @@ Partial Class frmgenerarpago
         '
         'btnguardar
         '
-        Me.btnguardar.Location = New System.Drawing.Point(672, 506)
+        Me.btnguardar.Location = New System.Drawing.Point(672, 509)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(104, 43)
+        Me.btnguardar.Size = New System.Drawing.Size(104, 37)
         Me.btnguardar.TabIndex = 22
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = True
         '
         'btnnuevo
         '
-        Me.btnnuevo.Location = New System.Drawing.Point(562, 506)
+        Me.btnnuevo.Location = New System.Drawing.Point(552, 509)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(104, 43)
+        Me.btnnuevo.Size = New System.Drawing.Size(104, 37)
         Me.btnnuevo.TabIndex = 23
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = True
@@ -235,16 +254,37 @@ Partial Class frmgenerarpago
         Me.txtultima.Name = "txtultima"
         Me.txtultima.Size = New System.Drawing.Size(100, 20)
         Me.txtultima.TabIndex = 24
+        Me.txtultima.Visible = False
         '
         'erroricono
         '
         Me.erroricono.ContainerControl = Me
+        '
+        'txtactual
+        '
+        Me.txtactual.Location = New System.Drawing.Point(679, 34)
+        Me.txtactual.Name = "txtactual"
+        Me.txtactual.Size = New System.Drawing.Size(100, 20)
+        Me.txtactual.TabIndex = 25
+        Me.txtactual.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(506, 90)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(83, 17)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "Último pago"
         '
         'frmgenerarpago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.txtactual)
         Me.Controls.Add(Me.txtultima)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.btnguardar)
@@ -286,4 +326,7 @@ Partial Class frmgenerarpago
     Friend WithEvents btnnuevo As Button
     Friend WithEvents txtultima As TextBox
     Friend WithEvents erroricono As ErrorProvider
+    Friend WithEvents txtactual As TextBox
+    Friend WithEvents txtultimalabel As TextBox
+    Friend WithEvents Label2 As Label
 End Class
