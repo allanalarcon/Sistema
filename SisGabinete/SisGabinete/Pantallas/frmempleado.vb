@@ -3,9 +3,75 @@
 Public Class frmempleado
 
     Private dt As New DataTable
+    Dim save_edit As New Integer
 
+    Private Sub bloqueartext()
+        txtnombre.BorderStyle = BorderStyle.None
+        txtapellido.BorderStyle = BorderStyle.None
+        txtcedula.BorderStyle = BorderStyle.None
+        txtdireccion.BorderStyle = BorderStyle.None
+        txttelefono.BorderStyle = BorderStyle.None
+        txtemail.BorderStyle = BorderStyle.None
+        txtfecha.BorderStyle = BorderStyle.None
+        txtedad.BorderStyle = BorderStyle.None
+
+        txtnombre.ReadOnly = True
+        txtapellido.ReadOnly = True
+        txtcedula.ReadOnly = True
+        txtdireccion.ReadOnly = True
+        txttelefono.ReadOnly = True
+        txtemail.ReadOnly = True
+        txtfecha.ReadOnly = True
+        txtedad.ReadOnly = True
+
+        txtfecha.BackColor = Color.White
+        txtedad.Visible = True
+        laedad.Visible = True
+    End Sub
+
+    Private Sub bloquearbtn()
+        btnguardar.Enabled = False
+        btncancelar.Enabled = False
+        btneliminar.Enabled = False
+        btneditar.Enabled = False
+        btnnuevo.Enabled = False
+    End Sub
+
+    Private Sub desbloqueartext()
+        txtnombre.BorderStyle = BorderStyle.FixedSingle
+        txtapellido.BorderStyle = BorderStyle.FixedSingle
+        txtcedula.BorderStyle = BorderStyle.FixedSingle
+        txtdireccion.BorderStyle = BorderStyle.FixedSingle
+        txttelefono.BorderStyle = BorderStyle.FixedSingle
+        txtemail.BorderStyle = BorderStyle.FixedSingle
+        txtfecha.BorderStyle = BorderStyle.FixedSingle
+        txtedad.BorderStyle = BorderStyle.FixedSingle
+
+        txtnombre.ReadOnly = False
+        txtapellido.ReadOnly = False
+        txtcedula.ReadOnly = False
+        txtdireccion.ReadOnly = False
+        txttelefono.ReadOnly = False
+        txtemail.ReadOnly = False
+        txtfecha.ReadOnly = False
+        txtedad.ReadOnly = False
+
+        txtedad.Visible = False
+        laedad.Visible = False
+    End Sub
+
+    Private Sub desbloquearbtn()
+        btnguardar.Enabled = True
+        btncancelar.Enabled = True
+        btneliminar.Enabled = True
+        btneditar.Enabled = True
+        btnnuevo.Enabled = True
+    End Sub
     Private Sub frmempleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrar()
+        bloqueartext()
+        bloquearbtn()
+        btnnuevo.Enabled = True
     End Sub
 
     Private Sub mostrar()
@@ -99,6 +165,11 @@ Public Class frmempleado
             txtfecha.Text = Format(dgvlistado.SelectedCells.Item(6).Value, "dd/MM/yyyy")
             txtedad.Text = DateDiff(DateInterval.Year, dgvlistado.SelectedCells.Item(6).Value, Date.Now)
         End If
+        desbloquearbtn()
+        bloqueartext()
+        desbloquearbtn()
+        btnguardar.Enabled = False
+        btncancelar.Enabled = False
     End Sub
 
     Private Sub txtnombre_Validating(sender As Object, e As CancelEventArgs) Handles txtnombre.Validating
@@ -151,78 +222,93 @@ Public Class frmempleado
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
+        desbloqueartext()
+        save_edit = 1
+        desbloquearbtn()
+        btneditar.Enabled = False
+        btneliminar.Enabled = False
     End Sub
 
     Private Sub btneditar_Click(sender As Object, e As EventArgs) Handles btneditar.Click
-        Dim result As DialogResult
+        desbloqueartext()
+        save_edit = 0
+        desbloquearbtn()
+        btnnuevo.Enabled = False
+        btneliminar.Enabled = False
+    End Sub
 
-        result = MessageBox.Show("¿Desea modificar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-
-        If result = DialogResult.OK Then
-
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        If save_edit = 1 Then
             If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" And txtdireccion.Text <> "" And txttelefono.Text <> "" And txtcedula.Text <> "" Then
                 Try
                     Dim dts As New vempleado
                     Dim func As New fempleado
 
-                    dts.gidempleado = dgvlistado.SelectedCells.Item(0).Value
                     dts.gnombre = txtnombre.Text
                     dts.gapellido = txtapellido.Text
                     dts.gdireccion = txtdireccion.Text
                     dts.gtelefono = txttelefono.Text
                     dts.gemail = txtemail.Text
-                    dts.gfechanacimiento = txtfecha.Text
+                    dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
                     dts.gcedula = txtcedula.Text
-                    dts.gtipo = dgvlistado.SelectedCells.Item(8).Value.ToString
+                    dts.gtipo = 0
 
-
-                    If func.editar(dts) Then
-                        MessageBox.Show("Editar completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    If func.ingresar(dts) Then
+                        MessageBox.Show("Registro completado.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         mostrar()
                         limpiar()
+                        bloqueartext()
+                        bloquearbtn()
+                        btnnuevo.Enabled = True
                     Else
-                        MessageBox.Show("No se pudo completar la edición", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        mostrar()
-                        limpiar()
+                        MessageBox.Show("No se pudo completar el registro.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             Else
-                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
-        End If
-    End Sub
+        ElseIf save_edit = 0 Then
+            Dim result As DialogResult
 
-    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
-        If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" And txtdireccion.Text <> "" And txttelefono.Text <> "" And txtcedula.Text <> "" Then
-            Try
-                Dim dts As New vempleado
-                Dim func As New fempleado
+            result = MessageBox.Show("¿Desea modificar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
 
-                dts.gnombre = txtnombre.Text
-                dts.gapellido = txtapellido.Text
-                dts.gdireccion = txtdireccion.Text
-                dts.gtelefono = txttelefono.Text
-                dts.gemail = txtemail.Text
-                dts.gfechanacimiento = Date.ParseExact(txtfecha.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
-                dts.gcedula = txtcedula.Text
-                dts.gtipo = 0
+            If result = DialogResult.OK Then
 
-                If func.ingresar(dts) Then
-                    MessageBox.Show("Registro completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    mostrar()
-                    limpiar()
+                If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" And txtdireccion.Text <> "" And txttelefono.Text <> "" And txtcedula.Text <> "" Then
+                    Try
+                        Dim dts As New vempleado
+                        Dim func As New fempleado
+
+                        dts.gidempleado = dgvlistado.SelectedCells.Item(0).Value
+                        dts.gnombre = txtnombre.Text
+                        dts.gapellido = txtapellido.Text
+                        dts.gdireccion = txtdireccion.Text
+                        dts.gtelefono = txttelefono.Text
+                        dts.gemail = txtemail.Text
+                        dts.gfechanacimiento = txtfecha.Text
+                        dts.gcedula = txtcedula.Text
+                        dts.gtipo = dgvlistado.SelectedCells.Item(8).Value.ToString
+
+
+                        If func.editar(dts) Then
+                            MessageBox.Show("Edición completada.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            mostrar()
+                            limpiar()
+                            bloqueartext()
+                            bloquearbtn()
+                            btnnuevo.Enabled = True
+                        Else
+                            MessageBox.Show("No se pudo completar la edición.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
                 Else
-                    MessageBox.Show("No se pudo completar el registro", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    mostrar()
-                    limpiar()
+                    MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Else
-            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         End If
     End Sub
 
@@ -241,19 +327,20 @@ Public Class frmempleado
                     dts.gidempleado = dgvlistado.SelectedCells.Item(0).Value
 
                     If func.eliminar(dts) Then
-                        MessageBox.Show("Eliminar completado", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show("Eliminar completado.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         mostrar()
                         limpiar()
+                        bloqueartext()
+                        bloquearbtn()
+                        btnnuevo.Enabled = True
                     Else
-                        MessageBox.Show("No se pudo completar la eliminación", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        mostrar()
-                        limpiar()
+                        MessageBox.Show("No se pudo completar la eliminación.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             Else
-                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
@@ -270,17 +357,6 @@ Public Class frmempleado
             frmventas.Show()
             Me.Close()
         ElseIf txtbandera.Text = "2" Then
-            frmpago.txtidempleado.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
-            frmpago.txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
-            frmpago.txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
-            txtbandera.Text = "0"
-            frmcontenedor.pnpantallas.Controls.Clear()
-            frmpago.TopLevel = False
-            frmpago.Visible = True
-            frmcontenedor.pnpantallas.Controls.Add(frmpago)
-            frmpago.Show()
-            Me.Close()
-        ElseIf txtbandera.Text = "3" Then
             frmgenerarpago.txtidempleado.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
             frmgenerarpago.txtnombre.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
             frmgenerarpago.txtapellido.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
@@ -292,5 +368,11 @@ Public Class frmempleado
             frmgenerarpago.Show()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
+        bloqueartext()
+        bloquearbtn()
+        btnnuevo.Enabled = True
     End Sub
 End Class

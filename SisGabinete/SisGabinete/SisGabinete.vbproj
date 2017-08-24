@@ -158,6 +158,12 @@
     <Compile Include="Pantallas\frmservicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantallas\frmusuario.Designer.vb">
+      <DependentUpon>frmusuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmusuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantallas\frmvendedor.Designer.vb">
       <DependentUpon>frmvendedor.vb</DependentUpon>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmservicio.resx">
       <DependentUpon>frmservicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmusuario.resx">
+      <DependentUpon>frmusuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmvendedor.resx">
       <DependentUpon>frmvendedor.vb</DependentUpon>

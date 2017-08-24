@@ -31,10 +31,6 @@ Partial Class frmcliente
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.piccliente = New System.Windows.Forms.PictureBox()
         Me.pandatossec = New System.Windows.Forms.Panel()
-        Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtedad = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -47,7 +43,7 @@ Partial Class frmcliente
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btneditar = New System.Windows.Forms.Button()
-        Me.batncancelar = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.txtbandera = New System.Windows.Forms.TextBox()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +105,7 @@ Partial Class frmcliente
         Me.txtapellido.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellido.ForeColor = System.Drawing.Color.Black
         Me.txtapellido.Location = New System.Drawing.Point(20, 69)
+        Me.txtapellido.MaxLength = 40
         Me.txtapellido.Name = "txtapellido"
         Me.txtapellido.Size = New System.Drawing.Size(423, 43)
         Me.txtapellido.TabIndex = 3
@@ -120,6 +117,7 @@ Partial Class frmcliente
         Me.txtnombre.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.ForeColor = System.Drawing.Color.Black
         Me.txtnombre.Location = New System.Drawing.Point(20, 20)
+        Me.txtnombre.MaxLength = 40
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(423, 43)
         Me.txtnombre.TabIndex = 2
@@ -135,10 +133,6 @@ Partial Class frmcliente
         'pandatossec
         '
         Me.pandatossec.BackColor = System.Drawing.Color.White
-        Me.pandatossec.Controls.Add(Me.txtfecha)
-        Me.pandatossec.Controls.Add(Me.Label6)
-        Me.pandatossec.Controls.Add(Me.txtedad)
-        Me.pandatossec.Controls.Add(Me.Label5)
         Me.pandatossec.Controls.Add(Me.Label4)
         Me.pandatossec.Controls.Add(Me.Label3)
         Me.pandatossec.Controls.Add(Me.Label2)
@@ -149,51 +143,8 @@ Partial Class frmcliente
         Me.pandatossec.Controls.Add(Me.txtcedula)
         Me.pandatossec.Location = New System.Drawing.Point(501, 222)
         Me.pandatossec.Name = "pandatossec"
-        Me.pandatossec.Size = New System.Drawing.Size(463, 220)
+        Me.pandatossec.Size = New System.Drawing.Size(463, 158)
         Me.pandatossec.TabIndex = 3
-        '
-        'txtfecha
-        '
-        Me.txtfecha.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtfecha.Location = New System.Drawing.Point(156, 144)
-        Me.txtfecha.Mask = "00/00/0000"
-        Me.txtfecha.Name = "txtfecha"
-        Me.txtfecha.Size = New System.Drawing.Size(287, 25)
-        Me.txtfecha.TabIndex = 8
-        Me.txtfecha.ValidatingType = GetType(Date)
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(17, 177)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(38, 17)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Edad"
-        '
-        'txtedad
-        '
-        Me.txtedad.BackColor = System.Drawing.Color.White
-        Me.txtedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtedad.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtedad.ForeColor = System.Drawing.Color.Black
-        Me.txtedad.Location = New System.Drawing.Point(156, 175)
-        Me.txtedad.Name = "txtedad"
-        Me.txtedad.Size = New System.Drawing.Size(287, 25)
-        Me.txtedad.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(17, 146)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(133, 17)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Fecha de nacimiento"
         '
         'Label4
         '
@@ -246,6 +197,7 @@ Partial Class frmcliente
         Me.txtemail.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtemail.ForeColor = System.Drawing.Color.Black
         Me.txtemail.Location = New System.Drawing.Point(156, 113)
+        Me.txtemail.MaxLength = 50
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(287, 25)
         Me.txtemail.TabIndex = 7
@@ -269,6 +221,7 @@ Partial Class frmcliente
         Me.txtdireccion.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdireccion.ForeColor = System.Drawing.Color.Black
         Me.txtdireccion.Location = New System.Drawing.Point(156, 51)
+        Me.txtdireccion.MaxLength = 60
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(287, 25)
         Me.txtdireccion.TabIndex = 5
@@ -291,46 +244,46 @@ Partial Class frmcliente
         '
         'btnnuevo
         '
-        Me.btnnuevo.Location = New System.Drawing.Point(501, 518)
+        Me.btnnuevo.Location = New System.Drawing.Point(501, 524)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(104, 43)
-        Me.btnnuevo.TabIndex = 10
+        Me.btnnuevo.Size = New System.Drawing.Size(104, 37)
+        Me.btnnuevo.TabIndex = 8
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = True
         '
         'btneliminar
         '
-        Me.btneliminar.Location = New System.Drawing.Point(743, 518)
+        Me.btneliminar.Location = New System.Drawing.Point(860, 481)
         Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(104, 43)
-        Me.btneliminar.TabIndex = 13
+        Me.btneliminar.Size = New System.Drawing.Size(104, 37)
+        Me.btneliminar.TabIndex = 12
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = True
         '
         'btneditar
         '
-        Me.btneditar.Location = New System.Drawing.Point(623, 518)
+        Me.btneditar.Location = New System.Drawing.Point(621, 524)
         Me.btneditar.Name = "btneditar"
-        Me.btneditar.Size = New System.Drawing.Size(104, 43)
-        Me.btneditar.TabIndex = 12
+        Me.btneditar.Size = New System.Drawing.Size(104, 37)
+        Me.btneditar.TabIndex = 9
         Me.btneditar.Text = "Editar"
         Me.btneditar.UseVisualStyleBackColor = True
         '
-        'batncancelar
+        'btncancelar
         '
-        Me.batncancelar.Location = New System.Drawing.Point(860, 518)
-        Me.batncancelar.Name = "batncancelar"
-        Me.batncancelar.Size = New System.Drawing.Size(104, 43)
-        Me.batncancelar.TabIndex = 14
-        Me.batncancelar.Text = "Cancelar"
-        Me.batncancelar.UseVisualStyleBackColor = True
+        Me.btncancelar.Location = New System.Drawing.Point(860, 524)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(104, 37)
+        Me.btncancelar.TabIndex = 11
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = True
         '
         'btnguardar
         '
-        Me.btnguardar.Location = New System.Drawing.Point(623, 469)
+        Me.btnguardar.Location = New System.Drawing.Point(741, 524)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(104, 43)
-        Me.btnguardar.TabIndex = 11
+        Me.btnguardar.Size = New System.Drawing.Size(104, 37)
+        Me.btnguardar.TabIndex = 10
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = True
         '
@@ -350,7 +303,7 @@ Partial Class frmcliente
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1024, 621)
         Me.Controls.Add(Me.txtbandera)
-        Me.Controls.Add(Me.batncancelar)
+        Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btneditar)
         Me.Controls.Add(Me.btneliminar)
@@ -382,7 +335,6 @@ Partial Class frmcliente
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents piccliente As PictureBox
     Friend WithEvents pandatossec As Panel
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -391,14 +343,11 @@ Partial Class frmcliente
     Friend WithEvents txttelefono As TextBox
     Friend WithEvents txtdireccion As TextBox
     Friend WithEvents txtcedula As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txtedad As TextBox
     Friend WithEvents erroricono As ErrorProvider
-    Friend WithEvents batncancelar As Button
+    Friend WithEvents btncancelar As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents btneditar As Button
     Friend WithEvents btneliminar As Button
     Friend WithEvents btnnuevo As Button
-    Friend WithEvents txtfecha As MaskedTextBox
     Friend WithEvents txtbandera As TextBox
 End Class

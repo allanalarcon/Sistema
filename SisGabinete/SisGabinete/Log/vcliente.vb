@@ -1,7 +1,6 @@
 ﻿Public Class vcliente
     Dim idcliente As Integer
     Dim nombre, apellido, direccion, telefono, email, cedula As String
-    Dim fechanacimiento As Date
 
     'Setter and getter
 
@@ -59,16 +58,6 @@
         End Set
     End Property
 
-    Public Property gfechanacimiento
-        Get
-            Return fechanacimiento
-
-        End Get
-        Set(ByVal value)
-            fechanacimiento = value
-        End Set
-    End Property
-
     Public Property gcedula
         Get
             Return cedula
@@ -84,14 +73,13 @@
 
     End Sub
 
-    Public Sub New(ByVal idcliente As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal email As String, ByVal fechanacimiento As Date, ByVal cedula As String)
+    Public Sub New(ByVal idcliente As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal email As String, ByVal cedula As String)
         gidcliente = idcliente
         gnombre = nombre
         gapellido = apellido
         gdireccion = direccion
         gtelefono = telefono
         gemail = email
-        gfechanacimiento = fechanacimiento
         gcedula = cedula
     End Sub
 End Class

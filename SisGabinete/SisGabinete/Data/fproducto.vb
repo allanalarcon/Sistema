@@ -102,7 +102,11 @@ Public Class fproducto
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            If ex.Message.ToString = "The DELETE statement conflicted with the REFERENCE constraint ""FK__detalle_p__idpro__3F115E1A"". The conflict occurred in database ""dbGabinete"", table ""dbo.detalle_producto"", column 'idproducto'." & vbNewLine & "The statement has been terminated." Then
+                MessageBox.Show("No se puede eliminar el producto. Existe en ventas registradas.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MsgBox(ex.Message)
+            End If
             Return False
         Finally
             desconectado()

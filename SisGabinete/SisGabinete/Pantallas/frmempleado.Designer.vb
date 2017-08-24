@@ -23,11 +23,11 @@ Partial Class frmempleado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtedad = New System.Windows.Forms.TextBox()
         Me.txtapellido = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.laedad = New System.Windows.Forms.Label()
         Me.pandatossec = New System.Windows.Forms.Panel()
         Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -42,7 +42,7 @@ Partial Class frmempleado
         Me.dgvlistado = New System.Windows.Forms.DataGridView()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.pandatosprin = New System.Windows.Forms.Panel()
-        Me.batncancelar = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btneditar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
@@ -62,6 +62,7 @@ Partial Class frmempleado
         Me.txtnombre.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.ForeColor = System.Drawing.Color.Black
         Me.txtnombre.Location = New System.Drawing.Point(20, 20)
+        Me.txtnombre.MaxLength = 40
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(423, 43)
         Me.txtnombre.TabIndex = 2
@@ -84,26 +85,27 @@ Partial Class frmempleado
         Me.txtapellido.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellido.ForeColor = System.Drawing.Color.Black
         Me.txtapellido.Location = New System.Drawing.Point(20, 69)
+        Me.txtapellido.MaxLength = 40
         Me.txtapellido.Name = "txtapellido"
         Me.txtapellido.Size = New System.Drawing.Size(423, 43)
         Me.txtapellido.TabIndex = 3
         '
-        'Label6
+        'laedad
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(17, 177)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(38, 17)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Edad"
+        Me.laedad.AutoSize = True
+        Me.laedad.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.laedad.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.laedad.Location = New System.Drawing.Point(17, 177)
+        Me.laedad.Name = "laedad"
+        Me.laedad.Size = New System.Drawing.Size(38, 17)
+        Me.laedad.TabIndex = 13
+        Me.laedad.Text = "Edad"
         '
         'pandatossec
         '
         Me.pandatossec.BackColor = System.Drawing.Color.White
         Me.pandatossec.Controls.Add(Me.txtfecha)
-        Me.pandatossec.Controls.Add(Me.Label6)
+        Me.pandatossec.Controls.Add(Me.laedad)
         Me.pandatossec.Controls.Add(Me.txtedad)
         Me.pandatossec.Controls.Add(Me.Label5)
         Me.pandatossec.Controls.Add(Me.Label4)
@@ -191,6 +193,7 @@ Partial Class frmempleado
         Me.txtemail.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtemail.ForeColor = System.Drawing.Color.Black
         Me.txtemail.Location = New System.Drawing.Point(156, 113)
+        Me.txtemail.MaxLength = 50
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(287, 25)
         Me.txtemail.TabIndex = 7
@@ -214,6 +217,7 @@ Partial Class frmempleado
         Me.txtdireccion.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdireccion.ForeColor = System.Drawing.Color.Black
         Me.txtdireccion.Location = New System.Drawing.Point(156, 51)
+        Me.txtdireccion.MaxLength = 60
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(287, 25)
         Me.txtdireccion.TabIndex = 5
@@ -243,12 +247,12 @@ Partial Class frmempleado
         Me.dgvlistado.Name = "dgvlistado"
         Me.dgvlistado.ReadOnly = True
         Me.dgvlistado.RowHeadersVisible = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(90, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(73, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvlistado.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlistado.Size = New System.Drawing.Size(381, 470)
         Me.dgvlistado.TabIndex = 1
@@ -274,47 +278,47 @@ Partial Class frmempleado
         Me.pandatosprin.Size = New System.Drawing.Size(463, 132)
         Me.pandatosprin.TabIndex = 6
         '
-        'batncancelar
+        'btncancelar
         '
-        Me.batncancelar.Location = New System.Drawing.Point(857, 518)
-        Me.batncancelar.Name = "batncancelar"
-        Me.batncancelar.Size = New System.Drawing.Size(104, 43)
-        Me.batncancelar.TabIndex = 14
-        Me.batncancelar.Text = "Cancelar"
-        Me.batncancelar.UseVisualStyleBackColor = True
+        Me.btncancelar.Location = New System.Drawing.Point(860, 524)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(104, 37)
+        Me.btncancelar.TabIndex = 13
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = True
         '
         'btnguardar
         '
-        Me.btnguardar.Location = New System.Drawing.Point(620, 469)
+        Me.btnguardar.Location = New System.Drawing.Point(741, 524)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(104, 43)
-        Me.btnguardar.TabIndex = 11
+        Me.btnguardar.Size = New System.Drawing.Size(104, 37)
+        Me.btnguardar.TabIndex = 12
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = True
         '
         'btneditar
         '
-        Me.btneditar.Location = New System.Drawing.Point(620, 518)
+        Me.btneditar.Location = New System.Drawing.Point(621, 524)
         Me.btneditar.Name = "btneditar"
-        Me.btneditar.Size = New System.Drawing.Size(104, 43)
-        Me.btneditar.TabIndex = 12
+        Me.btneditar.Size = New System.Drawing.Size(104, 37)
+        Me.btneditar.TabIndex = 11
         Me.btneditar.Text = "Editar"
         Me.btneditar.UseVisualStyleBackColor = True
         '
         'btneliminar
         '
-        Me.btneliminar.Location = New System.Drawing.Point(740, 518)
+        Me.btneliminar.Location = New System.Drawing.Point(860, 481)
         Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(104, 43)
-        Me.btneliminar.TabIndex = 13
+        Me.btneliminar.Size = New System.Drawing.Size(104, 37)
+        Me.btneliminar.TabIndex = 14
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = True
         '
         'btnnuevo
         '
-        Me.btnnuevo.Location = New System.Drawing.Point(498, 518)
+        Me.btnnuevo.Location = New System.Drawing.Point(501, 524)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(104, 43)
+        Me.btnnuevo.Size = New System.Drawing.Size(104, 37)
         Me.btnnuevo.TabIndex = 10
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = True
@@ -338,7 +342,7 @@ Partial Class frmempleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 621)
         Me.Controls.Add(Me.txtbandera)
-        Me.Controls.Add(Me.batncancelar)
+        Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btneditar)
         Me.Controls.Add(Me.btneliminar)
@@ -349,6 +353,7 @@ Partial Class frmempleado
         Me.Controls.Add(Me.pandatosprin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmempleado"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmempleado"
         Me.pandatossec.ResumeLayout(False)
         Me.pandatossec.PerformLayout()
@@ -364,7 +369,7 @@ Partial Class frmempleado
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents txtedad As TextBox
     Friend WithEvents txtapellido As TextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents laedad As Label
     Friend WithEvents pandatossec As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
@@ -378,7 +383,7 @@ Partial Class frmempleado
     Friend WithEvents dgvlistado As DataGridView
     Friend WithEvents txtbuscar As TextBox
     Friend WithEvents pandatosprin As Panel
-    Friend WithEvents batncancelar As Button
+    Friend WithEvents btncancelar As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents btneditar As Button
     Friend WithEvents btneliminar As Button

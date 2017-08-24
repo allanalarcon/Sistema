@@ -105,11 +105,27 @@
         frmservicio.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btpagos_Click(sender As Object, e As EventArgs) Handles btpagos.Click
         pnpantallas.Controls.Clear()
         frmpago.TopLevel = False
         frmpago.Visible = True
         pnpantallas.Controls.Add(frmpago)
         frmpago.Show()
+    End Sub
+
+    Private Sub btconfiguracion_Click(sender As Object, e As EventArgs) Handles btconfiguracion.Click
+        pnpantallas.Controls.Clear()
+        frmusuario.TopLevel = False
+        frmusuario.Visible = True
+        pnpantallas.Controls.Add(frmusuario)
+        frmusuario.Show()
+    End Sub
+
+    Private Sub btexit_Click(sender As Object, e As EventArgs) Handles btexit.Click
+        End
+    End Sub
+
+    Private Sub btminimizar_Click(sender As Object, e As EventArgs) Handles btminimizar.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

@@ -3,9 +3,53 @@
 Public Class frmproveedor
 
     Private dt As New DataTable
+    Dim save_edit As New Integer
+
+    Private Sub bloqueartext()
+        txtnombre.BorderStyle = BorderStyle.None
+        txtdireccion.BorderStyle = BorderStyle.None
+        txttelefono.BorderStyle = BorderStyle.None
+        txtemail.BorderStyle = BorderStyle.None
+
+        txtnombre.ReadOnly = True
+        txtdireccion.ReadOnly = True
+        txttelefono.ReadOnly = True
+        txtemail.ReadOnly = True
+    End Sub
+
+    Private Sub bloquearbtn()
+        btnguardar.Enabled = False
+        btncancelar.Enabled = False
+        btneliminar.Enabled = False
+        btneditar.Enabled = False
+        btnnuevo.Enabled = False
+    End Sub
+
+    Private Sub desbloqueartext()
+        txtnombre.BorderStyle = BorderStyle.FixedSingle
+        txtdireccion.BorderStyle = BorderStyle.FixedSingle
+        txttelefono.BorderStyle = BorderStyle.FixedSingle
+        txtemail.BorderStyle = BorderStyle.FixedSingle
+
+        txtnombre.ReadOnly = False
+        txtdireccion.ReadOnly = False
+        txttelefono.ReadOnly = False
+        txtemail.ReadOnly = False
+    End Sub
+
+    Private Sub desbloquearbtn()
+        btnguardar.Enabled = True
+        btncancelar.Enabled = True
+        btneliminar.Enabled = True
+        btneditar.Enabled = True
+        btnnuevo.Enabled = True
+    End Sub
 
     Private Sub frmproveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrar()
+        bloqueartext()
+        bloquearbtn()
+        btnnuevo.Enabled = True
     End Sub
 
     Private Sub mostrar()
@@ -84,6 +128,11 @@ Public Class frmproveedor
         txtdireccion.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
         txttelefono.Text = dgvlistado.SelectedCells.Item(3).Value.ToString
         txtemail.Text = dgvlistado.SelectedCells.Item(4).Value.ToString
+        desbloquearbtn()
+        bloqueartext()
+        desbloquearbtn()
+        btnguardar.Enabled = False
+        btncancelar.Enabled = False
     End Sub
 
     Private Sub txtnombre_Validating(sender As Object, e As CancelEventArgs) Handles txtnombre.Validating
@@ -104,75 +153,90 @@ Public Class frmproveedor
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
+        desbloqueartext()
+        save_edit = 1
+        desbloquearbtn()
+        btneditar.Enabled = False
+        btneliminar.Enabled = False
     End Sub
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
-        If Me.ValidateChildren = True And txtnombre.Text <> "" And txtdireccion.Text <> "" Then
-            Try
-                Dim dts As New vproveedor
-                Dim func As New fproveedor
-
-                dts.gnombre = txtnombre.Text
-                dts.gdireccion = txtdireccion.Text
-                dts.gtelefono = txttelefono.Text
-                dts.gemail = txtemail.Text
-
-                If func.ingresar(dts) Then
-                    MessageBox.Show("Registro completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    mostrar()
-                    limpiar()
-                Else
-                    MessageBox.Show("No se pudo completar el registro", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    mostrar()
-                    limpiar()
-                End If
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Else
-            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-
-    Private Sub btneditar_Click(sender As Object, e As EventArgs) Handles btneditar.Click
-
-        Dim result As DialogResult
-
-        result = MessageBox.Show("¿Desea modificar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-
-        If result = DialogResult.OK Then
-
+        txtbuscar.Select()
+        If save_edit = 1 Then
             If Me.ValidateChildren = True And txtnombre.Text <> "" And txtdireccion.Text <> "" Then
                 Try
                     Dim dts As New vproveedor
                     Dim func As New fproveedor
 
-                    dts.gidproveedor = dgvlistado.SelectedCells.Item(0).Value
                     dts.gnombre = txtnombre.Text
                     dts.gdireccion = txtdireccion.Text
                     dts.gtelefono = txttelefono.Text
                     dts.gemail = txtemail.Text
 
-                    If func.editar(dts) Then
-                        MessageBox.Show("Editar completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    If func.ingresar(dts) Then
+                        MessageBox.Show("Registro completado.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         mostrar()
                         limpiar()
+                        bloqueartext()
+                        bloquearbtn()
+                        btnnuevo.Enabled = True
                     Else
-                        MessageBox.Show("No se pudo completar la edición", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        mostrar()
-                        limpiar()
+                        MessageBox.Show("No se pudo completar el registro.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             Else
-                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        ElseIf save_edit = 0 Then
+            Dim result As DialogResult
+
+            result = MessageBox.Show("¿Desea modificar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+            If result = DialogResult.OK Then
+
+                If Me.ValidateChildren = True And txtnombre.Text <> "" And txtdireccion.Text <> "" Then
+                    Try
+                        Dim dts As New vproveedor
+                        Dim func As New fproveedor
+
+                        dts.gidproveedor = dgvlistado.SelectedCells.Item(0).Value
+                        dts.gnombre = txtnombre.Text
+                        dts.gdireccion = txtdireccion.Text
+                        dts.gtelefono = txttelefono.Text
+                        dts.gemail = txtemail.Text
+
+                        If func.editar(dts) Then
+                            MessageBox.Show("Edición completada.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            mostrar()
+                            limpiar()
+                            bloqueartext()
+                            bloquearbtn()
+                            btnnuevo.Enabled = True
+                        Else
+                            MessageBox.Show("No se pudo completar la edición.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                Else
+                    MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
             End If
         End If
     End Sub
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+    Private Sub btneditar_Click(sender As Object, e As EventArgs) Handles btneditar.Click
+        desbloqueartext()
+        save_edit = 0
+        desbloquearbtn()
+        btnnuevo.Enabled = False
+        btneliminar.Enabled = False
+    End Sub
 
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+        txtbuscar.Select()
         Dim result As DialogResult
 
         result = MessageBox.Show("¿Desea eliminar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
@@ -187,19 +251,20 @@ Public Class frmproveedor
                     dts.gidproveedor = dgvlistado.SelectedCells.Item(0).Value
 
                     If func.eliminar(dts) Then
-                        MessageBox.Show("Eliminar completado", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show("Eliminar completado.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         mostrar()
                         limpiar()
+                        bloqueartext()
+                        bloquearbtn()
+                        btnnuevo.Enabled = True
                     Else
-                        MessageBox.Show("No se pudo completar la eliminación", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        mostrar()
-                        limpiar()
+                        MessageBox.Show("No se pudo completar la eliminación.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             Else
-                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
@@ -216,5 +281,12 @@ Public Class frmproveedor
             frmvendedor.Show()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
+        txtbuscar.Select()
+        bloqueartext()
+        bloquearbtn()
+        btnnuevo.Enabled = True
     End Sub
 End Class

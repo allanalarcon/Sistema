@@ -4,8 +4,45 @@ Public Class frmpago
 
     Private dt As New DataTable
 
+    Private Sub bloqueartext()
+        txtnombre.BorderStyle = BorderStyle.None
+        txtapellido.BorderStyle = BorderStyle.None
+        txtpago.BorderStyle = BorderStyle.None
+        txtfecha.BorderStyle = BorderStyle.None
+
+        txtnombre.ReadOnly = True
+        txtapellido.ReadOnly = True
+        txtpago.ReadOnly = True
+        txtfecha.ReadOnly = True
+
+        txtfecha.BackColor = Color.White
+    End Sub
+
+    Private Sub bloquearbtn()
+        btncancelar.Enabled = False
+        btneliminar.Enabled = False
+        btngenerar.Enabled = False
+    End Sub
+
+    Private Sub desbloqueartext()
+        txtpago.BorderStyle = BorderStyle.FixedSingle
+        txtfecha.BorderStyle = BorderStyle.FixedSingle
+
+        txtpago.ReadOnly = False
+        txtfecha.ReadOnly = False
+    End Sub
+
+    Private Sub desbloquearbtn()
+        btncancelar.Enabled = True
+        btneliminar.Enabled = True
+        btngenerar.Enabled = True
+    End Sub
+
     Private Sub frmpago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrar()
+        bloqueartext()
+        bloquearbtn()
+        btngenerar.Enabled = True
     End Sub
 
     Private Sub mostrar()
@@ -91,15 +128,10 @@ Public Class frmpago
         If Not fecha = "" Then
             txtfecha.Text = Format(dgvlistado.SelectedCells.Item(4).Value, "dd/MM/yyyy")
         End If
-    End Sub
-
-    Private Sub btbuscarc_Click(sender As Object, e As EventArgs) Handles btbuscarc.Click
-        frmempleado.txtbandera.Text = "2"
-        frmcontenedor.pnpantallas.Controls.Clear()
-        frmempleado.TopLevel = False
-        frmempleado.Visible = True
-        frmcontenedor.pnpantallas.Controls.Add(frmempleado)
-        frmempleado.Show()
+        desbloquearbtn()
+        bloqueartext()
+        desbloquearbtn()
+        btncancelar.Enabled = False
     End Sub
 
     Private Sub txtnombre_Validating(sender As Object, e As CancelEventArgs) Handles txtnombre.Validating
@@ -134,72 +166,6 @@ Public Class frmpago
         End If
     End Sub
 
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
-        limpiar()
-    End Sub
-
-    Private Sub btneditar_Click(sender As Object, e As EventArgs) Handles btneditar.Click
-        Dim result As DialogResult
-
-        result = MessageBox.Show("¿Desea modificar los datos?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-
-        If result = DialogResult.OK Then
-
-            If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" And txtpago.Text <> "" And txtfecha.Text <> "" And txtidempleado.Text <> "" Then
-                Try
-                    Dim dts As New vpago
-                    Dim func As New fpago
-
-                    dts.gidpago = dgvlistado.SelectedCells.Item(0).Value
-                    dts.gidempleado = txtidempleado.Text
-                    dts.gpago = txtpago.Text
-                    dts.gfechapago = txtfecha.Text
-
-                    If func.editar(dts) Then
-                        MessageBox.Show("Editar completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        mostrar()
-                        limpiar()
-                    Else
-                        MessageBox.Show("No se pudo completar la edición", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        mostrar()
-                        limpiar()
-                    End If
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
-            Else
-                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        End If
-    End Sub
-
-    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
-        If Me.ValidateChildren = True And txtnombre.Text <> "" And txtapellido.Text <> "" And txtpago.Text <> "" And txtfecha.Text <> "" And txtidempleado.Text <> "" Then
-            Try
-                Dim dts As New vpago
-                Dim func As New fpago
-
-                dts.gidempleado = txtidempleado.Text
-                dts.gpago = txtpago.Text
-                dts.gfechapago = txtfecha.Text
-
-                If func.ingresar(dts) Then
-                    MessageBox.Show("Registro completado", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    mostrar()
-                    limpiar()
-                Else
-                    MessageBox.Show("No se pudo completar el registro", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    mostrar()
-                    limpiar()
-                End If
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Else
-            MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
         Dim result As DialogResult
 
@@ -215,24 +181,31 @@ Public Class frmpago
                     dts.gidpago = dgvlistado.SelectedCells.Item(0).Value
 
                     If func.eliminar(dts) Then
-                        MessageBox.Show("Eliminar completado", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show("Eliminar completado.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         mostrar()
                         limpiar()
+                        bloqueartext()
+                        bloquearbtn()
+                        btngenerar.Enabled = True
                     Else
-                        MessageBox.Show("No se pudo completar la eliminación", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        mostrar()
-                        limpiar()
+                        MessageBox.Show("No se pudo completar la eliminación.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             Else
-                MessageBox.Show("Datos incompletos. Llene los campos obligatorios", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
 
-    Private Sub btgenerar_Click(sender As Object, e As EventArgs) Handles btgenerar.Click
+    Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
+        bloqueartext()
+        bloquearbtn()
+        btngenerar.Enabled = True
+    End Sub
+
+    Private Sub btngenerar_Click(sender As Object, e As EventArgs) Handles btngenerar.Click
         frmcontenedor.pnpantallas.Controls.Clear()
         frmgenerarpago.TopLevel = False
         frmgenerarpago.Visible = True

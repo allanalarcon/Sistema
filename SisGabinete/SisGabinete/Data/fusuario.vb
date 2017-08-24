@@ -42,7 +42,7 @@ Public Class fusuario
             cmd.Connection = cn
 
             cmd.Parameters.AddWithValue("@idusuario", dts.gidusuario)
-            cmd.Parameters.AddWithValue("@usuario", dts.gusuario)
+            cmd.Parameters.AddWithValue("@nombre", dts.gusuario)
             cmd.Parameters.AddWithValue("@password", dts.gpassword)
 
             If cmd.ExecuteNonQuery Then

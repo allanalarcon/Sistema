@@ -41,7 +41,6 @@ Public Class fcliente
             cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
             cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
             cmd.Parameters.AddWithValue("@email", dts.gemail)
-            cmd.Parameters.AddWithValue("@fechanacimiento", dts.gfechanacimiento)
             cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
 
             If cmd.ExecuteNonQuery Then
@@ -72,7 +71,6 @@ Public Class fcliente
             cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
             cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
             cmd.Parameters.AddWithValue("@email", dts.gemail)
-            cmd.Parameters.AddWithValue("@fechanacimiento", dts.gfechanacimiento)
             cmd.Parameters.AddWithValue("@cedula", dts.gcedula)
 
             If cmd.ExecuteNonQuery Then
@@ -106,7 +104,11 @@ Public Class fcliente
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            If ex.Message.ToString = "The DELETE statement conflicted with the REFERENCE constraint ""FK__venta__idcliente__3864608B"". The conflict occurred in database ""dbGabinete"", table ""dbo.venta"", column 'idcliente'." & vbNewLine & "The statement has been terminated." Then
+                MessageBox.Show("No se puede eliminar el cliente. Tiene compras realizadas.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MsgBox(ex.Message)
+            End If
             Return False
         Finally
             desconectado()

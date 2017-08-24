@@ -2,7 +2,6 @@
     Dim idempleado, tipo As Integer
     Dim nombre, apellido, direccion, telefono, email, cedula As String
     Dim fechanacimiento As Date
-    'Dim imagen As Image
 
     'Setter and getter
 
@@ -81,21 +80,12 @@
 
     Public Property gtipo
         Get
-            Return nombre
+            Return tipo
         End Get
         Set(ByVal value)
-            cedula = value
+            tipo = value
         End Set
     End Property
-
-    'Public Property gimagen
-    'Get
-    'Return imagen
-    'End Get
-    'Set(ByVal value)
-    'imagen = value
-    'End Set
-    'End Property
 
     'Constructores
 
@@ -103,7 +93,7 @@
 
     End Sub
 
-    Public Sub New(ByVal idempleado As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal email As String, ByVal fechanacimiento As Date, ByVal cedula As String, ByVal tipo As Integer) 'ByVal imagen As Image)
+    Public Sub New(ByVal idempleado As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal email As String, ByVal fechanacimiento As Date, ByVal cedula As String, ByVal tipo As Integer)
         gidempleado = idempleado
         gnombre = nombre
         gapellido = apellido
@@ -113,6 +103,5 @@
         gfechanacimiento = fechanacimiento
         gcedula = cedula
         gtipo = tipo
-        'gimagen = imagen
     End Sub
 End Class

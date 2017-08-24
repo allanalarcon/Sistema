@@ -96,7 +96,11 @@ Public Class fservicio
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            If ex.Message.ToString = "The DELETE statement conflicted with the REFERENCE constraint ""FK__detalle_s__idser__42E1EEFE"". The conflict occurred in database ""dbGabinete"", table ""dbo.detalle_servicio"", column 'idservicio'." & vbNewLine & "The statement has been terminated." Then
+                MessageBox.Show("No se puede eliminar el servicio. Existe en ventas registradas.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MsgBox(ex.Message)
+            End If
             Return False
         Finally
             desconectado()
