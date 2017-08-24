@@ -25,6 +25,7 @@ Partial Class frmgenerarpago
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pandatosprin = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtultimalabel = New System.Windows.Forms.TextBox()
         Me.btgenerar = New System.Windows.Forms.Button()
         Me.txtapellido = New System.Windows.Forms.TextBox()
@@ -44,7 +45,7 @@ Partial Class frmgenerarpago
         Me.txtultima = New System.Windows.Forms.TextBox()
         Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtactual = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.pandatosprin.SuspendLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +70,17 @@ Partial Class frmgenerarpago
         Me.pandatosprin.Name = "pandatosprin"
         Me.pandatosprin.Size = New System.Drawing.Size(904, 131)
         Me.pandatosprin.TabIndex = 18
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(506, 90)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(83, 17)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "Último pago"
         '
         'txtultimalabel
         '
@@ -268,22 +280,22 @@ Partial Class frmgenerarpago
         Me.txtactual.TabIndex = 25
         Me.txtactual.Visible = False
         '
-        'Label2
+        'Label5
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(506, 90)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 17)
-        Me.Label2.TabIndex = 26
-        Me.Label2.Text = "Último pago"
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(52, 10)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(237, 47)
+        Me.Label5.TabIndex = 26
+        Me.Label5.Text = "Generar pago"
         '
         'frmgenerarpago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtactual)
         Me.Controls.Add(Me.txtultima)
         Me.Controls.Add(Me.btnnuevo)
@@ -329,4 +341,5 @@ Partial Class frmgenerarpago
     Friend WithEvents txtactual As TextBox
     Friend WithEvents txtultimalabel As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label5 As Label
 End Class

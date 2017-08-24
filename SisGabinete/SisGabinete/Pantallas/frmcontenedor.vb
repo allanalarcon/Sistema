@@ -84,6 +84,12 @@
                 pnbotones.Visible = True
                 pnlogin.Visible = False
                 pnbotones2.Visible = True
+                pblogo.Visible = False
+                pnpantallas.Controls.Clear()
+                frmventas.TopLevel = False
+                frmventas.Visible = True
+                pnpantallas.Controls.Add(frmventas)
+                frmventas.Show()
                 administrador()
             Else
                 MsgBox("Credencial incorrecta", MsgBoxStyle.Information, "Acceso denegado al sistema")
@@ -116,6 +122,7 @@
         pnpantallas.Visible = True
         pnbotones.Visible = True
         pnlogin.Visible = False
+        pblogo.Visible = False
         pnbotones2.Visible = True
         empleado()
     End Sub
@@ -189,5 +196,6 @@
         pnbotones.Visible = False
         pnbotones2.Visible = False
         pnlogin.Visible = True
+        pblogo.Visible = True
     End Sub
 End Class

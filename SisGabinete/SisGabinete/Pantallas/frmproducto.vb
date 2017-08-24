@@ -88,6 +88,7 @@ Public Class frmproducto
         dgvlistado.Columns("nombre_vendedor").Visible = False
         dgvlistado.Columns("apellido_vendedor").Visible = False
         dgvlistado.Columns("idproducto").Visible = False
+        dgvlistado.Columns("idvendedor").Visible = False
 
         'Visibles
 
@@ -148,6 +149,7 @@ Public Class frmproducto
         txtnombrevendedor.Text = dgvlistado.SelectedCells.Item(6).Value.ToString
         txtapellidovendedor.Text = dgvlistado.SelectedCells.Item(7).Value.ToString
         txtproveedor.Text = dgvlistado.SelectedCells.Item(2).Value.ToString
+        txtidvendedor.Text = dgvlistado.SelectedCells.Item(8).Value.ToString
         desbloquearbtn()
         bloqueartext()
         desbloquearbtn()
@@ -167,6 +169,7 @@ Public Class frmproducto
             frmventas.Visible = True
             frmcontenedor.pnpantallas.Controls.Add(frmventas)
             frmventas.Show()
+            frmventas.txtcantidadp.Maximum = frmventas.txtstock.Text
             Me.Close()
         End If
     End Sub
@@ -275,8 +278,8 @@ Public Class frmproducto
             If result = DialogResult.OK Then
 
                 If Me.ValidateChildren = True And txtnombre.Text <> "" And txtprecio.Text <> "" And txtdescripcion.Text <> "" And txtstock.Text <> "" And txtnombrevendedor.Text <> "" And txtapellidovendedor.Text <> "" Then
-                    Try
-                        Dim dts As New vproducto
+                    'Try
+                    Dim dts As New vproducto
                         Dim func As New fproducto
 
                         dts.gidproducto = dgvlistado.SelectedCells.Item(0).Value.ToString
@@ -296,9 +299,9 @@ Public Class frmproducto
                         Else
                             MessageBox.Show("No se pudo completar la edición.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
-                    Catch ex As Exception
-                        MsgBox(ex.Message)
-                    End Try
+                    'Catch ex As Exception
+                    'MsgBox(ex.Message)
+                    'End Try
                 Else
                     MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If

@@ -46,6 +46,7 @@ Partial Class frmcliente
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.txtbandera = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.dgvlistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pandatosprin.SuspendLayout()
         CType(Me.piccliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -296,12 +297,23 @@ Partial Class frmcliente
         Me.txtbandera.Text = "0"
         Me.txtbandera.Visible = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(52, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(131, 47)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "Cliente"
+        '
         'frmcliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1024, 621)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtbandera)
         Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.btnguardar)
@@ -350,4 +362,5 @@ Partial Class frmcliente
     Friend WithEvents btneliminar As Button
     Friend WithEvents btnnuevo As Button
     Friend WithEvents txtbandera As TextBox
+    Friend WithEvents Label5 As Label
 End Class

@@ -65,6 +65,7 @@ Public Class frmventas
         dgvlistado.Columns("idcliente").Visible = False
         dgvlistado.Columns("fecha").Visible = False
         dgvlistado.Columns("hora").Visible = False
+        dgvlistado.Columns("reserva").Visible = False
 
         'Visibles
         dgvlistado.Columns("nombre").HeaderText = "Nombres"
@@ -92,9 +93,9 @@ Public Class frmventas
         dgvservicios.Columns("descripcion").HeaderText = "Descripción"
         dgvservicios.Columns("descripcion").Width = 150
         dgvservicios.Columns("cantidad").HeaderText = "Cantidad"
-        dgvservicios.Columns("cantidad").Width = 150
+        dgvservicios.Columns("cantidad").Width = 80
         dgvservicios.Columns("preciounitario").HeaderText = "Precio Unitario"
-        dgvservicios.Columns("preciounitario").Width = 80
+        dgvservicios.Columns("preciounitario").Width = 150
     End Sub
 
     Private Sub modificar_columnasproductos()
@@ -112,9 +113,9 @@ Public Class frmventas
         dgvproductos.Columns("nombre").HeaderText = "Nombre"
         dgvproductos.Columns("nombre").Width = 150
         dgvproductos.Columns("cantidad").HeaderText = "Cantidad"
-        dgvproductos.Columns("cantidad").Width = 150
+        dgvproductos.Columns("cantidad").Width = 80
         dgvproductos.Columns("preciounitario").HeaderText = "Precio Unitario"
-        dgvproductos.Columns("preciounitario").Width = 80
+        dgvproductos.Columns("preciounitario").Width = 150
 
     End Sub
 
@@ -176,7 +177,12 @@ Public Class frmventas
     Private Sub mostrarservicios()
         Try
             Dim func As New fdetalleservicio
-            dt = func.mostrar()
+            Dim dts As New vdetalleservicio
+
+
+            dts.gidventa = txtidventa.Text
+
+            dt = func.mostrar(dts)
 
             If dt.Rows.Count <> 0 Then
                 dgvservicios.DataSource = dt
@@ -194,7 +200,13 @@ Public Class frmventas
     Private Sub mostrarproductos()
         Try
             Dim func As New fdetalleproducto
-            dt = func.mostrar()
+            Dim dts As New vdetalleproducto
+
+
+            dts.gidventa = txtidventa.Text
+
+            dt = func.mostrar(dts)
+
 
             If dt.Rows.Count <> 0 Then
                 dgvproductos.DataSource = dt
@@ -260,7 +272,7 @@ Public Class frmventas
         limpiar()
     End Sub
 
-    Private Sub dgvlistado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellContentClick
+    Private Sub dgvlistado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlistado.CellClick
         limpiar()
         txtidventa.Text = dgvlistado.SelectedCells.Item(0).Value.ToString
         txtidcliente.Text = dgvlistado.SelectedCells.Item(1).Value.ToString
@@ -269,6 +281,26 @@ Public Class frmventas
         Dim fecha As String = dgvlistado.SelectedCells.Item(4).Value.ToString
         If Not fecha = "" Then
             dtpfecha.Text = Format(dgvlistado.SelectedCells.Item(4).Value, "dd/MM/yyyy")
+        End If
+        Dim func As New fventa
+        Dim dt2 As New DataTable
+        dt2 = func.mostrar(dgvlistado.SelectedCells.Item(0).Value.ToString)
+        If dt2.Rows.Count <> 0 Then
+            dgvproductos.DataSource = dt2
+            dgvproductos.ColumnHeadersVisible = True
+            modificar_columnasproductos()
+        Else
+            dgvproductos.DataSource = Nothing
+        End If
+        Dim func2 As New fventa
+        Dim dt3 As New DataTable
+        dt3 = func.mostrarserv(dgvlistado.SelectedCells.Item(0).Value.ToString)
+        If dt3.Rows.Count <> 0 Then
+            dgvservicios.DataSource = dt3
+            dgvservicios.ColumnHeadersVisible = True
+            modificar_columnasservicios()
+        Else
+            dgvservicios.DataSource = Nothing
         End If
     End Sub
 
@@ -354,7 +386,41 @@ Public Class frmventas
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         txtnombrec.Text = txthora.Text
+    End Sub
+
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+        Dim result As DialogResult
+
+        result = MessageBox.Show("¿Desea eliminar la venta?", "Modificando Datos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+
+            If Me.ValidateChildren = True And txtnombrec.Text <> "" And txtapellidoc.Text <> "" And txtidventa.Text <> "" Then
+                Try
+                    Dim dts As New vventa
+                    Dim func As New fventa
+
+                    dts.gidventa = txtidventa.Text
+
+                    If func.eliminar(dts) Then
+                        MessageBox.Show("Eliminar completado.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        mostrar()
+                        limpiar()
+                        txtidventa.Text = ""
+                        ' bloqueartext()
+                        'bloquearbtn()
+                        btnnuevo.Enabled = True
+                    Else
+                        MessageBox.Show("No se pudo completar la eliminación.", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                MessageBox.Show("Datos incompletos. Llene los campos obligatorios.", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
     End Sub
 End Class

@@ -44,5 +44,9 @@
 
     Private Sub btcancelar_Click(sender As Object, e As EventArgs) Handles btcancelar.Click
         frmcontenedor.pnpantallas.Controls.Clear()
+        frmventas.TopLevel = False
+        frmventas.Visible = True
+        frmcontenedor.pnpantallas.Controls.Add(frmventas)
+        frmventas.Show()
     End Sub
 End Class

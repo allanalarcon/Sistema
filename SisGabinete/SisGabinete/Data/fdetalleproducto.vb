@@ -4,13 +4,15 @@ Public Class fdetalleproducto
     Inherits conexion
     Dim cmd As New SqlCommand
 
-    Public Function mostrar() As DataTable
+    Public Function mostrar(ByVal dts As vdetalleproducto) As DataTable
         Try
             conectado()
             cmd = New SqlCommand("mostrar_detalleproducto")
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Connection = cn
+
+            cmd.Parameters.AddWithValue("@idventa", dts.gidventa)
 
             If cmd.ExecuteNonQuery Then
                 Dim dt As New DataTable
