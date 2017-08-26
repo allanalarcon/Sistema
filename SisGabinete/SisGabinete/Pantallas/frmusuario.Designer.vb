@@ -108,6 +108,7 @@ Partial Class frmusuario
         Me.txtactual.Location = New System.Drawing.Point(141, 20)
         Me.txtactual.MaxLength = 10
         Me.txtactual.Name = "txtactual"
+        Me.txtactual.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtactual.Size = New System.Drawing.Size(239, 25)
         Me.txtactual.TabIndex = 0
         '

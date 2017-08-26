@@ -13,6 +13,9 @@
                 func.editar(dts)
                 MessageBox.Show("Contraseña cambiada.", "Configuración", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 frmcontenedor.pnpantallas.Controls.Clear()
+                frmventas.TopLevel = False
+                frmventas.Visible = True
+                frmcontenedor.pnpantallas.Controls.Add(frmventas)
             Else
                 MsgBox("Credencial incorrecta", MsgBoxStyle.Information, "Configuración")
                 txtactual.Clear()
