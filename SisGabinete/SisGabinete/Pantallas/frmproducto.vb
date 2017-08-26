@@ -112,7 +112,7 @@ Public Class frmproducto
             ds.Tables.Add(dt.Copy)
             Dim dv As New DataView(ds.Tables(0))
 
-            dv.RowFilter = "nombre like '" & txtbuscar.Text & "%'"
+            dv.RowFilter = "producto like '" & txtbuscar.Text & "%'"
 
             If dv.Count <> 0 Then
                 dgvlistado.DataSource = dv
